@@ -6,7 +6,7 @@ namespace CSKodOvningarD
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Mata in ett tal mellan 1-10 Varför funkar itne det här: ");
+            Console.WriteLine("Mata in ett tal mellan 1-10 Varför funkar i3242343432423454553tne det här: ");
             int num = Convert.ToInt32(Console.ReadLine());
             if (num >= 1 && num <= 10)
             {
