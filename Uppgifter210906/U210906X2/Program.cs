@@ -1,4 +1,7 @@
 ﻿using System;
+//Låt användaren mata in en mening.
+//Skriv ut varje ord på en egen rad, i storleksordning (längd på ordet)
+//Skriv ut varje ord på en egen rad, i omvänd ordning (baklänges)
 
 namespace U210906X2
 {

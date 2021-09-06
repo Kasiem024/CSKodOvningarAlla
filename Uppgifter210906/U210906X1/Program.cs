@@ -1,4 +1,8 @@
 ﻿using System;
+//Låt användaren mata in en mening.
+//Skriv ut antal ord
+//Skriv ut varje ord på en egen rad med antal tecken i ordet (ex hej (3))
+
 
 namespace U210906X1
 {
