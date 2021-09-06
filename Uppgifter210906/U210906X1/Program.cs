@@ -12,29 +12,13 @@ namespace U210906X1
         {
             Console.WriteLine("Skriv en mening: ");
             String sentence = Console.ReadLine();
+            String[] words = sentence.Split(" ");//I princip skapar en ny variabel efter varje " " och sparar den.
 
-            int wordcount = 0;
-            int index = 0;
+            Console.WriteLine("Du har skrivit " + words.Length + " ord.");
 
-            while (index < sentence.Length && char.IsWhiteSpace(sentence[index]))
-                index++;
-
-            while (index < sentence.Length)
+            foreach (var word in words)//Skapar en ny variabel "word". För varje variabel i listan words skapas en ny word variabel.
             {
-
-                while (index < sentence.Length && !char.IsWhiteSpace(sentence[index]))
-                    index++;
-
-                wordcount++;
-
-                while (index < sentence.Length && char.IsWhiteSpace(sentence[index]))
-                    index++;
-            }
-            Console.WriteLine("Du har skrivit " + wordcount + " ord.");
-
-            foreach (var word in sentence)
-            {
-                Console.WriteLine($"{word}");
+                Console.WriteLine($"{word} är ("+word.Length+") bokstäver långt.");//Word Variabeln skrivs ut.
             }
         }
     }
