@@ -6,7 +6,8 @@ namespace U210906X2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Skriv en mening: ");
+            String sentence = Console.ReadLine();
         }
     }
 }
