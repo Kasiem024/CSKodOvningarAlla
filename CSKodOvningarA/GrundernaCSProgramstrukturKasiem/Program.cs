@@ -6,7 +6,7 @@ namespace GrundernaCSProgramstrukturKasiem
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hur många favoirtmaträtter har du? TEST");
+            Console.WriteLine("Hur många favoirtmaträtter har du?");
             int index = Convert.ToInt32(Console.ReadLine());
             string[] foods = new string[index];
 
