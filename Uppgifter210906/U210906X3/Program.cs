@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text.RegularExpressions;
 
 //Låt användaren mata in en mening.
 //Skriv ut varje unikt ord på en egen rad, och ange hur ofta ordet förekommer (ex "och (2)")
@@ -15,6 +14,13 @@ namespace U210906X3
             Console.WriteLine("Skriv en mening: ");
             string sentence = Console.ReadLine();
             string[] words = sentence.Split(" ");
+
+            Array.Sort(words);
+
+            foreach (var word in words)
+            {
+                Console.WriteLine($"{word}");
+            }
 
             /*for (int i = 0; i <= sentence.Length - 1; i++)
             {
