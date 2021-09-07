@@ -28,7 +28,7 @@ namespace GrundernaCSProgramstrukturKasiem
                 Console.Write("\n" + foods[i] + " är (" + foods[i].Length + ") bokstäver lång.");//Skriver antalet bokstäver för varje maträtt genom att räkna antalet variabler för varje karaktär
             }
 
-            string longest = foods[0];//Skapar den for så att den kan användas i slutet.
+            string longest = foods[0];//Skapar den innan for loopen så att den kan användas i slutet.
 
             for (int i = 0; i < foods.Length - 1; i++)//Eftersom arrayen börjar på 0 måste 1 subtraheras.
             {
