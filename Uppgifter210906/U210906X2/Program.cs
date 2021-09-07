@@ -13,7 +13,7 @@ namespace U210906X2
             string sentence = Console.ReadLine();
             string[] words = sentence.Split(" ");//I princip skapar en ny variabel efter varje " " och sparar den. 
 
-            Array.Sort(words, (word1, word2) => word1.Length.CompareTo(word2.Length));//Sorterar alla variabler som finns i "word" efter antalet karaktärer den har.
+            Array.Sort(words, (word1, word2) => word1.Length.CompareTo(word2.Length));//Sorterar alla variabler som finns i "word" efter antalet karaktärer den har. Jämför alla med alla.
 
             Console.WriteLine("Orden du skrev in kommer nu skrivas ut sorterade i stigande ordning beroende på längden av varje ord: ");
 

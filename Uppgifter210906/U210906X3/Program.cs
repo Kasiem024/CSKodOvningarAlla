@@ -17,6 +17,8 @@ namespace U210906X3
 
             Array.Sort(words);
 
+
+
             foreach (var word in words)
             {
                 Console.WriteLine($"{word}");
