@@ -21,9 +21,6 @@ namespace U210906X3
             {
                 counter[i] = 0;
             }
-            counter[0]++;
-            counter[1]--;
-            Console.WriteLine(counter[0]+counter[1]);
 
             for (int i = 0; i < words.Length - 1; i++)
             {
@@ -32,7 +29,7 @@ namespace U210906X3
                     counter[i]++;
                     foreach (var word in words)
                     {
-                        Console.WriteLine($"{word} och {counter}");
+                        Console.WriteLine($"{word} och {counter[i]}");
                     }
                 }
             }
