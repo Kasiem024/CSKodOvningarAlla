@@ -8,7 +8,25 @@ namespace U210906X4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string str = "Techie Delight";
+            char ch = 'e';
+
+            int freq = str.Split(ch).Length - 1;
+            Console.WriteLine(freq);
+
+            string str = "Techie Delight";
+            char ch = 'e';
+
+            int freq = 0;
+            foreach (char c in str)
+            {
+                if (c == ch)
+                {
+                    freq++;
+                }
+            }
+
+            Console.WriteLine(freq);
         }
     }
 }
