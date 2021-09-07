@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text.RegularExpressions;
+
 //Låt användaren mata in en mening.
 //Skriv ut varje unikt ord på en egen rad, och ange hur ofta ordet förekommer (ex "och (2)")
 //Skriv ut varje unikt ord på en egen rad, sorterat efter hur ofta ordet förekommer
@@ -14,43 +16,39 @@ namespace U210906X3
             string sentence = Console.ReadLine();
             string[] words = sentence.Split(" ");
 
-
-            /*int[] counter = new int[words.Length];
-
-            for (int i = 0; i <= counter.Length - 1; i++)
+            for (int i = 0; i <= words.Length -1; i++)
             {
-                counter[i] = 0;
+                String findMatch = words[i];
+                int counter = 0;
+                foreach (Match Match in Regex.Matches(sentence, findMatch, RegexOptions.IgnoreCase))
+                {
+                    counter++;
+                }
+                Console.WriteLine("{0}" + " Found " + "{1}" + " Times", findMatch, counter);
             }
 
-            for (int i = 0; i < words.Length - 1; i++)
+        /*int[] counter = new int[words.Length];
+
+        for (int i = 0; i <= counter.Length - 1; i++)
+        {
+            counter[i] = 0;
+        }
+
+        for (int i = 0; i < words.Length - 1; i++)
+        {
+            if (words[i] == (words[i + 1]))
             {
-                if (words[i] == (words[i + 1]))
+                counter[i]++;
+                foreach (var word in words)
                 {
-                    counter[i]++;
-                    foreach (var word in words)
-                    {
-                        Console.WriteLine($"{word} och {counter[i]}");
-                    }
+                    Console.WriteLine($"{word} och {counter[i]}");
                 }
             }
-            for (int i = 0; i <= counter.Length - 1; i++)
-            {
-                Console.WriteLine(words[i]+" "+counter[i]);
-            }*/
-
-            for (int i = 0; i <= sentence.Length - 1; i++)
-            {
-                if (sentence[i].Length < sentence[i + 1].Length)
-                {
-                    String Tobematched = words[i];
-                    int Count = 0;
-                    foreach (Match Match in Regex.Matches(sentence, Tobematched, RegexOptions.IgnoreCase))
-                    {
-                        Count++;
-                    }
-                    Console.WriteLine("{0}" + " Found " + "{1}" + " Times", Tobematched, Count);
-                }
-            }
+        }
+        for (int i = 0; i <= counter.Length - 1; i++)
+        {
+            Console.WriteLine(words[i]+" "+counter[i]);
+        }*/
         }
     }
 }
