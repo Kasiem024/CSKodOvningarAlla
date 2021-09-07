@@ -16,12 +16,23 @@ namespace U210906X3
             string[] words = sentence.Split(" ");
 
             Array.Sort(words);
+            int counter = 0;
 
-
+            for (int i = 0; i < words.Length - 1; i++)
+            {
+                if (words[i].Equals(words[i+1], StringComparison.OrdinalIgnoreCase))
+                {
+                    counter++;
+                    foreach (var word in words)
+                    {
+                        Console.WriteLine($"{word} och {counter}");
+                    }
+                }
+            }
 
             foreach (var word in words)
             {
-                Console.WriteLine($"{word}");
+                Console.WriteLine($"{word} och {counter}");
             }
 
             /*for (int i = 0; i <= sentence.Length - 1; i++)
