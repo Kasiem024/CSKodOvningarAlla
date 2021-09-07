@@ -16,20 +16,19 @@ namespace U210906X3
             string sentence = Console.ReadLine();
             string[] words = sentence.Split(" ");
 
-            for (int i = 0; i <= sentence.Length - 1; i++)
+            /*for (int i = 0; i <= sentence.Length - 1; i++)
             {
                 if (sentence[i].Length < sentence[i + 1].Length)
                 {
-
+                    String Tobematched = words[i];
+                    int Count = 0;
+                    foreach (Match Match in Regex.Matches(sentence, Tobematched, RegexOptions.IgnoreCase))
+                    {
+                        Count++;
+                    }
+                    Console.WriteLine("{0}" + " Found " + "{1}" + " Times", Tobematched, Count);
                 }
-                String Tobematched = words[i];
-                int Count = 0;
-                foreach (Match Match in Regex.Matches(sentence, Tobematched, RegexOptions.IgnoreCase))
-                {
-                    Count++;
-                }
-                Console.WriteLine("{0}" + " Found " + "{1}" + " Times", Tobematched, Count);
-            }
+            }*/
         }
     }
 }
