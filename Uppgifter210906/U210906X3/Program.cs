@@ -24,7 +24,7 @@ namespace U210906X3
                 {
                     counter++;
                 }
-                Console.WriteLine("{0}" + " Found " + "{1}" + " Times", findMatch, counter);
+                Console.WriteLine("{0} har skrivits {1} gånger", findMatch, counter);
             }
 
         /*int[] counter = new int[words.Length];
