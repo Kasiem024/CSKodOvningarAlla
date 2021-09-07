@@ -11,6 +11,9 @@ namespace U210906X2
         {
             Console.WriteLine("Skriv en mening: ");
             String sentence = Console.ReadLine();
+            String[] words = sentence.Split(" ");//I princip skapar en ny variabel efter varje " " och sparar den. 
+
+            Array.Sort(words);
         }
     }
 }
