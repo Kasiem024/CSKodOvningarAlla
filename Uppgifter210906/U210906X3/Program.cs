@@ -16,15 +16,27 @@ namespace U210906X3
             string sentence = Console.ReadLine();
             string[] words = sentence.Split(" ");
 
+            string findMatch;
+            int[] counter = new int[words.Length];
+
             for (int i = 0; i <= words.Length - 1; i++)
             {
-                String findMatch = words[i];
-                int counter = 0;
+                counter[i] = 0;
+
+            }
+
+            for (int i = 0; i <= words.Length - 1; i++)
+            {
+                findMatch = words[i];
                 foreach (Match Match in Regex.Matches(sentence, findMatch, RegexOptions.IgnoreCase))
                 {
-                    counter++;
+                    counter[i]++;
                 }
-                Console.WriteLine(findMatch + " har skrivits " + counter + " gånger");
+            }
+
+            for (int i = 0; i <= words.Length-1; i++)
+            {
+                Console.WriteLine(words[i] + " har skrivits " + counter[i] + " gånger");
             }
 
             /*int[] counter = new int[words.Length];
