@@ -1,5 +1,4 @@
 ﻿using System;
-
 //Låt användaren mata in en mening.
 //Skriv ut varje unikt ord på en egen rad, och ange hur ofta ordet förekommer (ex "och (2)")
 //Skriv ut varje unikt ord på en egen rad, sorterat efter hur ofta ordet förekommer
@@ -16,13 +15,20 @@ namespace U210906X3
             string[] words = sentence.Split(" ");
 
             Array.Sort(words);
-            int counter = 0;
+            int[] counter = new int[words.Length];
+
+            for (int i = 0; i <= counter.Length - 1; i++)
+            {
+                counter[i] = 0;
+                Console.WriteLine(counter[i]);
+            }
+
 
             for (int i = 0; i < words.Length - 1; i++)
             {
-                if (words[i].Equals(words[i+1], StringComparison.OrdinalIgnoreCase))
+                if (words[i].Equals(words[i + 1], StringComparison.OrdinalIgnoreCase))
                 {
-                    counter++;
+                    counter[i]++;
                     foreach (var word in words)
                     {
                         Console.WriteLine($"{word} och {counter}");
