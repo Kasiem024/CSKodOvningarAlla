@@ -16,7 +16,7 @@ namespace U210906X3
             string sentence = Console.ReadLine();
             string[] words = sentence.Split(" ");
 
-            for (int i = 0; i <= words.Length -1; i++)
+            for (int i = 0; i <= words.Length - 1; i++)
             {
                 String findMatch = words[i];
                 int counter = 0;
@@ -24,31 +24,31 @@ namespace U210906X3
                 {
                     counter++;
                 }
-                Console.WriteLine("{0} har skrivits {1} gånger", findMatch, counter);
+                Console.WriteLine(findMatch + " har skrivits " + counter + " gånger");
             }
 
-        /*int[] counter = new int[words.Length];
+            /*int[] counter = new int[words.Length];
 
-        for (int i = 0; i <= counter.Length - 1; i++)
-        {
-            counter[i] = 0;
-        }
-
-        for (int i = 0; i < words.Length - 1; i++)
-        {
-            if (words[i] == (words[i + 1]))
+            for (int i = 0; i <= counter.Length - 1; i++)
             {
-                counter[i]++;
-                foreach (var word in words)
+                counter[i] = 0;
+            }
+
+            for (int i = 0; i < words.Length - 1; i++)
+            {
+                if (words[i] == (words[i + 1]))
                 {
-                    Console.WriteLine($"{word} och {counter[i]}");
+                    counter[i]++;
+                    foreach (var word in words)
+                    {
+                        Console.WriteLine($"{word} och {counter[i]}");
+                    }
                 }
             }
-        }
-        for (int i = 0; i <= counter.Length - 1; i++)
-        {
-            Console.WriteLine(words[i]+" "+counter[i]);
-        }*/
+            for (int i = 0; i <= counter.Length - 1; i++)
+            {
+                Console.WriteLine(words[i]+" "+counter[i]);
+            }*/
         }
     }
 }
