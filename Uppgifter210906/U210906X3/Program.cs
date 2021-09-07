@@ -14,8 +14,8 @@ namespace U210906X3
             string sentence = Console.ReadLine();
             string[] words = sentence.Split(" ");
 
-            Array.Sort(words);
-            int[] counter = new int[words.Length];
+
+            /*int[] counter = new int[words.Length];
 
             for (int i = 0; i <= counter.Length - 1; i++)
             {
@@ -24,7 +24,7 @@ namespace U210906X3
 
             for (int i = 0; i < words.Length - 1; i++)
             {
-                if (words[i].Equals(words[i + 1], StringComparison.OrdinalIgnoreCase))
+                if (words[i] == (words[i + 1]))
                 {
                     counter[i]++;
                     foreach (var word in words)
@@ -33,13 +33,12 @@ namespace U210906X3
                     }
                 }
             }
-
-            foreach (var word in words)
+            for (int i = 0; i <= counter.Length - 1; i++)
             {
-                Console.WriteLine($"{word} och {counter}");
-            }
+                Console.WriteLine(words[i]+" "+counter[i]);
+            }*/
 
-            /*for (int i = 0; i <= sentence.Length - 1; i++)
+            for (int i = 0; i <= sentence.Length - 1; i++)
             {
                 if (sentence[i].Length < sentence[i + 1].Length)
                 {
@@ -51,7 +50,7 @@ namespace U210906X3
                     }
                     Console.WriteLine("{0}" + " Found " + "{1}" + " Times", Tobematched, Count);
                 }
-            }*/
+            }
         }
     }
 }
