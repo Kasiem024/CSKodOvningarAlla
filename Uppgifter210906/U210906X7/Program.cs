@@ -5,7 +5,7 @@
 //OBS skapa ingen ReadMe
 //Anslut nu ditt GitHub repo till din lokala mapp
 //Pusha upp ditt lokala arbete till ditt GitHub repo
-//Skapa två array för varje alfabet och sen kombinera de med en for loop. konvertera från string till char och sen tillbaka igen.
+//Skapa två array för varje alfabet. Läser meningen som en chararray konverterar till string och sen tillbaka till char och skriver ut den som den förra uppiften.
 
 namespace U210906X7
 {
