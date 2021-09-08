@@ -17,6 +17,7 @@ namespace U210906X5
             {
                 words = Console.ReadLine();
             }
+            Console.WriteLine("test"+words);
         }
     }
 }
