@@ -12,12 +12,14 @@ namespace U210906X5
         {
             Console.WriteLine("Du kan nu mata in ett ord om taget. När du vill avsluta programmet skriv: 'AVSLUTA'.");
             string words = "noll";
+            string sentence = " ";
 
             while (words != "AVSLUTA")
             {
                 words = Console.ReadLine();
+                sentence = sentence + words;
             }
-            Console.WriteLine("test"+words);
+            Console.WriteLine("test " + sentence);
         }
     }
 }
