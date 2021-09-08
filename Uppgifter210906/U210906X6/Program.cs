@@ -12,7 +12,7 @@ namespace U210906X6
         {
             Console.WriteLine("Gissa ett tal mellan 1-21");
             Console.ReadLine();
-            Math.Random
+            int rnd = new Random().Next(1, 21);
         }
     }
 }
