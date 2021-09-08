@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 //Låt användaren mata in en mening.
 //Skriv ut varje unikt ord på en egen rad, och ange hur ofta ordet förekommer (ex "och (2)")
 //Skriv ut varje unikt ord på en egen rad, sorterat efter hur ofta ordet förekommer
-//Sortera i alfabetsordning och om de har samma värde är det samma ord. Alltså if else och jämföra alla ord med varandra. Ha en coutner för varje ord.
+//Sortera i alfabetsordning och om de har samma värde är det samma ord. Alltså if else och jämföra alla ord med varandra. Ha en coutner för varje ord. Foreach loop där man kollar igenom varje ord. 2D array.
 
 namespace U210906X3
 {
