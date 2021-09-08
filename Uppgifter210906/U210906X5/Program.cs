@@ -9,7 +9,13 @@ namespace U210906X5
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Du kan nu mata in ett ord om taget. När du vill avsluta programmet skriv: 'AVSLUTA'.");
+            string[] words;
+
+            if (words.Equals)
+            {
+
+            }
         }
     }
 }
