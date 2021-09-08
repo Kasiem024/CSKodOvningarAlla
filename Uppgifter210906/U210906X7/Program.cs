@@ -14,6 +14,7 @@ namespace U210906X7
         static void Main(string[] args)
         {
             Console.WriteLine("Mata in en mening: ");
+
         }
     }
 }
