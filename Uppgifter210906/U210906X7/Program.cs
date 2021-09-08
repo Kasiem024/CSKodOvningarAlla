@@ -34,6 +34,11 @@ namespace U210906X7
                 charCollection = charCollection + ch + "";
             }
             Console.WriteLine(charCollection);
+
+            for (int i = 0; i <= sentence.Length; i++)
+            {
+                if
+            }
         }
     }
 }
