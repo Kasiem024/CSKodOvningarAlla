@@ -5,7 +5,7 @@
 //OBS skapa ingen ReadMe
 //Anslut nu ditt GitHub repo till din lokala mapp
 //Pusha upp ditt lokala arbete till ditt GitHub repo
-//Skapa två array för varje alfabet och sen kombinera de med en for loop. Jämföra vad som finns i meningen med alfabetet
+//Skapa två array för varje alfabet och sen kombinera de med en for loop. konvertera från string till char och sen tillbaka igen.
 
 namespace U210906X7
 {
@@ -34,6 +34,7 @@ namespace U210906X7
                 Console.WriteLine(ch);
                 charCollection = charCollection + ch + "";
             }
+
             Console.WriteLine(charCollection);
 
             for (int i = 0; i <= sentence.Length; i++)
