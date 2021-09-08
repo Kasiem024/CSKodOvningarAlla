@@ -16,11 +16,11 @@ namespace U210906X5
 
             while (words != "AVSLUTA")
             {
-                if (true)
+                if (words != "AVSLUTA")
                 {
                     words = Console.ReadLine();
+                    sentence = sentence + words + " ";
                 }
-                sentence = sentence + words + " ";
             }
             Console.WriteLine(sentence);
         }
