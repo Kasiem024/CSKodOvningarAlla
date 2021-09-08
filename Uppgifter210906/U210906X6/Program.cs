@@ -10,10 +10,9 @@ namespace U210906X6
     {
         static void Main(string[] args)
         {
-            int rnd = new Random().Next(1, 21);
-            int guess = 0;
+            int rnd = new Random().Next(1, 21);//Skapar ett random tal mellan 1 och 21.
             Console.WriteLine("Gissa ett tal mellan 1-21");
-            guess = Convert.ToInt32(Console.ReadLine());
+            int guess = Convert.ToInt32(Console.ReadLine());//Eftersom Console.Read anävnds för att läsa strings måste vad som matas in konverteras till en int.
 
             while (guess != rnd)
             {
