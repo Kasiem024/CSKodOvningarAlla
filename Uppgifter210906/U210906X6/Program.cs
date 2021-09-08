@@ -10,9 +10,20 @@ namespace U210906X6
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Gissa ett tal mellan 1-21");
-            Console.ReadLine();
             int rnd = new Random().Next(1, 21);
+            int guess = 0;
+            Console.WriteLine("Gissa ett tal mellan 1-21");
+            guess = Convert.ToInt32(Console.ReadLine());
+
+            while (guess != rnd)
+            {
+                while (guess != rnd)
+                {
+                    Console.WriteLine("Du gissade fel. Försök igen! \nGissa ett tal mellan 1-21");
+                    guess = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            Console.WriteLine("Du gissade rätt. Grattis!");
         }
     }
 }
