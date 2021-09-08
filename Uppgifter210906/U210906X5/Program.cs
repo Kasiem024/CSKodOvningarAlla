@@ -11,10 +11,11 @@ namespace U210906X5
         static void Main(string[] args)
         {
             Console.WriteLine("Du kan nu mata in ett ord om taget. När du vill avsluta programmet skriv: 'AVSLUTA'.");
+            string words = "noll";
 
-            while (true)
+            if (words != "AVSLUTA")
             {
-
+                words = Console.ReadLine();
             }
         }
     }
