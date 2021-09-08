@@ -14,16 +14,15 @@ namespace U210906X5
             string words = "noll";
             string sentence = "";
 
-            while (true)
+            while (words != "AVSLUTA")
             {
                 sentence = sentence + words + " ";
                 if (words != "AVSLUTA")
                 {
                     words = Console.ReadLine();
                 }
-
-                Console.WriteLine(sentence);
             }
+            Console.WriteLine(sentence);
         }
     }
-}
+}  
