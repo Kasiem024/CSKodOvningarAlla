@@ -22,7 +22,6 @@ namespace U210906X3
             for (int i = 0; i <= words.Length - 1; i++)
             {
                 counter[i] = 0;
-
             }
 
             for (int i = 0; i <= words.Length - 1; i++)
