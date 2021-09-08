@@ -10,9 +10,10 @@ namespace U210906X5
         static void Main(string[] args)
         {
             Console.WriteLine("Du kan nu mata in ett ord om taget. När du vill avsluta programmet skriv: 'AVSLUTA'.");
-            string[] words;
+            string words;
+            int i;
 
-            if (words.Equals)
+            if (words[i] == "AVSLUTA")
             {
 
             }
