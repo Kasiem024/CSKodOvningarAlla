@@ -10,7 +10,9 @@ namespace U210906X6
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Gissa ett tal mellan 1-21");
+            Console.ReadLine();
+            Math.Random
         }
     }
 }
