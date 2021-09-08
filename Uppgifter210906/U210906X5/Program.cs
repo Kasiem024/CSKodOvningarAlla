@@ -22,7 +22,7 @@ namespace U210906X5
                     words = Console.ReadLine();
                 }
 
-                    Console.WriteLine(sentence);
+                Console.WriteLine(sentence);
             }
         }
     }
