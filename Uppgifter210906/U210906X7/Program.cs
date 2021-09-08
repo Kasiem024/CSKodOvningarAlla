@@ -5,6 +5,7 @@
 //OBS skapa ingen ReadMe
 //Anslut nu ditt GitHub repo till din lokala mapp
 //Pusha upp ditt lokala arbete till ditt GitHub repo
+//Skapa två array för varje alfabet och sen kombinera de med en for loop. Jämföra vad som finns i meningen med alfabetet
 
 namespace U210906X7
 {
@@ -37,7 +38,7 @@ namespace U210906X7
 
             for (int i = 0; i <= sentence.Length; i++)
             {
-                if
+
             }
         }
     }
