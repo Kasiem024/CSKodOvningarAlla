@@ -23,7 +23,17 @@ namespace U210906X7
                 array2D[i, 0] = alphabetSplit[i];
                 array2D[i, 1] = leetSpeakSplit[i];
             }
-            Console.WriteLine(array2D[0,1]);
+
+            Console.WriteLine("Skriv en meniing på engelska som du vill översättas till Leet Speak");
+            string sentence = Console.ReadLine();
+
+            string charCollection = "";
+            foreach (char ch in sentence)
+            {
+                Console.WriteLine(ch);
+                charCollection = charCollection + ch + "";
+            }
+            Console.WriteLine(charCollection);
         }
     }
 }
