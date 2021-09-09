@@ -1,13 +1,6 @@
 ﻿using System;
 //Be användaren mata in en mening.
 //Översätt den enligt Leet Speak (när det finns flera alternativ i tabellen, välj själv så det bara är 1-1)
-//Skapa ett nytt publikt repo i GitHub U210906X1
-//OBS skapa ingen ReadMe
-//Anslut nu ditt GitHub repo till din lokala mapp
-//Pusha upp ditt lokala arbete till ditt GitHub repo
-//Skapa två array för varje alfabet. Läser meningen som en chararray konverterar till string och sen tillbaka till char och skriver ut den som den förra uppiften.
-//Jag vill att vad som användaren skriver in delas upp i bokstäver och sen jämförs med vad som finns i alfabetet. 
-//Den jämför genom att jämföra varje bokstav i meningen med alfabetet
 
 namespace U210906X7
 {
@@ -20,7 +13,7 @@ namespace U210906X7
             string leetSpeak = "4,8,(,|),3,|#,6,|-|,!,_),|(,1,|\\\\/|,|\\\\|,0,|>,?,|2,5,+,|_|,\\\\/,\\\\|/,%,`/,7_, ";
             string[] leetSpeakSplit = leetSpeak.Split(",");
 
-            //Försökte här göra något med 2D array men insåg senare att det inte behövs.
+            //Försökte här göra något med 2D array men insåg senare att det inte behövs. Denna for loop kombinerar de två ovan arrays till en 2D array.
             /* string[,] array2D = new string[26, 2];
 
             for (int i = 0; i <= alphabetSplit.Length - 1; i++)
@@ -30,7 +23,7 @@ namespace U210906X7
             }*/
 
             Console.WriteLine("Skriv en mening på engelska med stora bokstäver som du vill översätta till Leet Speak.");//På engelska eftersom å ä ö inte finns.
-            char[] letters = Console.ReadLine().ToCharArray();//Console.ReadLine förväntar sig en string men ToCharArray gör vad som matas in till char.
+            char[] letters = Console.ReadLine().ToCharArray();//Console.ReadLine förväntar sig en string men ToCharArray gör vad som matas in till char. Har samma funktion som ConvertToInt32.
             string[] sentence = new string[letters.Length];//Gör en string som är lika lång som antalet bokstäver i den inmatade meningen.
 
             for (int i = 0; i < sentence.Length; i++)
