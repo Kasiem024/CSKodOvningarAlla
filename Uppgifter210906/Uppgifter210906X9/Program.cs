@@ -42,6 +42,9 @@ namespace Uppgifter210906X9
                     Console.WriteLine(number);
                 }
 
+
+
+
             }
         }
     }
