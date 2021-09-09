@@ -33,22 +33,15 @@ namespace U210906X3
                 }
             }
 
-            string temp = "";
-            for (int j = 0; j <= words.Length - 2; j++)
+            for (int i = 0; i <= words.Length - 2; i++)
             {
-                for (int i = 0; i <= words.Length - 2; i++)
+                if (words[i] != words[i+1])
                 {
-                    if (words[i] != words[i + 1])
-                    {
-                        temp = words[i + 1];
-                        words[i + 1] = words[i];
-                        words[i] = temp;
-                        Console.WriteLine(words[i] + " har skrivits " + counter[i] + " gånger");
-
-                    }
-
+                    Console.WriteLine(words[i] + " har skrivits " + counter[i] + " gånger");
                 }
             }
+
+
 
             /*int[] counter = new int[words.Length];
 
