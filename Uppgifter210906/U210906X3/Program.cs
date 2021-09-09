@@ -41,6 +41,25 @@ namespace U210906X3
                 }
             }
 
+            int temp;
+            for (int j = 0; j <= counter.Length - 2; j++)
+            {
+                for (int i = 0; i <= counter.Length - 2; i++)
+                {
+                    if (counter[i] > counter[i + 1])
+                    {
+                        temp = counter[i + 1];
+                        counter[i + 1] = counter[i];
+                        counter[i] = temp;
+                    }
+                }
+            }
+
+            Console.WriteLine("Din lista sorterad:");
+            {
+                foreach (int number in counter)
+                    Console.Write(number + " ");
+            }
 
 
             /*int[] counter = new int[words.Length];
