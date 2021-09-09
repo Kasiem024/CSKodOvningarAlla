@@ -45,9 +45,12 @@ namespace Uppgifter210906X9
                 //Har vi nu inte behövt sortera några tal så är 
                 //needsSorting == false och loop'en kommer att avbrytas
 
-                Console.WriteLine("Dina lista sorterad 2:");
-                foreach (int number in numArr)
-                    Console.Write(number + " ");
+                Console.WriteLine("Din lista sorterad :");
+                {
+                    foreach (int number in numArr)
+                        Console.Write(number + " ");
+                }
+                Console.WriteLine("\n");
             }
 
             int temp;
@@ -64,10 +67,11 @@ namespace Uppgifter210906X9
                 }
             }
 
-            Console.WriteLine("Dina lista sorterad:");
-            foreach (int number in numArr)
-                Console.Write(number + " ");
-
+            Console.WriteLine("Din lista sorterad för andra gången:");
+            {
+                foreach (int number in numArr)
+                    Console.Write(number + " ");
+            }
         }
     }
 }
