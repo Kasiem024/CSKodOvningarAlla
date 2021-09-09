@@ -41,8 +41,15 @@ namespace U210906X7
 
             for (int i = 0; i < sentence.Length; i++)
             {
-                sentenceLeet += leetSpeakSplit[Array.IndexOf(alphabetSplit, sentence[i])];//Letar i alphabetSplit efter bokstäverna som finns i meningen.
-                                                                                          //alphabetSplit och LeetSplit är parallela, därför fungerar det här.
+                sentenceLeet += leetSpeakSplit[Array.IndexOf(alphabetSplit, sentence[i])];//Letar i alphabetSplit efter bokstäverna som finns i meningen.                                                                          //alphabetSplit och LeetSplit är parallela, därför fungerar det här.
+            }
+
+            for (int i = 0; i < sentence.Length; i++)
+            {
+                //Titta på vad som finns i array2D [i,0] och ersätt den med vad som finns i array2D [i,1]
+
+                 
+
             }
 
             Console.WriteLine(sentenceLeet);
