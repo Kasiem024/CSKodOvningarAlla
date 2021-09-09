@@ -30,14 +30,18 @@ namespace U210906X7
 
             Console.WriteLine("Skriv en mening på engelska med stora bokstäver som du vill översätta till Leet Speak.");
             char[] letters = Console.ReadLine().ToCharArray();//Console.ReadLine förväntar sig en string men ToCharArray gör vad som matas in till char.
-            string[] tempSentence = new string[letters.Length];//Gör en string som är lika lång som antalet bokstäver i den inmatade meningen.
-            tempSentence = tempSentence.Select(s => s.ToLowerInvariant()).ToArray();
+            string[] sentence = new string[letters.Length];//Gör en string som är lika lång som antalet bokstäver i den inmatade meningen.
 
             for (int i = 0; i < sentence.Length; i++)
             {
                 sentence[i] = letters[i].ToString();//Konverterar char till string igen.
             }
             //Sentence just nu är en string och letters är char.
+
+            for (int i = 0; i < sentence.Length; i++)
+            {
+                sentence[i] = sentence[i].ToUpper();
+            }
 
             string sentenceLeet = "";
 
