@@ -6,7 +6,7 @@ namespace Uppgifter210906X9
     {
         static void Main(string[] args)
         {
-            int[] numArr = { 1, 2, 3, 4, 5, 6, 7 };
+            int[] numArr = { 1, 2, 3, 4, 5, 6, 7,1232,21,423543,23,43 };
 
             foreach (int number in numArr)
             {
@@ -36,26 +36,12 @@ namespace Uppgifter210906X9
                 }
                 //Har vi nu inte behövt sortera några tal så är 
                 //needsSorting == false och loop'en kommer att avbrytas
-
-
-                int[] arr = { 78, 55, 45, 98, 13 };
-                int temp;
-                for (int j = 0; j <= arr.Length - 2; j++)
+                Console.WriteLine("TEST");
+                foreach (int number in numArr)
                 {
-                    for (int i = 0; i <= arr.Length - 2; i++)
-                    {
-                        if (arr[i] > arr[i + 1])
-                        {
-                            temp = arr[i + 1];
-                            arr[i + 1] = arr[i];
-                            arr[i] = temp;
-                        }
-                    }
+                    Console.WriteLine(number);
                 }
-                Console.WriteLine("Sorted:");
-                foreach (int p in arr)
-                    Console.Write(p + " ");
-                Console.Read();
+
             }
         }
     }
