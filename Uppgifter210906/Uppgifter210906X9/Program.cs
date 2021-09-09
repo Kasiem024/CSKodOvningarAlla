@@ -6,7 +6,8 @@ namespace Uppgifter210906X9
     {
         static void Main(string[] args)
         {
-            int[] numArr = { 1, 2, 3, 4, 5, 6, 7,1232,21,423543,23,43 };
+            int num = Convert.ToInt32(Console.ReadLine());
+            int numArr = new string [num]
 
             foreach (int number in numArr)
             {
