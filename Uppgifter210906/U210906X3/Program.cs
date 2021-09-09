@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 //Skriv ut varje unikt ord på en egen rad, och ange hur ofta ordet förekommer (ex "och (2)")
 //Skriv ut varje unikt ord på en egen rad, sorterat efter hur ofta ordet förekommer
 //Sortera i alfabetsordning och om de har samma värde är det samma ord. Alltså if else och jämföra alla ord med varandra. Ha en coutner för varje ord. Foreach loop där man kollar igenom varje ord. 2D array.
+//Planen är att skapa en ny counter för varje unikt ord.
 
 namespace U210906X3
 {
@@ -67,8 +68,6 @@ namespace U210906X3
                 foreach (int number in counter)
                     Console.Write(number + " ");
             }
-
-
 
             /*int[] counter = new int[words.Length];
 
