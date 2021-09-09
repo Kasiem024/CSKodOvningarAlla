@@ -37,7 +37,14 @@ namespace U210906X7
             }
             //Sentence just nu är en string och letters är char.
 
+            string sentenceLeet = "";
 
+            for (int i = 0; i < sentence.Length; i++)
+            {
+                sentenceLeet += leetSpeakSplit[Array.IndexOf(alphabetSplit, sentence[i])];
+            }
+
+            Console.WriteLine(sentenceLeet);
         }
     }
 }
