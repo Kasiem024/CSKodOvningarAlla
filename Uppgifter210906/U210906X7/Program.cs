@@ -6,6 +6,7 @@
 //Anslut nu ditt GitHub repo till din lokala mapp
 //Pusha upp ditt lokala arbete till ditt GitHub repo
 //Skapa två array för varje alfabet. Läser meningen som en chararray konverterar till string och sen tillbaka till char och skriver ut den som den förra uppiften.
+//Jag vill att vad som användaren skriver in delas upp i bokstäver och sen jämförs med vad som finns i alfabetet. 
 
 namespace U210906X7
 {
@@ -25,22 +26,15 @@ namespace U210906X7
                 array2D[i, 1] = leetSpeakSplit[i];
             }
 
-            Console.WriteLine("Skriv en meniing på engelska som du vill översättas till Leet Speak");
+            Console.WriteLine("Skriv en meninig på engelska som du vill översätta till Leet Speak");
             string sentence = Console.ReadLine();
+            char[] chars = sentence.ToCharArray();
 
-            string charCollection = "";
-            foreach (char ch in sentence)
+            foreach (char ch in chars)
             {
                 Console.WriteLine(ch);
-                charCollection = charCollection + ch + "";
             }
 
-            Console.WriteLine(charCollection);
-
-            for (int i = 0; i <= sentence.Length; i++)
-            {
-
-            }
         }
     }
 }
