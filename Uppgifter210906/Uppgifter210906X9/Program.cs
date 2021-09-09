@@ -6,22 +6,32 @@ namespace Uppgifter210906X9
     {
         static void Main(string[] args)
         {
-            int[] arr = { 78, 55, 45, 98, 13 };
-            int temp;
-            for (int j = 0; j <= arr.Length - 2; j++)
+
+            Console.WriteLine("Skriv antalet tal du vill sortera.");
+            int num = Convert.ToInt32(Console.ReadLine());
+            int[] numArr = new int[num];
+
+            for (int i = 0; i < numArr.Length; i++)
             {
-                for (int i = 0; i <= arr.Length - 2; i++)
+                Console.WriteLine("Skriv en siffra.");
+                numArr[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            int temp;
+            for (int j = 0; j <= numArr.Length - 2; j++)
+            {
+                for (int i = 0; i <= numArr.Length - 2; i++)
                 {
-                    if (arr[i] > arr[i + 1])
+                    if (numArr[i] > numArr[i + 1])
                     {
-                        temp = arr[i + 1];
-                        arr[i + 1] = arr[i];
-                        arr[i] = temp;
+                        temp = numArr[i + 1];
+                        numArr[i + 1] = numArr[i];
+                        numArr[i] = temp;
                     }
                 }
             }
             Console.WriteLine("Sorted:");
-            foreach (int p in arr)
+            foreach (int p in numArr)
                 Console.Write(p + " ");
         }
     }
