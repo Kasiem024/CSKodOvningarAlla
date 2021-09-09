@@ -7,6 +7,7 @@
 //Pusha upp ditt lokala arbete till ditt GitHub repo
 //Skapa två array för varje alfabet. Läser meningen som en chararray konverterar till string och sen tillbaka till char och skriver ut den som den förra uppiften.
 //Jag vill att vad som användaren skriver in delas upp i bokstäver och sen jämförs med vad som finns i alfabetet. 
+//Den jämför genom att jämföra varje bokstav i meningen med alfabetet
 
 namespace U210906X7
 {
@@ -27,7 +28,7 @@ namespace U210906X7
                 array2D[i, 1] = leetSpeakSplit[i];
             }*/
 
-            Console.WriteLine("Skriv en mening på engelska som du vill översätta till Leet Speak.");
+            Console.WriteLine("Skriv en mening på engelska med stora bokstäver som du vill översätta till Leet Speak.");
             char[] letters = Console.ReadLine().ToCharArray();//Console.ReadLine förväntar sig en string men ToCharArray gör vad som matas in till char.
             string[] sentence = new string[letters.Length];//Gör en string som är lika lång som antalet bokstäver i den inmatade meningen.
 
@@ -38,14 +39,13 @@ namespace U210906X7
             //Sentence just nu är en string och letters är char.
 
             string sentenceLeet = "";
-            Console.WriteLine("TEST");
 
             for (int i = 0; i < sentence.Length; i++)
             {
                 sentenceLeet += leetSpeakSplit[Array.IndexOf(alphabetSplit, sentence[i])];
             }
 
-            Console.WriteLine(sentenceLeet+"TEST");
+            Console.WriteLine(sentenceLeet);
         }
     }
 }
