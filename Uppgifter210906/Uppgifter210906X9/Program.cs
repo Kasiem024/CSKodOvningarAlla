@@ -7,6 +7,12 @@ namespace Uppgifter210906X9
         static void Main(string[] args)
         {
             int[] numArr = { 1, 2, 3, 4, 5, 6, 7 };
+
+            foreach (int number in numArr)
+            {
+                Console.WriteLine(number);
+            }
+
             bool needsSorting = true;
             //Gör en loop för varje tal som skall sorteras, avbryt om talen är sorterade
             for (int i = 0; i < numArr.Length - 1 && needsSorting; i++)
@@ -30,6 +36,7 @@ namespace Uppgifter210906X9
                 }
                 //Har vi nu inte behövt sortera några tal så är 
                 //needsSorting == false och loop'en kommer att avbrytas
+
 
                 int[] arr = { 78, 55, 45, 98, 13 };
                 int temp;
