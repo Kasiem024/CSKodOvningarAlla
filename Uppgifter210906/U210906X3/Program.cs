@@ -4,8 +4,11 @@ using System.Text.RegularExpressions;
 //Låt användaren mata in en mening.
 //Skriv ut varje unikt ord på en egen rad, och ange hur ofta ordet förekommer (ex "och (2)")
 //Skriv ut varje unikt ord på en egen rad, sorterat efter hur ofta ordet förekommer
-//Sortera i alfabetsordning och om de har samma värde är det samma ord. Alltså if else och jämföra alla ord med varandra. Ha en coutner för varje ord. Foreach loop där man kollar igenom varje ord. 2D array.
-//Planen är att skapa en ny counter för varje unikt ord.
+//Sortera i alfabetsordning och om de har samma värde är det samma ord. Alltså if else och jämföra alla ord med varandra.
+//Ha en counter för varje ord. Foreach loop där man kollar igenom varje ord. 2D array.
+//Planen är att skapa en ny counter för varje unikt ord. Skapa en ny array för unika ord.
+//I början är den tom. Lägg till ett ord från meningen om den uppkommer mer än en gång.
+//Counter räknar hur många gånger varje ord uppkommer i arrayen unika ord.
 
 namespace U210906X3
 {
@@ -49,14 +52,13 @@ namespace U210906X3
 
             Console.WriteLine("TEST");
 
-            int temp;
             for (int j = 0; j <= counter.Length - 2; j++)
             {
                 for (int i = 0; i <= counter.Length - 2; i++)
                 {
                     if (counter[i] > counter[i + 1])
                     {
-                        temp = counter[i + 1];
+                        int temp = counter[i + 1];
                         counter[i + 1] = counter[i];
                         counter[i] = temp;
                     }
@@ -67,6 +69,16 @@ namespace U210906X3
             {
                 foreach (int number in counter)
                     Console.Write(number + " ");
+            }
+
+            Console.WriteLine("TEST");
+
+            for (int i = 0; i <= counter.Length - 2; i++)
+            {
+                if (counter[i] != counter[i + 1])
+                {
+                    Console.WriteLine(counter[i]);
+                }
             }
 
             /*int[] counter = new int[words.Length];
