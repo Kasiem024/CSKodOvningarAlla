@@ -27,13 +27,9 @@ namespace U210906X7
             }
 
             Console.WriteLine("Skriv en mening på engelska som du vill översätta till Leet Speak.");
-            string sentence = Console.ReadLine();
-            char[] chars = sentence.ToCharArray();
+            char[] letters = Console.ReadLine().ToCharArray();
+            string[] sentence = new string[letters.Length];
 
-            foreach (char ch in chars)
-            {
-                Console.WriteLine(ch);
-            }
 
         }
     }
