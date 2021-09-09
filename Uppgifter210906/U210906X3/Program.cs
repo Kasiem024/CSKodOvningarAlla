@@ -41,6 +41,13 @@ namespace U210906X3
                 }
             }
 
+            foreach (var item in counter)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("TEST");
+
             int temp;
             for (int j = 0; j <= counter.Length - 2; j++)
             {
@@ -60,6 +67,7 @@ namespace U210906X3
                 foreach (int number in counter)
                     Console.Write(number + " ");
             }
+
 
 
             /*int[] counter = new int[words.Length];
