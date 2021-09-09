@@ -18,18 +18,34 @@ namespace U210906X7
             string[] alphabetSplit = alphabet.Split(",");
             string leetSpeak = "4,8,(,|),3,|#,6,|-|,!,_),|(,1,|\\\\/|,|\\\\|,0,|>,?,|2,5,+,|_|,\\\\/,\\\\|/,%,`/,7_, ";
             string[] leetSpeakSplit = leetSpeak.Split(",");
-            string[,] array2D = new string[26, 2];
+
+            /* string[,] array2D = new string[26, 2];
 
             for (int i = 0; i <= alphabetSplit.Length - 1; i++)
             {
                 array2D[i, 0] = alphabetSplit[i];
                 array2D[i, 1] = leetSpeakSplit[i];
-            }
+            }*/
 
             Console.WriteLine("Skriv en mening på engelska som du vill översätta till Leet Speak.");
             char[] letters = Console.ReadLine().ToCharArray();
             string[] sentence = new string[letters.Length];
 
+            for (int i = 0; i < sentence.Length; i++)
+            {
+                sentence[i] = letters[i].ToString();
+            }
+
+            foreach (string item in sentence)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("TEST");
+
+            foreach (char item in letters)
+            {
+                Console.WriteLine(item);
+            }
 
         }
     }
