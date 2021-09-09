@@ -6,7 +6,6 @@ namespace Uppgifter210906X9
     {
         static void Main(string[] args)
         {
-
             Console.WriteLine("Skriv antalet tal du vill sortera.");
             int num = Convert.ToInt32(Console.ReadLine());
             int[] numArr = new int[num];
@@ -15,6 +14,11 @@ namespace Uppgifter210906X9
             {
                 Console.WriteLine("Skriv en siffra.");
                 numArr[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            foreach (var number in numArr)
+            {
+                Console.WriteLine(number);
             }
 
             int temp;
@@ -30,9 +34,9 @@ namespace Uppgifter210906X9
                     }
                 }
             }
-            Console.WriteLine("Sorted:");
-            foreach (int p in numArr)
-                Console.Write(p + " ");
+            Console.WriteLine("Dina lista sorterad:");
+            foreach (int number in numArr)
+                Console.Write(number + " ");
         }
     }
 }
