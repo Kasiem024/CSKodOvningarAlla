@@ -6,25 +6,26 @@ namespace Uppgifter210906X9
     {
         static void Main(string[] args)
         {
+            int[] numArr = { 1, 2, 3, 4, 5, 6, 7 };
             bool needsSorting = true;
             //Gör en loop för varje tal som skall sorteras, avbryt om talen är sorterade
-            for (int i = 0; i < data.Length - 1 && needsSorting; i++)
+            for (int i = 0; i < numArr.Length - 1 && needsSorting; i++)
             {
                 //Signalera att vi börjar om en ny vända med sortering
                 needsSorting = false;
                 //Gå igenom alla tal fram till och med de tal som ev. 
                 //redan är sorterade (variabeln i)
-                for (int j = 0; j < data.Length - 1 - i; j++)
+                for (int j = 0; j < numArr.Length - 1 - i; j++)
                 {
                     //Flytta större tal fram i vektorn
-                    if (data[j] > data[j + 1])
+                    if (numArr[j] > numArr[j + 1])
                     {
                         //Signalera att vi kommer att behöva fortsätta sortera
                         needsSorting = true;
                         //Byt plats på tal
-                        int tmp = data[j + 1];
-                        data[j + 1] = data[j];
-                        data[j] = tmp;
+                        int tmp = numArr[j + 1];
+                        numArr[j + 1] = numArr[j];
+                        numArr[j] = tmp;
                     }
                 }
                 //Har vi nu inte behövt sortera några tal så är 
