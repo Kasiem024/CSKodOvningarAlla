@@ -28,24 +28,15 @@ namespace U210906X7
             }*/
 
             Console.WriteLine("Skriv en mening på engelska som du vill översätta till Leet Speak.");
-            char[] letters = Console.ReadLine().ToCharArray();
-            string[] sentence = new string[letters.Length];
+            char[] letters = Console.ReadLine().ToCharArray();//Console.ReadLine förväntar sig en string men ToCharArray gör vad som matas in till char.
+            string[] sentence = new string[letters.Length];//Gör en string som är lika lång som antalet bokstäver i den inmatade meningen.
 
             for (int i = 0; i < sentence.Length; i++)
             {
-                sentence[i] = letters[i].ToString();
+                sentence[i] = letters[i].ToString();//Konverterar char till string igen.
             }
+            //Sentence just nu är en string och letters är char.
 
-            foreach (string item in sentence)
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine("TEST");
-
-            foreach (char item in letters)
-            {
-                Console.WriteLine(item);
-            }
 
         }
     }
