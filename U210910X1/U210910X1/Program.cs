@@ -33,19 +33,34 @@ namespace U210910X1
                     case 1:
                         Console.WriteLine("Du har valt att skapa en ny kund. \nVad heter kunden?");
 
+                        string input = Console.ReadLine();
+                        List<string> userList = new List<String>();
+                        userList.Add(input);
+                        string inputNewUser = Console.ReadLine();
+                        userList.Add(inputNewUser);
+                        foreach (var user in userList)
+                        {
+                            Console.WriteLine(user);
+                        }
+
                         Console.WriteLine("Vad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta");
                         choice = Convert.ToInt32(Console.ReadLine());
                         break;
 
                     case 2:
-                        Console.WriteLine("Antalet kunder är: ");
+                        Console.WriteLine($"Antalet kunder är: {customerList.Count}");
 
                         Console.WriteLine("Vad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta");
                         choice = Convert.ToInt32(Console.ReadLine());
                         break;
 
                     case 3:
-                        Console.WriteLine("Detta är listan över alla kunder: ");
+                        Console.WriteLine("Detta är listan över alla kunder:");
+
+                        foreach (var customer in customerList)
+                        {
+                            Console.WriteLine($"{customer.name}\n");
+                        }
 
                         Console.WriteLine("Vad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta");
                         choice = Convert.ToInt32(Console.ReadLine());
