@@ -21,11 +21,15 @@ namespace U210910X1
 
             Customer newCustomer;
             newCustomer = new Customer();
+
+
         }
     }
 
     public class Customer
     {
-
+        public string name;
+        public string accident;
+        public int age;
     }
 }
