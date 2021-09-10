@@ -24,6 +24,7 @@ namespace U210910X1
             Customer newCustomer;
             newCustomer = new Customer();
             List<Customer> customerList = new List<Customer>();
+        tryAgain:
 
             Console.WriteLine("Vad vill du göra? \n\n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta");
             int choice = Convert.ToInt32(Console.ReadLine());
@@ -66,24 +67,25 @@ namespace U210910X1
                         Console.WriteLine("\nVad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta\n");
                         choice = Convert.ToInt32(Console.ReadLine());
                         break;
-
-                    case 4:
-                        Console.WriteLine("Programmet avslutas ");
-                        break;
-
-                    default:
-                        Console.WriteLine("\nOj något gick snett där, försök igen! \nVad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta\n");
-                        choice = Convert.ToInt32(Console.ReadLine());
-                        break;
                 }
             }
-        }
-    }
 
-    public class Customer
-    {
-        public string name;
-        public int phoneNumber;
-        public int age;
+            if (choice == 4)
+            {
+                Console.WriteLine("\nProgrammet avslutas ");
+            }
+            else
+            {
+                Console.WriteLine("\nOj något gick snett där, försök igen!");
+                goto tryAgain;
+            }
+        }
+
+        public class Customer
+        {
+            public string name;
+            public int phoneNumber;
+            public int age;
+        }
     }
 }
