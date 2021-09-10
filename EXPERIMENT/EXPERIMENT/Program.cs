@@ -18,7 +18,12 @@ namespace EXPERIMENT
             List<Car> myCars = new List<Car>();
             myCars.Add(myCar);
 
+            Console.WriteLine("TEST");
 
+            foreach (var item in myCars)
+            {
+                Console.WriteLine($"{item.color} och {item.make} och {item.model}.");
+            }
 
         }
     }
@@ -28,7 +33,5 @@ namespace EXPERIMENT
         public string color;
         public string make;
         public string model;
-
-
     }
 }
