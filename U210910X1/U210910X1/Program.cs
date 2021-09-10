@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 /*
 Vi vill bygga ett program för att hantera lite enkel CRM - customer relationship management, dvs en lista över kunder. 
 CRM systemet ska användas av vår Biluthyrare. Så fundera på domänen och vilka klasser som behövs och vilka egenskaper. 
@@ -19,6 +21,7 @@ namespace U210910X1
         {
             Customer newCustomer;
             newCustomer = new Customer();
+            List<Customer> customerList = new List<Customer>();
 
             Console.WriteLine("Vad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta");
             int choice = Convert.ToInt32(Console.ReadLine());
@@ -28,7 +31,8 @@ namespace U210910X1
                 switch (choice)
                 {
                     case 1:
-                        Console.WriteLine("Du har valt att skapa en ny kund.");
+                        Console.WriteLine("Du har valt att skapa en ny kund. \nVad heter kunden?");
+                        string Console.ReadLine();
 
                         Console.WriteLine("Vad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta");
                         choice = Convert.ToInt32(Console.ReadLine());
