@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 /*
 Vi vill bygga ett program för att hantera lite enkel CRM - customer relationship management, dvs en lista över kunder. 
 CRM systemet ska användas av vår Biluthyrare. Så fundera på domänen och vilka klasser som behövs och vilka egenskaper. 
@@ -19,6 +18,14 @@ namespace U210910X1
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            Customer newCustomer;
+            newCustomer = new Customer();
         }
+    }
+
+    public class Customer
+    {
+
     }
 }
