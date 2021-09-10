@@ -35,8 +35,10 @@ namespace U210910X1
                     case 1:
                         Console.WriteLine("\nDu har valt att skapa en ny kund. \n\nVad heter kunden?");
                         newCustomer.name = Console.ReadLine();
+
                         Console.WriteLine("Hur gammal är kunden?");
                         newCustomer.age = Convert.ToInt32(Console.ReadLine());
+
                         Console.WriteLine("Vad är kundens telefonnummer?");
                         newCustomer.phoneNumber = Convert.ToInt32(Console.ReadLine());
 
