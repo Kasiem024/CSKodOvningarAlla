@@ -25,9 +25,7 @@ namespace U210910X1
             newCustomer = new Customer();
             List<Customer> customerList = new List<Customer>();
 
-
-
-            Console.WriteLine("Vad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta");
+            Console.WriteLine("Vad vill du göra? \n\n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta");
             int choice = Convert.ToInt32(Console.ReadLine());
 
             while (choice < 4)
@@ -35,7 +33,7 @@ namespace U210910X1
                 switch (choice)
                 {
                     case 1:
-                        Console.WriteLine("Du har valt att skapa en ny kund. \nVad heter kunden?");
+                        Console.WriteLine("\nDu har valt att skapa en ny kund. \n\nVad heter kunden?");
                         newCustomer.name = Console.ReadLine();
                         Console.WriteLine("Hur gammal är kunden?");
                         newCustomer.age = Convert.ToInt32(Console.ReadLine());
@@ -44,24 +42,23 @@ namespace U210910X1
 
                         customerList.Add(new Customer() { name = newCustomer.name, age = newCustomer.age, phoneNumber = newCustomer.phoneNumber });
 
-
-                        Console.WriteLine("Vad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta");
+                        Console.WriteLine("\nDu har nu skapat en ny kund. \nVad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta\n");
                         choice = Convert.ToInt32(Console.ReadLine());
                         break;
 
                     case 2:
-                        Console.WriteLine($"Antalet kunder är: {customerList.Count}");
+                        Console.WriteLine($"\nAntalet kunder är: {customerList.Count}");
 
-                        Console.WriteLine("Vad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta");
+                        Console.WriteLine("\nVad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta\n");
                         choice = Convert.ToInt32(Console.ReadLine());
                         break;
 
                     case 3:
-                        Console.WriteLine("Detta är listan över alla kunder:");
+                        Console.WriteLine("\nDetta är listan över alla kunder:\n");
 
                         foreach (var customer in customerList)
                         {
-                            Console.WriteLine($"{customer.name}\n {customer.phoneNumber}\n {customer.age}");
+                            Console.WriteLine($"\nNamn: {customer.name}\n Telefonnummer: {customer.phoneNumber}\n Ålder:{customer.age}");
                         }
 
                         Console.WriteLine("Vad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta");
