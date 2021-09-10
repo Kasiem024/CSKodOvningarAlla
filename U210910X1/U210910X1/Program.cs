@@ -17,11 +17,32 @@ namespace U210910X1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-
             Customer newCustomer;
             newCustomer = new Customer();
 
+            Console.WriteLine("Vad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta");
+            int choice = Convert.ToInt32(Console.ReadLine());
+
+            switch (choice)
+            {
+                case 1:
+                    Console.WriteLine("Du har valt att skapa en ny kund.");
+
+                    break;
+
+                case 2:
+                    Console.WriteLine("Antalet kunder är: ");
+
+                    break;
+
+                case 3:
+                    Console.WriteLine("Detta är listan över alla kunder: ");
+
+                    break;
+
+                default:
+                    break;
+            }
 
         }
     }
