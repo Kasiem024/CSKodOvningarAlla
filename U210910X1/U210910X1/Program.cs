@@ -23,27 +23,31 @@ namespace U210910X1
             Console.WriteLine("Vad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta");
             int choice = Convert.ToInt32(Console.ReadLine());
 
-            switch (choice)
+            while (true)
             {
-                case 1:
-                    Console.WriteLine("Du har valt att skapa en ny kund.");
+                switch (choice)
+                {
+                    case 1:
+                        Console.WriteLine("Du har valt att skapa en ny kund.");
 
-                    break;
+                        break;
 
-                case 2:
-                    Console.WriteLine("Antalet kunder är: ");
+                    case 2:
+                        Console.WriteLine("Antalet kunder är: ");
 
-                    break;
+                        break;
 
-                case 3:
-                    Console.WriteLine("Detta är listan över alla kunder: ");
+                    case 3:
+                        Console.WriteLine("Detta är listan över alla kunder: ");
 
-                    break;
+                        break;
 
-                default:
-                    break;
+                    default:
+                        Console.WriteLine("Programmet avslutas ");
+
+                        break;
+                }
             }
-
         }
     }
 
