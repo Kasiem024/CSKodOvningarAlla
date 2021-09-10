@@ -19,6 +19,7 @@ namespace EXPERIMENT
             myCars.Add(myCar);
 
             Console.WriteLine("TEST");
+            Console.WriteLine(myCars.Contains(myCar));
 
             foreach (var item in myCars)
             {
