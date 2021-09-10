@@ -19,9 +19,13 @@ namespace U210910X1
     {
         static void Main(string[] args)
         {
+
+
             Customer newCustomer;
             newCustomer = new Customer();
             List<Customer> customerList = new List<Customer>();
+
+
 
             Console.WriteLine("Vad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta");
             int choice = Convert.ToInt32(Console.ReadLine());
@@ -32,16 +36,14 @@ namespace U210910X1
                 {
                     case 1:
                         Console.WriteLine("Du har valt att skapa en ny kund. \nVad heter kunden?");
+                        newCustomer.name = Console.ReadLine();
+                        Console.WriteLine("Hur gammal är kunden?");
+                        newCustomer.age = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Vad är kundens telefonnummer?");
+                        newCustomer.phoneNumber = Convert.ToInt32(Console.ReadLine());
 
-                        string input = Console.ReadLine();
-                        List<string> userList = new List<String>();
-                        userList.Add(input);
-                        string inputNewUser = Console.ReadLine();
-                        userList.Add(inputNewUser);
-                        foreach (var user in userList)
-                        {
-                            Console.WriteLine(user);
-                        }
+                        new
+
 
                         Console.WriteLine("Vad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta");
                         choice = Convert.ToInt32(Console.ReadLine());
@@ -77,7 +79,7 @@ namespace U210910X1
     public class Customer
     {
         public string name;
-        public string accident;
+        public int phoneNumber;
         public int age;
     }
 }
