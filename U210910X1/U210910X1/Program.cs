@@ -23,13 +23,14 @@ namespace U210910X1
 
             Customer newCustomer;
             newCustomer = new Customer();
-            List<Customer> customerList = new List<Customer>();
-        tryAgain:
+            List<Customer> customerList = new List<Customer>();//Skapar listan customerList.
+
+        tryAgain://Ifall vad som inte skrivs in i choice inte är 1-4 kommer programmet tillbaka hit.
 
             Console.WriteLine("Vad vill du göra? \n\n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta");
             int choice = Convert.ToInt32(Console.ReadLine());
 
-            while (choice < 4)
+            while (choice < 4)//Switch finns inuti while så att användaren kan hoppa från funktioner i programmet.
             {
                 switch (choice)
                 {
@@ -43,7 +44,7 @@ namespace U210910X1
                         Console.WriteLine("Vad är kundens telefonnummer?");
                         newCustomer.phoneNumber = Convert.ToInt32(Console.ReadLine());
 
-                        customerList.Add(new Customer() { name = newCustomer.name, age = newCustomer.age, phoneNumber = newCustomer.phoneNumber });
+                        customerList.Add(new Customer() { name = newCustomer.name, age = newCustomer.age, phoneNumber = newCustomer.phoneNumber });//Här läggs till vad som användaren skrev i listan.
 
                         Console.WriteLine("\nDu har nu skapat en ny kund. \nVad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta\n");
                         choice = Convert.ToInt32(Console.ReadLine());
@@ -77,11 +78,11 @@ namespace U210910X1
             else
             {
                 Console.WriteLine("\nOj något gick snett där, försök igen!");
-                goto tryAgain;
+                goto tryAgain;//Hoppar tillbaka i koden så att programmet startar om.
             }
         }
 
-        public class Customer
+        public class Customer//Klassen Customer skapas.
         {
             public string name;
             public int phoneNumber;
