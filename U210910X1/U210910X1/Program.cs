@@ -32,7 +32,6 @@ namespace U210910X1
                 {
                     case 1:
                         Console.WriteLine("Du har valt att skapa en ny kund. \nVad heter kunden?");
-                        string Console.ReadLine();
 
                         Console.WriteLine("Vad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta");
                         choice = Convert.ToInt32(Console.ReadLine());
