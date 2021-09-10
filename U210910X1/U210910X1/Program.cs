@@ -42,7 +42,7 @@ namespace U210910X1
                         Console.WriteLine("Vad är kundens telefonnummer?");
                         newCustomer.phoneNumber = Convert.ToInt32(Console.ReadLine());
 
-                        new
+                        customerList.Add(new Customer() { name = newCustomer.name, age = newCustomer.age, phoneNumber = newCustomer.phoneNumber });
 
 
                         Console.WriteLine("Vad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta");
@@ -61,7 +61,7 @@ namespace U210910X1
 
                         foreach (var customer in customerList)
                         {
-                            Console.WriteLine($"{customer.name}\n");
+                            Console.WriteLine($"{customer.name}\n {customer.phoneNumber}\n {customer.age}");
                         }
 
                         Console.WriteLine("Vad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta");
