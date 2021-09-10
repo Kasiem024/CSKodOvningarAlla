@@ -25,14 +25,14 @@ namespace U210910X1
             newCustomer = new Customer();
             List<Customer> customerList = new List<Customer>();//Skapar listan customerList.
 
-        tryAgain://Ifall vad som inte skrivs in i choice inte är 1-4 kommer programmet tillbaka hit.
+        tryAgain://Ifall vad som skrivs in i choice inte är 1-4 kommer programmet tillbaka hit.
 
             Console.WriteLine("Vad vill du göra? \n\n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta");
             int choice = Convert.ToInt32(Console.ReadLine());
 
-            while (choice < 4)//Switch finns inuti while så att användaren kan hoppa från funktioner i programmet.
+            while (choice < 4)//Switch finns inuti while så att användaren kan hoppa från case till case i programmet.
             {
-                switch (choice)
+                switch (choice)//Beroende på vad choice är just nu kommer programmet hoppa till en case.
                 {
                     case 1:
                         Console.WriteLine("\nDu har valt att skapa en ny kund. \n\nVad heter kunden?");
@@ -51,7 +51,7 @@ namespace U210910X1
                         break;
 
                     case 2:
-                        Console.WriteLine($"\nAntalet kunder är: {customerList.Count}");
+                        Console.WriteLine($"\nAntalet kunder är: {customerList.Count}");//Räknar antalet element i listan.
 
                         Console.WriteLine("\nVad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta\n");
                         choice = Convert.ToInt32(Console.ReadLine());
@@ -82,7 +82,7 @@ namespace U210910X1
             }
         }
 
-        public class Customer//Klassen Customer skapas.
+        public class Customer//Klassen Customer skapas, det är en datatyp nu likt till string, int m.m.
         {
             public string name;
             public int phoneNumber;
