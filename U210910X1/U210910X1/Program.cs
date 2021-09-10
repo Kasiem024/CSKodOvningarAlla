@@ -58,15 +58,20 @@ namespace U210910X1
 
                         foreach (var customer in customerList)
                         {
-                            Console.WriteLine($"\nNamn: {customer.name}\n Telefonnummer: {customer.phoneNumber}\n Ålder:{customer.age}");
+                            Console.WriteLine($"\nNamn: {customer.name}\nTelefonnummer: {customer.phoneNumber}\nÅlder:{customer.age}");
                         }
 
-                        Console.WriteLine("Vad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta");
+                        Console.WriteLine("\nVad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta\n");
                         choice = Convert.ToInt32(Console.ReadLine());
                         break;
 
-                    default:
+                    case 4:
                         Console.WriteLine("Programmet avslutas ");
+                        break;
+
+                    default:
+                        Console.WriteLine("\nOj något gick snett där, försök igen! \nVad vill du göra? \n1-Skapa ny kund \n2-Visa antal kunder \n3-Visa lista över alla kunder \n4-Avsluta\n");
+                        choice = Convert.ToInt32(Console.ReadLine());
                         break;
                 }
             }
