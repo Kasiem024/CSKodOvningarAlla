@@ -63,21 +63,21 @@ namespace U210913X1
                     int counter = 0;
                     foreach (var car in carList)
                     {
-                        Console.WriteLine($"\n{counter} {car.Color} {car.Make} {car.Model} \t Price: {car.Price} \t License plate: {car.LicensePlate}");
+                        Console.WriteLine($"\nNumber: {counter} {car.Color} {car.Make} {car.Model} Price: {car.Price} License plate: {car.LicensePlate}");
                         counter++;
                     }
 
                     Console.WriteLine("\nChoose which one of those cars you want to edit.");
                     int carNum = Convert.ToInt32(Console.ReadLine());
 
-                    if (carNum > carList.Count)
+                    if (carNum >= carList.Count)
                     {
                         Console.WriteLine("You have not chosen a car from the list, try again!");
                         goto startEdit;
                     }
 
-                    Console.WriteLine($"\nYou have chosen to edit car number {carNum}.\nAre you sure?" +
-                        $"\nWrite Y if you're sure.\nIf you want to change which car to remove write N.\nIf you dont want to edit an existing car write X.");
+                    Console.WriteLine($"\nYou have chosen to edit car number {carNum}.\n\nAre you sure?" +
+                        $"\n\nWrite Y if you're sure.\n\nIf you want to change which car to remove write N.\n\nIf you don't want to edit an existing car write X.");
                     string carEditChoice = Console.ReadLine();
 
                     if (carEditChoice.ToUpper() == "Y")
@@ -135,21 +135,21 @@ namespace U210913X1
                         counter = 0;
                         foreach (var car in carList)
                         {
-                            Console.WriteLine($"\n{counter} {car.Color} {car.Make} {car.Model} \t Price: {car.Price} \t License plate: {car.LicensePlate}");
+                            Console.WriteLine($"\nNumber: {counter} {car.Color} {car.Make} {car.Model} Price: {car.Price} License plate: {car.LicensePlate}");
                             counter++;
                         }
 
                         Console.WriteLine("\nChoose which one of those cars you want to remove from the list.");
                         carNum = Convert.ToInt32(Console.ReadLine());
 
-                        if (carNum > carList.Count)
+                        if (carNum >= carList.Count)
                         {
-                            Console.WriteLine("You have not chosen a car from the list, try again!");
+                            Console.WriteLine("\n\nYou have not chosen a car from the list, try again!");
                             goto startRemove;
                         }
 
-                        Console.WriteLine($"\nYou have chosen to remove car number {carNum} from the list.\nAre you sure?" +
-                            $"\nWrite Y if you're sure.\nIf you want to change which car to remove write N.\nIf you dont want to remove an existing car write X.");
+                        Console.WriteLine($"\nYou have chosen to remove car number {carNum} from the list.\n\nAre you sure?" +
+                            $"\n\nWrite Y if you're sure.\n\nIf you want to change which car to remove write N.\n\nIf you don't want to remove an existing car write X.");
                         string carRemoveChoice = Console.ReadLine();
 
                         if (carRemoveChoice.ToUpper() == "Y")
@@ -174,7 +174,7 @@ namespace U210913X1
 
                         foreach (var car in carList)
                         {
-                            Console.WriteLine($"\n {car.Color} {car.Make} {car.Model} \t Price: {car.Price} \t License plate: {car.LicensePlate}");
+                            Console.WriteLine($"\nNumber: {car.Color} {car.Make} {car.Model} Price: {car.Price} License plate: {car.LicensePlate}");
                         }
                     }
                     else
