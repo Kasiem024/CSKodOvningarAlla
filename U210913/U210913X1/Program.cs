@@ -66,18 +66,31 @@ namespace U210913X1
                     break;
 
                 case "D":
-                    Console.WriteLine("\nYou have chosen to delete existing car.");
-                    int counter = 0;
+                tryAgainRemove:
+                    Console.WriteLine("\nYou have chosen to remove an existing car.");
 
+                    int counter = 0;
                     foreach (var car in carList)
                     {
                         Console.WriteLine($"\n{counter} Color: {car.Color} \t Make: {car.Make} \t Model: {car.Model} \t Price: {car.Price} \t License plate: {car.LicensePlate}");
                         counter++;
                     }
 
-                    Console.WriteLine("Choose which one of those cars you want to remove from the list.\n\nRemember the list starts from 0!");
+                    Console.WriteLine("Choose which one of those cars you want to remove from the list.\n\nRemember the list starts at 0!");
                     int carRemove = Convert.ToInt32(Console.ReadLine());
-                    carList.RemoveAt(carRemove);
+
+                    Console.WriteLine($"You have chosen to remove car number {carRemove} from the list.\nAre you sure?" +
+                        $"\nWrite Y if you're sure.\nIf you want to change which car to remove write N.\nIf you dont want to remove an existing car write X.");
+                    string carRemoveChoice = Console.ReadLine();
+
+                    if (carRemoveChoice == "Y" || carRemoveChoice == "y")
+                    {
+                        carList.RemoveAt(carRemove);
+                    }
+                    if (carRemoveChoice == "N" || carRemoveChoice == "n")
+                    {
+                        goto tryAgainRemove;
+                    }
 
                     Console.WriteLine("What do you want to do? \n\nX = Exit \nN = Add Car \nE = Edit existing car " +
                         "\nD = Remove Car \nS = Show all cars");
