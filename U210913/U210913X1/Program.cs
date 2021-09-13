@@ -40,6 +40,25 @@ namespace U210913X1
                         "\nD = Remove Car \nS = Show all cars \nOBS You need to write your choice in capital letters");
                     choice = Console.ReadLine();
                     break;
+
+                case "E":
+                    Console.WriteLine("What do you want to do? \nX = Exit \nN = Add Car \nE = Edit existing car " +
+                        "\nD = Remove Car \nS = Show all cars \nOBS You need to write your choice in capital letters");
+                    choice = Console.ReadLine();
+                    break;
+
+                case "D":
+                    Console.WriteLine("What do you want to do? \nX = Exit \nN = Add Car \nE = Edit existing car " +
+                        "\nD = Remove Car \nS = Show all cars \nOBS You need to write your choice in capital letters");
+                    choice = Console.ReadLine();
+                    break;
+
+                case "S":
+                    Console.WriteLine("What do you want to do? \nX = Exit \nN = Add Car \nE = Edit existing car " +
+                        "\nD = Remove Car \nS = Show all cars \nOBS You need to write your choice in capital letters");
+                    choice = Console.ReadLine();
+                    break;
+
             }
 
             if (choice == "X")
