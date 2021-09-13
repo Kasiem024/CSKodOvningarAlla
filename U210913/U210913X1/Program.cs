@@ -23,32 +23,38 @@ namespace U210913X1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("What do you want to do? \nX = Exit \nN = Add Car \nE = Edit existing car \nD = Remove Car \nS = Show all cars");
+            Console.WriteLine("What do you want to do? \nX = Exit \nN = Add Car \nE = Edit existing car " +
+                "\nD = Remove Car \nS = Show all cars \nOBS You need to write your choice in capital letters");
             string choice = Console.ReadLine();
 
             List<Car> carList = new List<Car>();
 
-            while (true)
+            while (choice != "X")
             {
                 switch (choice)
                 {
+                    case "N":
+                        Console.WriteLine("TEST");
 
+                        choice = Console.ReadLine();
+
+                        break;
                 }
             }
 
             if (true)
             {
-
+                Console.WriteLine("TEST");
             }
         }
     }
 
     public class Car
     {
-        public string color;
-        public string make;
-        public string model;
-        public string licensePlate;
-        public int price;
+        public string Color { get; set; }
+        public string Make { get; set; }
+        public string Model { get; set; }
+        public string LicensePlate { get; set; }
+        public int Price { get; set; }
     }
 }
