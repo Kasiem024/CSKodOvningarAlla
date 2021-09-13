@@ -23,11 +23,12 @@ namespace U210913X1
     {
         static void Main(string[] args)
         {
+            List<Car> carList = new List<Car>();
+
+        tryAgain:
             Console.WriteLine("What do you want to do? \nX = Exit \nN = Add Car \nE = Edit existing car " +
                 "\nD = Remove Car \nS = Show all cars \nOBS You need to write your choice in capital letters");
             string choice = Console.ReadLine();
-
-            List<Car> carList = new List<Car>();
 
             while (choice != "X")
             {
@@ -42,9 +43,13 @@ namespace U210913X1
                 }
             }
 
-            if (true)
+            if (choice == "X")
             {
-                Console.WriteLine("TEST");
+                Console.WriteLine("Programmet avslutas");
+            }
+            else
+            {
+                goto tryAgain;
             }
         }
     }
