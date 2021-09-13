@@ -23,7 +23,7 @@ namespace U210913X1
         static void Main(string[] args)
         {
             Car newCar;
-            newCar = new Car();
+            newCar = new Car();//Det här är faktistk typ onödigt men jag är lat så det får bli.
             List<Car> carList = new List<Car>();//Skapar listan carList
 
             Console.WriteLine("Welcome to ACME Cars. The company for your car needs!\n");
