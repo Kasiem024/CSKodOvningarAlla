@@ -67,10 +67,12 @@ namespace U210913X1
 
                 case "D":
                     Console.WriteLine("\nYou have chosen to delete existing car.");
+                    int counter = 0;
 
                     foreach (var car in carList)
                     {
-                        Console.WriteLine($"\nColor: {car.Color} \t Make: {car.Make} \t Model: {car.Model} \t Price: {car.Price} \t License plate: {car.LicensePlate}");
+                        Console.WriteLine($"\n{counter} Color: {car.Color} \t Make: {car.Make} \t Model: {car.Model} \t Price: {car.Price} \t License plate: {car.LicensePlate}");
+                        counter++;
                     }
 
                     Console.WriteLine("Choose which one of those cars you want to remove from the list.\n\nRemember the list starts from 0!");
