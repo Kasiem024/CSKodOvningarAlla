@@ -203,13 +203,14 @@ namespace U210913X1
             }
         }
     }
-
-    public class Car
-    {
-        public string Color { get; set; }
-        public string Make { get; set; }
-        public string Model { get; set; }
-        public string LicensePlate { get; set; }
-        public int Price { get; set; }
-    }
 }
+
+public class Car
+{
+    public string Color { get; set; }
+    public string Make { get; set; }
+    public string Model { get; set; }
+    public string LicensePlate { get; set; }
+    public int Price { get; set; }
+}
+
