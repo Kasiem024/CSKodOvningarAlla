@@ -62,10 +62,9 @@ namespace U210913X1
                     goto start;
 
                 case "D":
-                startRemove:
                     if (carList.Count != 0)
                     {
-                        Console.WriteLine("");
+                    startRemove:
                         Console.WriteLine("\nYou have chosen to remove an existing car.");
 
                         int counter = 0;
