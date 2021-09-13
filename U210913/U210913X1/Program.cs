@@ -14,8 +14,6 @@ X = Exit, N=Add Car, E=Edit existing Car, D=Remove Car, S=Show all cars
 Hur ska du hantera redigera bil? Användaren bör kunna ange vilken bil som ska redigeras. Hur ska du hantera vad som uppdateras?
 Vad händer om användaren ber att få redigera en bil som inte finns?
 Samma gäller för att ta bort en bil.
-för att ändra en viss bil kan man skriva ut alla bilar och så kan användaren välja vilken av bilarna man vill ändra.
-Kanske kan göra någon sorts for each 
 */
 
 namespace U210913X1
