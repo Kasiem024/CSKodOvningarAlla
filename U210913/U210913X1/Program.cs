@@ -31,7 +31,7 @@ namespace U210913X1
 
         start:
 
-            Console.WriteLine("What do you want to do? \n\nX = Exit \nN = Add Car \nE = Edit existing car " +
+            Console.WriteLine("\nWhat do you want to do? \n\nX = Exit \nN = Add Car \nE = Edit existing car " +
                 "\nD = Remove Car \nS = Show all cars");
             string choice = Console.ReadLine();
 
@@ -51,7 +51,7 @@ namespace U210913X1
 
                     carList.Add(new Car() { Color = newCar.Color, Make = newCar.Make, Model = newCar.Model, Price = newCar.Price, LicensePlate = newCar.LicensePlate });
 
-                    Console.WriteLine($"You have successfully added a {newCar.Color} {newCar.Make} {newCar.Model} worth {newCar.Price}, the license plate is {newCar.LicensePlate}");
+                    Console.WriteLine($"\nYou have successfully added a {newCar.Color} {newCar.Make} {newCar.Model} worth {newCar.Price}, the license plate is {newCar.LicensePlate}");
 
                     goto start;
 
@@ -63,42 +63,61 @@ namespace U210913X1
 
                 case "D":
                 startRemove:
-                    Console.WriteLine("\nYou have chosen to remove an existing car.");
-
-                    int counter = 0;
-                    foreach (var car in carList)
+                    if (carList.Count != 0)
                     {
-                        Console.WriteLine($"\n{counter} {car.Color} {car.Make} {car.Model} \t Price: {car.Price} \t License plate: {car.LicensePlate}");
-                        counter++;
+                        Console.WriteLine("");
+                        Console.WriteLine("\nYou have chosen to remove an existing car.");
+
+                        int counter = 0;
+                        foreach (var car in carList)
+                        {
+                            Console.WriteLine($"\n{counter} {car.Color} {car.Make} {car.Model} \t Price: {car.Price} \t License plate: {car.LicensePlate}");
+                            counter++;
+                        }
+
+                        Console.WriteLine("\nChoose which one of those cars you want to remove from the list.\n\nRemember the list starts at 0!");
+                        int carRemove = Convert.ToInt32(Console.ReadLine());
+
+                        if (carRemove > carList.Count)
+                        {
+                            Console.WriteLine("You have not chosen a car from the list, try again!");
+                            goto startRemove;
+                        }
+
+                        Console.WriteLine($"\nYou have chosen to remove car number {carRemove} from the list.\nAre you sure?" +
+                            $"\nWrite Y if you're sure.\nIf you want to change which car to remove write N.\nIf you dont want to remove an existing car write X.");
+                        string carRemoveChoice = Console.ReadLine();
+
+                        if (carRemoveChoice.ToUpper() == "Y")
+                        {
+                            carList.RemoveAt(carRemove);
+                        }
+                        if (carRemoveChoice.ToUpper() == "N")
+                        {
+                            goto startRemove;
+                        }
                     }
-
-                    Console.WriteLine("\nChoose which one of those cars you want to remove from the list.\n\nRemember the list starts at 0!");
-                    int carRemove = Convert.ToInt32(Console.ReadLine());
-
-                    Console.WriteLine($"\nYou have chosen to remove car number {carRemove} from the list.\nAre you sure?" +
-                        $"\nWrite Y if you're sure.\nIf you want to change which car to remove write N.\nIf you dont want to remove an existing car write X.");
-                    string carRemoveChoice = Console.ReadLine();
-
-                    if (carRemoveChoice.ToUpper() == "Y")
+                    else
                     {
-                        carList.RemoveAt(carRemove);
+                        Console.WriteLine("\nThere are no cars on the list to remove!");
                     }
-                    if (carRemoveChoice.ToUpper() == "N")
-                    {
-                        goto startRemove;
-                    }
-
                     goto start;
 
                 case "S":
-
-                    Console.WriteLine("\nThis is a list of all the cars:");
-
-                    foreach (var car in carList)
+                    if (carList.Count != 0)
                     {
-                        Console.WriteLine($"\n {car.Color} {car.Make} {car.Model} \t Price: {car.Price} \t License plate: {car.LicensePlate}");
-                    }
+                        Console.WriteLine("\nThis is a list of all the cars:");
 
+                        foreach (var car in carList)
+                        {
+                            Console.WriteLine($"\n {car.Color} {car.Make} {car.Model} \t Price: {car.Price} \t License plate: {car.LicensePlate}");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nThere are no cars on the list to show!");
+
+                    }
                     goto start;
             }
 
