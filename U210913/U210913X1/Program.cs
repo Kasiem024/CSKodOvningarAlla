@@ -23,7 +23,10 @@ namespace U210913X1
     {
         static void Main(string[] args)
         {
+            Car newCar;
+            newCar = new Car();
             List<Car> carList = new List<Car>();
+
             Console.WriteLine("Welcome to ACME Cars. The company for your car needs!\n");
 
         tryAgain:
@@ -35,7 +38,18 @@ namespace U210913X1
             switch (choice.ToUpper())
             {
                 case "N":
-                    Console.WriteLine("\nYou have chosen to add a new car to the list. \n");
+                    Console.WriteLine("\nYou have chosen to add a new car to the list. \n\nWhat's the color of the car?");
+                    newCar.Color = Console.ReadLine();
+                    Console.WriteLine("What's the make of the car?");
+                    newCar.Make = Console.ReadLine();
+                    Console.WriteLine("What's the model of the car?");
+                    newCar.Model = Console.ReadLine();
+                    Console.WriteLine("What's the price of the car?");
+                    newCar.Price = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("What's the cars licenseplate?");
+                    newCar.LicensePlate = Console.ReadLine();
+
+                    carList.Add(new Car() { Color = newCar.Color, Make = newCar.Make, Model = newCar.Model, Price = newCar.Price, LicensePlate = newCar.LicensePlate });
 
                     Console.WriteLine("What do you want to do? \n\nX = Exit \nN = Add Car \nE = Edit existing car " +
                         "\nD = Remove Car \nS = Show all cars \nOBS You need to write your choice in capital letters");
