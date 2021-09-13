@@ -29,7 +29,7 @@ namespace U210913X1
 
             Console.WriteLine("Welcome to ACME Cars. The company for your car needs!\n");
 
-        tryAgain:
+        start:
 
             Console.WriteLine("What do you want to do? \n\nX = Exit \nN = Add Car \nE = Edit existing car " +
                 "\nD = Remove Car \nS = Show all cars");
@@ -51,26 +51,24 @@ namespace U210913X1
 
                     carList.Add(new Car() { Color = newCar.Color, Make = newCar.Make, Model = newCar.Model, Price = newCar.Price, LicensePlate = newCar.LicensePlate });
 
-                    Console.WriteLine("What do you want to do? \n\nX = Exit \nN = Add Car \nE = Edit existing car " +
-                        "\nD = Remove Car \nS = Show all cars");
-                    choice = Console.ReadLine();
-                    break;
+                    Console.WriteLine($"You have successfully added a {newCar.Color} {newCar.Make} {newCar.Model} worth {newCar.Price}, the license plate is {newCar.LicensePlate}");
+
+                    goto start;
 
                 case "E":
                     Console.WriteLine("\nYou have chosen to edit the information on an existing car.");
 
 
-                    goto tryAgain;
-                    break;
+                    goto start;
 
                 case "D":
-                tryAgainRemove:
+                startRemove:
                     Console.WriteLine("\nYou have chosen to remove an existing car.");
 
                     int counter = 0;
                     foreach (var car in carList)
                     {
-                        Console.WriteLine($"\n{counter} Color: {car.Color} \t Make: {car.Make} \t Model: {car.Model} \t Price: {car.Price} \t License plate: {car.LicensePlate}");
+                        Console.WriteLine($"\n{counter} {car.Color} {car.Make} {car.Model} \t Price: {car.Price} \t License plate: {car.LicensePlate}");
                         counter++;
                     }
 
@@ -81,17 +79,16 @@ namespace U210913X1
                         $"\nWrite Y if you're sure.\nIf you want to change which car to remove write N.\nIf you dont want to remove an existing car write X.");
                     string carRemoveChoice = Console.ReadLine();
 
-                    if (carRemoveChoice == "Y" || carRemoveChoice == "y")
+                    if (carRemoveChoice.ToUpper() == "Y")
                     {
                         carList.RemoveAt(carRemove);
                     }
-                    if (carRemoveChoice == "N" || carRemoveChoice == "n")
+                    if (carRemoveChoice.ToUpper() == "N")
                     {
-                        goto tryAgainRemove;
+                        goto startRemove;
                     }
 
-                    goto tryAgain;
-                    break;
+                    goto start;
 
                 case "S":
 
@@ -99,22 +96,21 @@ namespace U210913X1
 
                     foreach (var car in carList)
                     {
-                        Console.WriteLine($"\nColor: {car.Color} \t Make: {car.Make} \t Model: {car.Model} \t Price: {car.Price} \t License plate: {car.LicensePlate}");
+                        Console.WriteLine($"\n {car.Color} {car.Make} {car.Model} \t Price: {car.Price} \t License plate: {car.LicensePlate}");
                     }
 
-                    goto tryAgain;
-                    break;
+                    goto start;
             }
 
-            if (choice == "X" || choice == "x")
+            if (choice.ToUpper() == "X")
             {
-                Console.WriteLine("\nYou have exited the program");
+                Console.WriteLine("\nYou have exited the program.");
             }
             else
             {
                 Console.WriteLine("\nOpps, seems something went wrong there, try again!" +
                     "\n\n\n");
-                goto tryAgain;
+                goto start;
             }
         }
     }
