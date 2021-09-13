@@ -15,6 +15,7 @@ Hur ska du hantera redigera bil? Användaren bör kunna ange vilken bil som ska 
 Vad händer om användaren ber att få redigera en bil som inte finns?
 Samma gäller för att ta bort en bil.
 för att ändra en viss bil kan man skriva ut alla bilar och så kan användaren välja vilken av bilarna man vill ändra.
+Kanske kan göra någon sorts for each 
 */
 
 namespace U210913X1
@@ -67,21 +68,29 @@ namespace U210913X1
                     }
 
                     Console.WriteLine("\nChoose which one of those cars you want to edit.");
-                    int carRemove = Convert.ToInt32(Console.ReadLine());
+                    int carEditNum = Convert.ToInt32(Console.ReadLine());
 
-                    if (carRemove > carList.Count)
+                    if (carEditNum > carList.Count)
                     {
                         Console.WriteLine("You have not chosen a car from the list, try again!");
                         goto startEdit;
                     }
 
-                    Console.WriteLine($"\nYou have chosen to edit car number {carRemove}.\nAre you sure?" +
+                    Console.WriteLine($"\nYou have chosen to edit car number {carEditNum}.\nAre you sure?" +
                         $"\nWrite Y if you're sure.\nIf you want to change which car to remove write N.\nIf you dont want to edit an existing car write X.");
                     string carEditChoice = Console.ReadLine();
 
                     if (carEditChoice.ToUpper() == "Y")
                     {
-                        
+                        Console.WriteLine("Choose what part of the car you want to edit.\n\nC = Color\nMA = Make\nMO = Model" +
+                            "\nP = Price\nLP = License plate");
+                        string carEdit = Console.ReadLine();
+                        switch (carEdit)
+                        {
+                            case "C":
+
+                                break;
+                        }
                     }
                     if (carEditChoice.ToUpper() == "N")
                     {
