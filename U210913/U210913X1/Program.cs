@@ -55,7 +55,7 @@ namespace U210913X1
                     goto start;//Behöver inte en break för att programmet går tillbaka till start hela tiden vilket skapar en loop.
 
                 case "E":
-                    if (carList.Count != 0)
+                    if (carList.Count != 0)//Ifall det inte finns några bilar i listan.
                     {
                     startEdit://Ifall användaren gör något fel under denna case kommer den tillbaka hit.
                         Console.WriteLine("\nYou have chosen to edit the information on an existing car.");
@@ -70,7 +70,7 @@ namespace U210913X1
                         Console.WriteLine("\nChoose which one of those cars you want to edit.");
                         int carNum = Convert.ToInt32(Console.ReadLine());
 
-                        if (carNum >= carList.Count)//Ifall använadren väljer en bil som inte existerar
+                        if (carNum >= carList.Count)//Ifall användaren väljer en bil som inte existerar.
                         {
                             Console.WriteLine("\nYou have not chosen a car from the list, try again!");
                             goto startEdit;
@@ -78,7 +78,7 @@ namespace U210913X1
 
                         Console.WriteLine($"\nYou have chosen to edit car number {carNum}.\n\nAre you sure?" +
                             $"\n\nWrite Y if you're sure.\n\nIf you want to change which car to remove write N.\n\nIf you don't want to edit an existing car write X.");
-                        string carEditChoice = Console.ReadLine();
+                        string carEditChoice = Console.ReadLine();//Ifall användaren valde fel bil eller ändrade sig.
 
                         if (carEditChoice.ToUpper() == "Y")
                         {
@@ -86,7 +86,7 @@ namespace U210913X1
                                 "\nP = Price\nLP = License plate");
                             string carEdit = Console.ReadLine();
 
-                            switch (carEdit.ToUpper())
+                            switch (carEdit.ToUpper())//Den här delen av koden känns som den kan efektiveras men vet inte hur i nuläget.
                             {
                                 case "C":
                                     Console.WriteLine($"\nThe color of the car is currently {carList[carNum].Color}. What do you want to change it to?");
@@ -219,4 +219,3 @@ public class Car
     public string LicensePlate { get; set; }
     public int Price { get; set; }
 }
-
