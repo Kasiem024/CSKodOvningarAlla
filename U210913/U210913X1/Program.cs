@@ -46,34 +46,55 @@ namespace U210913X1
                     newCar.Model = Console.ReadLine();
                     Console.WriteLine("What's the price of the car?");
                     newCar.Price = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("What's the cars licenseplate?");
+                    Console.WriteLine("What's the cars license plate?");
                     newCar.LicensePlate = Console.ReadLine();
 
                     carList.Add(new Car() { Color = newCar.Color, Make = newCar.Make, Model = newCar.Model, Price = newCar.Price, LicensePlate = newCar.LicensePlate });
 
                     Console.WriteLine("What do you want to do? \n\nX = Exit \nN = Add Car \nE = Edit existing car " +
-                        "\nD = Remove Car \nS = Show all cars \nOBS You need to write your choice in capital letters");
+                        "\nD = Remove Car \nS = Show all cars");
                     choice = Console.ReadLine();
                     break;
 
                 case "E":
+                    Console.WriteLine("\nYou have chosen to edit the information on an existing car.");
+
+
                     Console.WriteLine("What do you want to do? \n\nX = Exit \nN = Add Car \nE = Edit existing car " +
                         "\nD = Remove Car \nS = Show all cars \nOBS You need to write your choice in capital letters");
                     choice = Console.ReadLine();
                     break;
 
                 case "D":
+                    Console.WriteLine("\nYou have chosen to delete existing car.");
+
+                    foreach (var car in carList)
+                    {
+                        Console.WriteLine($"\nColor: {car.Color} \t Make: {car.Make} \t Model: {car.Model} \t Price: {car.Price} \t License plate: {car.LicensePlate}");
+                    }
+
+                    Console.WriteLine("Choose which one of those cars you want to remove from the list.\n\nRemember the list starts from 0!");
+                    int carRemove = Convert.ToInt32(Console.ReadLine());
+                    carList.RemoveAt(carRemove);
+
                     Console.WriteLine("What do you want to do? \n\nX = Exit \nN = Add Car \nE = Edit existing car " +
-                        "\nD = Remove Car \nS = Show all cars \nOBS You need to write your choice in capital letters");
+                        "\nD = Remove Car \nS = Show all cars");
                     choice = Console.ReadLine();
                     break;
 
                 case "S":
+
+                    Console.WriteLine("\nThis is a list of all the cars:");
+
+                    foreach (var car in carList)
+                    {
+                        Console.WriteLine($"\nColor: {car.Color} \t Make: {car.Make} \t Model: {car.Model} \t Price: {car.Price} \t License plate: {car.LicensePlate}");
+                    }
+
                     Console.WriteLine("What do you want to do? \n\nX = Exit \nN = Add Car \nE = Edit existing car " +
-                        "\nD = Remove Car \nS = Show all cars \nOBS You need to write your choice in capital letters");
+                        "\nD = Remove Car \nS = Show all cars");
                     choice = Console.ReadLine();
                     break;
-
             }
 
             if (choice == "X" || choice == "x")
