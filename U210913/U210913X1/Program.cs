@@ -26,29 +26,29 @@ namespace U210913X1
             List<Car> carList = new List<Car>();
 
         tryAgain:
+
             Console.WriteLine("What do you want to do? \nX = Exit \nN = Add Car \nE = Edit existing car " +
                 "\nD = Remove Car \nS = Show all cars \nOBS You need to write your choice in capital letters");
             string choice = Console.ReadLine();
 
-            while (choice != "X")
+            switch (choice)
             {
-                switch (choice)
-                {
-                    case "N":
-                        Console.WriteLine("TEST");
+                case "N":
+                    Console.WriteLine("TEST");
 
-                        choice = Console.ReadLine();
-
-                        break;
-                }
+                    Console.WriteLine("What do you want to do? \nX = Exit \nN = Add Car \nE = Edit existing car " +
+                        "\nD = Remove Car \nS = Show all cars \nOBS You need to write your choice in capital letters");
+                    choice = Console.ReadLine();
+                    break;
             }
 
             if (choice == "X")
             {
-                Console.WriteLine("Programmet avslutas");
+                Console.WriteLine("You have exited the program");
             }
             else
             {
+                Console.WriteLine("Opps, seems something went wrong there, try again!");
                 goto tryAgain;
             }
         }
