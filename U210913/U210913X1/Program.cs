@@ -60,9 +60,7 @@ namespace U210913X1
                     Console.WriteLine("\nYou have chosen to edit the information on an existing car.");
 
 
-                    Console.WriteLine("What do you want to do? \n\nX = Exit \nN = Add Car \nE = Edit existing car " +
-                        "\nD = Remove Car \nS = Show all cars \nOBS You need to write your choice in capital letters");
-                    choice = Console.ReadLine();
+                    goto tryAgain;
                     break;
 
                 case "D":
@@ -76,10 +74,10 @@ namespace U210913X1
                         counter++;
                     }
 
-                    Console.WriteLine("Choose which one of those cars you want to remove from the list.\n\nRemember the list starts at 0!");
+                    Console.WriteLine("\nChoose which one of those cars you want to remove from the list.\n\nRemember the list starts at 0!");
                     int carRemove = Convert.ToInt32(Console.ReadLine());
 
-                    Console.WriteLine($"You have chosen to remove car number {carRemove} from the list.\nAre you sure?" +
+                    Console.WriteLine($"\nYou have chosen to remove car number {carRemove} from the list.\nAre you sure?" +
                         $"\nWrite Y if you're sure.\nIf you want to change which car to remove write N.\nIf you dont want to remove an existing car write X.");
                     string carRemoveChoice = Console.ReadLine();
 
@@ -92,9 +90,7 @@ namespace U210913X1
                         goto tryAgainRemove;
                     }
 
-                    Console.WriteLine("What do you want to do? \n\nX = Exit \nN = Add Car \nE = Edit existing car " +
-                        "\nD = Remove Car \nS = Show all cars");
-                    choice = Console.ReadLine();
+                    goto tryAgain;
                     break;
 
                 case "S":
@@ -106,19 +102,17 @@ namespace U210913X1
                         Console.WriteLine($"\nColor: {car.Color} \t Make: {car.Make} \t Model: {car.Model} \t Price: {car.Price} \t License plate: {car.LicensePlate}");
                     }
 
-                    Console.WriteLine("What do you want to do? \n\nX = Exit \nN = Add Car \nE = Edit existing car " +
-                        "\nD = Remove Car \nS = Show all cars");
-                    choice = Console.ReadLine();
+                    goto tryAgain;
                     break;
             }
 
             if (choice == "X" || choice == "x")
             {
-                Console.WriteLine("You have exited the program");
+                Console.WriteLine("\nYou have exited the program");
             }
             else
             {
-                Console.WriteLine("Opps, seems something went wrong there, try again!" +
+                Console.WriteLine("\nOpps, seems something went wrong there, try again!" +
                     "\n\n\n");
                 goto tryAgain;
             }
