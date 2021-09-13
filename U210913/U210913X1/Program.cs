@@ -22,7 +22,14 @@ namespace U210913X1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Vad vill du göra? ");
         }
+    }
+
+    public class Car
+    {
+        public string color;
+        public string make;
+        public string model;
     }
 }
