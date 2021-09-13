@@ -24,17 +24,17 @@ namespace U210913X1
         {
             Car newCar;
             newCar = new Car();
-            List<Car> carList = new List<Car>();
+            List<Car> carList = new List<Car>();//Skapar listan carList
 
             Console.WriteLine("Welcome to ACME Cars. The company for your car needs!\n");
 
-        start:
+        start://Har det innan man väljer vad man vill gör för att skriva mindre kod och så att en loop skapas.
 
             Console.WriteLine("\nWhat do you want to do? \n\nX = Exit \nN = Add Car \nE = Edit existing car " +
                 "\nD = Remove Car \nS = Show all cars");
             string choice = Console.ReadLine();
 
-            switch (choice.ToUpper())
+            switch (choice.ToUpper())//Om användaren matar in en liten bokstav i choice konverteras den till en stor.
             {
                 case "N":
                     Console.WriteLine("\nYou have chosen to add a new car to the list. \n\nWhat's the color of the car?");
@@ -52,86 +52,92 @@ namespace U210913X1
 
                     Console.WriteLine($"\nYou have successfully added a {newCar.Color} {newCar.Make} {newCar.Model} worth {newCar.Price} kr, the license plate is {newCar.LicensePlate}");
 
-                    goto start;
+                    goto start;//Behöver inte en break för att programmet går tillbaka till start hela tiden vilket skapar en loop.
 
                 case "E":
-                startEdit:
-                    Console.WriteLine("\nYou have chosen to edit the information on an existing car.");
-
-                    int counter = 0;
-                    foreach (var car in carList)
+                    if (carList.Count != 0)
                     {
-                        Console.WriteLine($"\nNumber: {counter} {car.Color} {car.Make} {car.Model} Price: {car.Price} kr License plate: {car.LicensePlate}");
-                        counter++;
-                    }
+                    startEdit://Ifall användaren gör något fel under denna case kommer den tillbaka hit.
+                        Console.WriteLine("\nYou have chosen to edit the information on an existing car.");
 
-                    Console.WriteLine("\nChoose which one of those cars you want to edit.");
-                    int carNum = Convert.ToInt32(Console.ReadLine());
-
-                    if (carNum >= carList.Count)
-                    {
-                        Console.WriteLine("\nYou have not chosen a car from the list, try again!");
-                        goto startEdit;
-                    }
-
-                    Console.WriteLine($"\nYou have chosen to edit car number {carNum}.\n\nAre you sure?" +
-                        $"\n\nWrite Y if you're sure.\n\nIf you want to change which car to remove write N.\n\nIf you don't want to edit an existing car write X.");
-                    string carEditChoice = Console.ReadLine();
-
-                    if (carEditChoice.ToUpper() == "Y")
-                    {
-                        Console.WriteLine("\nChoose what part of the car you want to edit.\n\nC = Color\nMA = Make\nMO = Model" +
-                            "\nP = Price\nLP = License plate");
-                        string carEdit = Console.ReadLine();
-
-                        switch (carEdit.ToUpper())
+                        int counter = 0;//En counter för att hjälpa användaren välja vilken bil. Eftersom listan börjar på 0 kan en okunnig ha problem.
+                        foreach (var car in carList)
                         {
-                            case "C":
-                                Console.WriteLine($"\nThe color of the car is currently {carList[carNum].Color}. What do you want to change it to?");
-                                carList[carNum].Color = Console.ReadLine();
+                            Console.WriteLine($"\nNumber: {counter} {car.Color} {car.Make} {car.Model} Price: {car.Price} kr License plate: {car.LicensePlate}");
+                            counter++;
+                        }
+                        //Skriver ut listan för att låta användaren välja.
+                        Console.WriteLine("\nChoose which one of those cars you want to edit.");
+                        int carNum = Convert.ToInt32(Console.ReadLine());
 
-                                Console.WriteLine($"\nThe color of the car is currently {carList[carNum].Color}.");
+                        if (carNum >= carList.Count)//Ifall använadren väljer en bil som inte existerar
+                        {
+                            Console.WriteLine("\nYou have not chosen a car from the list, try again!");
+                            goto startEdit;
+                        }
 
-                                break;
+                        Console.WriteLine($"\nYou have chosen to edit car number {carNum}.\n\nAre you sure?" +
+                            $"\n\nWrite Y if you're sure.\n\nIf you want to change which car to remove write N.\n\nIf you don't want to edit an existing car write X.");
+                        string carEditChoice = Console.ReadLine();
 
-                            case "MA":
-                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Make}. What do you want to change it to?");
-                                carList[carNum].Make = Console.ReadLine();
+                        if (carEditChoice.ToUpper() == "Y")
+                        {
+                            Console.WriteLine("\nChoose what part of the car you want to edit.\n\nC = Color\nMA = Make\nMO = Model" +
+                                "\nP = Price\nLP = License plate");
+                            string carEdit = Console.ReadLine();
 
-                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Make}.");
+                            switch (carEdit.ToUpper())
+                            {
+                                case "C":
+                                    Console.WriteLine($"\nThe color of the car is currently {carList[carNum].Color}. What do you want to change it to?");
+                                    carList[carNum].Color = Console.ReadLine();
 
-                                break;
+                                    Console.WriteLine($"\nThe color of the car is currently {carList[carNum].Color}.");
 
-                            case "MO":
-                                Console.WriteLine($"\nThe model of the car is currently {carList[carNum].Model}. What do you want to change it to?");
-                                carList[carNum].Model = Console.ReadLine();
+                                    break;
 
-                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Model}.");
+                                case "MA":
+                                    Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Make}. What do you want to change it to?");
+                                    carList[carNum].Make = Console.ReadLine();
 
-                                break;
+                                    Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Make}.");
 
-                            case "P":
-                                Console.WriteLine($"\nThe price of the car is currently {carList[carNum].Price} kr. What do you want to change it to?");
-                                carList[carNum].Price = Convert.ToInt32(Console.ReadLine());
+                                    break;
 
-                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Price} kr.");
+                                case "MO":
+                                    Console.WriteLine($"\nThe model of the car is currently {carList[carNum].Model}. What do you want to change it to?");
+                                    carList[carNum].Model = Console.ReadLine();
 
-                                break;
+                                    Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Model}.");
 
-                            case "LP":
-                                Console.WriteLine($"\nThe license plate of the car is currently {carList[carNum].LicensePlate}. What do you want to change it to?");
-                                carList[carNum].LicensePlate = Console.ReadLine();
+                                    break;
 
-                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].LicensePlate}.");
+                                case "P":
+                                    Console.WriteLine($"\nThe price of the car is currently {carList[carNum].Price} kr. What do you want to change it to?");
+                                    carList[carNum].Price = Convert.ToInt32(Console.ReadLine());
 
-                                break;
+                                    Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Price} kr.");
+
+                                    break;
+
+                                case "LP":
+                                    Console.WriteLine($"\nThe license plate of the car is currently {carList[carNum].LicensePlate}. What do you want to change it to?");
+                                    carList[carNum].LicensePlate = Console.ReadLine();
+
+                                    Console.WriteLine($"\nThe make of the car is currently {carList[carNum].LicensePlate}.");
+
+                                    break;
+                            }
+                        }
+                        if (carEditChoice.ToUpper() == "N")
+                        {
+                            goto startEdit;
                         }
                     }
-                    if (carEditChoice.ToUpper() == "N")
+                    else
                     {
-                        goto startEdit;
+                        Console.WriteLine("\nThere are no cars on the list to edit!");
                     }
-
                     goto start;
 
                 case "D":
@@ -140,7 +146,7 @@ namespace U210913X1
                     startRemove:
                         Console.WriteLine("\nYou have chosen to remove an existing car.");
 
-                        counter = 0;
+                        int counter = 0;
                         foreach (var car in carList)
                         {
                             Console.WriteLine($"\nNumber: {counter} {car.Color} {car.Make} {car.Model} Price: {car.Price} kr License plate: {car.LicensePlate}");
@@ -148,7 +154,7 @@ namespace U210913X1
                         }
 
                         Console.WriteLine("\nChoose which one of those cars you want to remove from the list.");
-                        carNum = Convert.ToInt32(Console.ReadLine());
+                        int carNum = Convert.ToInt32(Console.ReadLine());
 
                         if (carNum >= carList.Count)
                         {
