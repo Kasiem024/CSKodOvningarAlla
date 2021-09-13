@@ -85,6 +85,7 @@ namespace U210913X1
                         Console.WriteLine("Choose what part of the car you want to edit.\n\nC = Color\nMA = Make\nMO = Model" +
                             "\nP = Price\nLP = License plate");
                         string carEdit = Console.ReadLine();
+
                         switch (carEdit.ToUpper())
                         {
                             case "C":
@@ -94,25 +95,25 @@ namespace U210913X1
                                 break;
 
                             case "MA":
-                                Console.WriteLine($"\nThe color of the car is currently {carList[carNum].Make}. What do you want to change it to?");
+                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Make}. What do you want to change it to?");
                                 carList[carNum].Make = Console.ReadLine();
 
                                 break;
 
                             case "MO":
-                                Console.WriteLine($"\nThe color of the car is currently {carList[carNum].Model}. What do you want to change it to?");
+                                Console.WriteLine($"\nThe model of the car is currently {carList[carNum].Model}. What do you want to change it to?");
                                 carList[carNum].Model = Console.ReadLine();
 
                                 break;
 
                             case "P":
-                                Console.WriteLine($"\nThe color of the car is currently {carList[carNum].Price}. What do you want to change it to?");
+                                Console.WriteLine($"\nThe price of the car is currently {carList[carNum].Price}. What do you want to change it to?");
                                 carList[carNum].Price = Convert.ToInt32(Console.ReadLine());
 
                                 break;
 
                             case "LP":
-                                Console.WriteLine($"\nThe color of the car is currently {carList[carNum].LicensePlate}. What do you want to change it to?");
+                                Console.WriteLine($"\nThe license plate of the car is currently {carList[carNum].LicensePlate}. What do you want to change it to?");
                                 carList[carNum].LicensePlate = Console.ReadLine();
 
                                 break;
