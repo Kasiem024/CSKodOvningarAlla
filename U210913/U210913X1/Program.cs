@@ -72,7 +72,7 @@ namespace U210913X1
 
                     if (carNum >= carList.Count)
                     {
-                        Console.WriteLine("You have not chosen a car from the list, try again!");
+                        Console.WriteLine("\nYou have not chosen a car from the list, try again!");
                         goto startEdit;
                     }
 
@@ -82,7 +82,7 @@ namespace U210913X1
 
                     if (carEditChoice.ToUpper() == "Y")
                     {
-                        Console.WriteLine("Choose what part of the car you want to edit.\n\nC = Color\nMA = Make\nMO = Model" +
+                        Console.WriteLine("\nChoose what part of the car you want to edit.\n\nC = Color\nMA = Make\nMO = Model" +
                             "\nP = Price\nLP = License plate");
                         string carEdit = Console.ReadLine();
 
@@ -92,11 +92,15 @@ namespace U210913X1
                                 Console.WriteLine($"\nThe color of the car is currently {carList[carNum].Color}. What do you want to change it to?");
                                 carList[carNum].Color = Console.ReadLine();
 
+                                Console.WriteLine($"\nThe color of the car is currently {carList[carNum].Color}. What do you want to change it to?");
+
                                 break;
 
                             case "MA":
                                 Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Make}. What do you want to change it to?");
                                 carList[carNum].Make = Console.ReadLine();
+
+                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Make}. What do you want to change it to?");
 
                                 break;
 
@@ -104,17 +108,23 @@ namespace U210913X1
                                 Console.WriteLine($"\nThe model of the car is currently {carList[carNum].Model}. What do you want to change it to?");
                                 carList[carNum].Model = Console.ReadLine();
 
+                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Make}. What do you want to change it to?");
+
                                 break;
 
                             case "P":
                                 Console.WriteLine($"\nThe price of the car is currently {carList[carNum].Price}. What do you want to change it to?");
                                 carList[carNum].Price = Convert.ToInt32(Console.ReadLine());
 
+                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Make}. What do you want to change it to?");
+
                                 break;
 
                             case "LP":
                                 Console.WriteLine($"\nThe license plate of the car is currently {carList[carNum].LicensePlate}. What do you want to change it to?");
                                 carList[carNum].LicensePlate = Console.ReadLine();
+
+                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Make}. What do you want to change it to?");
 
                                 break;
                         }
@@ -183,17 +193,15 @@ namespace U210913X1
 
                     }
                     goto start;
-            }
 
-            if (choice.ToUpper() == "X")
-            {
-                Console.WriteLine("\nYou have exited the program.");
-            }
-            else
-            {
-                Console.WriteLine("\nOpps, seems something went wrong there, try again!" +
-                    "\n\n\n");
-                goto start;
+                case "X":
+                    Console.WriteLine("\nYou have exited the program.");
+                    break;
+
+                default:
+                    Console.WriteLine("\nOpps, seems something went wrong there, try again!" +
+                        "\n\n\n");
+                    goto start;
             }
         }
     }
