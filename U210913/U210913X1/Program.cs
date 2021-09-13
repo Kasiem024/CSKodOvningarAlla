@@ -24,50 +24,52 @@ namespace U210913X1
         static void Main(string[] args)
         {
             List<Car> carList = new List<Car>();
+            Console.WriteLine("Welcome to ACME Cars. The company for your car needs!\n");
 
         tryAgain:
 
-            Console.WriteLine("What do you want to do? \nX = Exit \nN = Add Car \nE = Edit existing car " +
-                "\nD = Remove Car \nS = Show all cars \nOBS You need to write your choice in capital letters");
+            Console.WriteLine("What do you want to do? \n\nX = Exit \nN = Add Car \nE = Edit existing car " +
+                "\nD = Remove Car \nS = Show all cars");
             string choice = Console.ReadLine();
 
-            switch (choice)
+            switch (choice.ToUpper())
             {
                 case "N":
-                    Console.WriteLine("TEST");
+                    Console.WriteLine("\nYou have chosen to add a new car to the list. \n");
 
-                    Console.WriteLine("What do you want to do? \nX = Exit \nN = Add Car \nE = Edit existing car " +
+                    Console.WriteLine("What do you want to do? \n\nX = Exit \nN = Add Car \nE = Edit existing car " +
                         "\nD = Remove Car \nS = Show all cars \nOBS You need to write your choice in capital letters");
                     choice = Console.ReadLine();
                     break;
 
                 case "E":
-                    Console.WriteLine("What do you want to do? \nX = Exit \nN = Add Car \nE = Edit existing car " +
+                    Console.WriteLine("What do you want to do? \n\nX = Exit \nN = Add Car \nE = Edit existing car " +
                         "\nD = Remove Car \nS = Show all cars \nOBS You need to write your choice in capital letters");
                     choice = Console.ReadLine();
                     break;
 
                 case "D":
-                    Console.WriteLine("What do you want to do? \nX = Exit \nN = Add Car \nE = Edit existing car " +
+                    Console.WriteLine("What do you want to do? \n\nX = Exit \nN = Add Car \nE = Edit existing car " +
                         "\nD = Remove Car \nS = Show all cars \nOBS You need to write your choice in capital letters");
                     choice = Console.ReadLine();
                     break;
 
                 case "S":
-                    Console.WriteLine("What do you want to do? \nX = Exit \nN = Add Car \nE = Edit existing car " +
+                    Console.WriteLine("What do you want to do? \n\nX = Exit \nN = Add Car \nE = Edit existing car " +
                         "\nD = Remove Car \nS = Show all cars \nOBS You need to write your choice in capital letters");
                     choice = Console.ReadLine();
                     break;
 
             }
 
-            if (choice == "X")
+            if (choice == "X" || choice == "x")
             {
                 Console.WriteLine("You have exited the program");
             }
             else
             {
-                Console.WriteLine("Opps, seems something went wrong there, try again!");
+                Console.WriteLine("Opps, seems something went wrong there, try again!" +
+                    "\n\n\n");
                 goto tryAgain;
             }
         }
