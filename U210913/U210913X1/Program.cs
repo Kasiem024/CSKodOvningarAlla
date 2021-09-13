@@ -50,7 +50,7 @@ namespace U210913X1
 
                     carList.Add(new Car() { Color = newCar.Color, Make = newCar.Make, Model = newCar.Model, Price = newCar.Price, LicensePlate = newCar.LicensePlate });
 
-                    Console.WriteLine($"\nYou have successfully added a {newCar.Color} {newCar.Make} {newCar.Model} worth {newCar.Price}, the license plate is {newCar.LicensePlate}");
+                    Console.WriteLine($"\nYou have successfully added a {newCar.Color} {newCar.Make} {newCar.Model} worth {newCar.Price} kr, the license plate is {newCar.LicensePlate}");
 
                     goto start;
 
@@ -61,7 +61,7 @@ namespace U210913X1
                     int counter = 0;
                     foreach (var car in carList)
                     {
-                        Console.WriteLine($"\nNumber: {counter} {car.Color} {car.Make} {car.Model} Price: {car.Price} License plate: {car.LicensePlate}");
+                        Console.WriteLine($"\nNumber: {counter} {car.Color} {car.Make} {car.Model} Price: {car.Price} kr License plate: {car.LicensePlate}");
                         counter++;
                     }
 
@@ -106,15 +106,15 @@ namespace U210913X1
                                 Console.WriteLine($"\nThe model of the car is currently {carList[carNum].Model}. What do you want to change it to?");
                                 carList[carNum].Model = Console.ReadLine();
 
-                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Make}.");
+                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Model}.");
 
                                 break;
 
                             case "P":
-                                Console.WriteLine($"\nThe price of the car is currently {carList[carNum].Price}. What do you want to change it to?");
+                                Console.WriteLine($"\nThe price of the car is currently {carList[carNum].Price} kr. What do you want to change it to?");
                                 carList[carNum].Price = Convert.ToInt32(Console.ReadLine());
 
-                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Make}.");
+                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Price} kr.");
 
                                 break;
 
@@ -122,7 +122,7 @@ namespace U210913X1
                                 Console.WriteLine($"\nThe license plate of the car is currently {carList[carNum].LicensePlate}. What do you want to change it to?");
                                 carList[carNum].LicensePlate = Console.ReadLine();
 
-                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Make}.");
+                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].LicensePlate}.");
 
                                 break;
                         }
@@ -143,7 +143,7 @@ namespace U210913X1
                         counter = 0;
                         foreach (var car in carList)
                         {
-                            Console.WriteLine($"\nNumber: {counter} {car.Color} {car.Make} {car.Model} Price: {car.Price} License plate: {car.LicensePlate}");
+                            Console.WriteLine($"\nNumber: {counter} {car.Color} {car.Make} {car.Model} Price: {car.Price} kr License plate: {car.LicensePlate}");
                             counter++;
                         }
 
@@ -182,7 +182,7 @@ namespace U210913X1
 
                         foreach (var car in carList)
                         {
-                            Console.WriteLine($"\nNumber: {car.Color} {car.Make} {car.Model} Price: {car.Price} License plate: {car.LicensePlate}");
+                            Console.WriteLine($"\nNumber: {car.Color} {car.Make} {car.Model} Price: {car.Price} kr License plate: {car.LicensePlate}");
                         }
                     }
                     else
