@@ -92,7 +92,7 @@ namespace U210913X1
                                 Console.WriteLine($"\nThe color of the car is currently {carList[carNum].Color}. What do you want to change it to?");
                                 carList[carNum].Color = Console.ReadLine();
 
-                                Console.WriteLine($"\nThe color of the car is currently {carList[carNum].Color}. What do you want to change it to?");
+                                Console.WriteLine($"\nThe color of the car is currently {carList[carNum].Color}.");
 
                                 break;
 
@@ -100,7 +100,7 @@ namespace U210913X1
                                 Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Make}. What do you want to change it to?");
                                 carList[carNum].Make = Console.ReadLine();
 
-                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Make}. What do you want to change it to?");
+                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Make}.");
 
                                 break;
 
@@ -108,7 +108,7 @@ namespace U210913X1
                                 Console.WriteLine($"\nThe model of the car is currently {carList[carNum].Model}. What do you want to change it to?");
                                 carList[carNum].Model = Console.ReadLine();
 
-                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Make}. What do you want to change it to?");
+                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Make}.");
 
                                 break;
 
@@ -116,7 +116,7 @@ namespace U210913X1
                                 Console.WriteLine($"\nThe price of the car is currently {carList[carNum].Price}. What do you want to change it to?");
                                 carList[carNum].Price = Convert.ToInt32(Console.ReadLine());
 
-                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Make}. What do you want to change it to?");
+                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Make}.");
 
                                 break;
 
@@ -124,7 +124,7 @@ namespace U210913X1
                                 Console.WriteLine($"\nThe license plate of the car is currently {carList[carNum].LicensePlate}. What do you want to change it to?");
                                 carList[carNum].LicensePlate = Console.ReadLine();
 
-                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Make}. What do you want to change it to?");
+                                Console.WriteLine($"\nThe make of the car is currently {carList[carNum].Make}.");
 
                                 break;
                         }
