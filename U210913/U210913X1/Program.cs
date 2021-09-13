@@ -23,13 +23,16 @@ namespace U210913X1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Vad vill du göra? \nX = Exit \nN = Add Car \nE = Edit existing car \nD = Remove Car \nS = Show all cars");
+            Console.WriteLine("What do you want to do? \nX = Exit \nN = Add Car \nE = Edit existing car \nD = Remove Car \nS = Show all cars");
             string choice = Console.ReadLine();
+
+            List<Car> carList = new List<Car>();
 
             while (true)
             {
                 switch (choice)
                 {
+
                 }
             }
 
