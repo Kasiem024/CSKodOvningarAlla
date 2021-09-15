@@ -35,9 +35,9 @@ namespace U210913X1
                 "\nD = Remove Car \nS = Show all cars");
             string choice = Console.ReadLine();
 
-            if (carList.Count == 0 && choice != "N" || choice != "X")
+            if (carList.Count == 0 && choice.ToUpper() != "N" && choice.ToUpper() != "X")
             {
-                Console.WriteLine("\nThere are no cars on the list to edit!");
+                Console.WriteLine("\nThere are no cars on the list!");
                 goto start;
             }
 
