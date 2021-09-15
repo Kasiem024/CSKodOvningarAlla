@@ -14,7 +14,6 @@ X = Exit, N=Add Car, E=Edit existing Car, D=Remove Car, S=Show all cars
 Hur ska du hantera redigera bil? Användaren bör kunna ange vilken bil som ska redigeras. Hur ska du hantera vad som uppdateras?
 Vad händer om användaren ber att få redigera en bil som inte finns?
 Samma gäller för att ta bort en bil.
-Om man väljer edit, remove eller show fastän det inte finns några bilar ska man gå till en case bara för det.
 */
 
 namespace U210913X1
@@ -35,9 +34,9 @@ namespace U210913X1
                 "\nD = Remove Car \nS = Show all cars");
             string choice = Console.ReadLine();
 
-            if (carList.Count == 0 && choice.ToUpper() != "N" && choice.ToUpper() != "X")
+            if (carList.Count == 0 && choice.ToUpper() != "N" && choice.ToUpper() != "X")//Ifall listan är tom ska man endast kunna avsluta programmet elelr lägga till en ny bil.
             {
-                Console.WriteLine("\nThere are no cars on the list!");
+                Console.WriteLine("\nThere are no cars on the list, you must first add a car to access this function.");
                 goto start;
             }
 
