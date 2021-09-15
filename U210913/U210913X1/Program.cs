@@ -35,6 +35,12 @@ namespace U210913X1
                 "\nD = Remove Car \nS = Show all cars");
             string choice = Console.ReadLine();
 
+            if (carList.Count == 0 && choice != "N" || choice != "X")
+            {
+                Console.WriteLine("\nThere are no cars on the list to edit!");
+                goto start;
+            }
+
             switch (choice.ToUpper())//Om användaren matar in en liten bokstav i choice konverteras den till en stor.
             {
                 case "N":
@@ -198,6 +204,8 @@ namespace U210913X1
 
                     }
                     goto start;
+
+
 
                 case "X":
                     Console.WriteLine("\nYou have exited the program.");
