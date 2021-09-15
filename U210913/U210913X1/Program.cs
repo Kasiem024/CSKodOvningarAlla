@@ -62,8 +62,6 @@ namespace U210913X1
                     goto start;//Behöver inte en break för att programmet går tillbaka till start hela tiden vilket skapar en loop.
 
                 case "E":
-                    if (carList.Count != 0)//Ifall det inte finns några bilar i listan.
-                    {
                     startEdit://Ifall användaren gör något fel under denna case kommer den tillbaka hit.
                         Console.WriteLine("\nYou have chosen to edit the information on an existing car.");
 
@@ -140,20 +138,13 @@ namespace U210913X1
                         {
                             goto startEdit;
                         }
-                    }
-                    else
-                    {
-                        Console.WriteLine("\nThere are no cars on the list to edit!");
-                    }
                     goto start;
 
                 case "D":
-                    if (carList.Count != 0)
-                    {
                     startRemove:
                         Console.WriteLine("\nYou have chosen to remove an existing car.");
 
-                        int counter = 0;
+                        counter = 0;
                         foreach (var car in carList)
                         {
                             Console.WriteLine($"\nNumber: {counter} {car.Color} {car.Make} {car.Model} Price: {car.Price} kr License plate: {car.LicensePlate}");
@@ -161,7 +152,7 @@ namespace U210913X1
                         }
 
                         Console.WriteLine("\nChoose which one of those cars you want to remove from the list.");
-                        int carNum = Convert.ToInt32(Console.ReadLine());
+                        carNum = Convert.ToInt32(Console.ReadLine());
 
                         if (carNum >= carList.Count)
                         {
@@ -181,31 +172,17 @@ namespace U210913X1
                         {
                             goto startRemove;
                         }
-                    }
-                    else
-                    {
-                        Console.WriteLine("\nThere are no cars on the list to remove!");
-                    }
                     goto start;
 
                 case "S":
-                    if (carList.Count != 0)
-                    {
                         Console.WriteLine("\nThis is a list of all the cars:");
 
                         foreach (var car in carList)
                         {
                             Console.WriteLine($"\nNumber: {car.Color} {car.Make} {car.Model} Price: {car.Price} kr License plate: {car.LicensePlate}");
                         }
-                    }
-                    else
-                    {
-                        Console.WriteLine("\nThere are no cars on the list to show!");
 
-                    }
                     goto start;
-
-
 
                 case "X":
                     Console.WriteLine("\nYou have exited the program.");
