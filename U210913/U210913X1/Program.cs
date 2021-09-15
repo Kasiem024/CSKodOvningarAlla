@@ -14,6 +14,7 @@ X = Exit, N=Add Car, E=Edit existing Car, D=Remove Car, S=Show all cars
 Hur ska du hantera redigera bil? Användaren bör kunna ange vilken bil som ska redigeras. Hur ska du hantera vad som uppdateras?
 Vad händer om användaren ber att få redigera en bil som inte finns?
 Samma gäller för att ta bort en bil.
+Om man väljer edit, remove eller show fastän det inte finns några bilar ska man gå till en case bara för det.
 */
 
 namespace U210913X1
