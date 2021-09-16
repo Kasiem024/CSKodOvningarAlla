@@ -1,1 +1,3 @@
-hek kasiem
+När man skriver bokstäver i tetxbox1 och textbox2 avlsutas programmet för att den förväntar sig att en double ska skrivas in.
+Man kan kanske lösa det här med en if sats eller något liknande som checkar vad för datayp det som matades in är.
+Den ser generellt ganska ful ut också.
