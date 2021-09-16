@@ -44,7 +44,6 @@ namespace U210916X1
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(149, 33);
             this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -71,7 +70,6 @@ namespace U210916X1
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(296, 37);
             this.textBox3.TabIndex = 3;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label1
             // 
@@ -104,8 +102,6 @@ namespace U210916X1
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.Click += new System.EventHandler(this.Form1_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

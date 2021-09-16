@@ -17,29 +17,9 @@ namespace U210916X1
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
-            textBox3.Text = "Hej" + (textBox1.Text) + (textBox2.Text);
+            textBox3.Text = "Hej " + (textBox1.Text) + (textBox2.Text);
         }
     }
 }
