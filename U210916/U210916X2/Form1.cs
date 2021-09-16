@@ -21,21 +21,21 @@ namespace U210916X2
         {
             double i = double.Parse(textBox1.Text);
             double j = double.Parse(textBox2.Text);
-            listBox1.Items.Add($"{textBox1.Text}+{textBox2.Text} = {i - j}");
+            listBox1.Items.Add($"{textBox1.Text}-{textBox2.Text} = {i - j}");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             double i = double.Parse(textBox1.Text);
             double j = double.Parse(textBox2.Text);
-            listBox1.Items.Add($"{textBox1.Text}+{textBox2.Text} = {i * j}");
+            listBox1.Items.Add($"{textBox1.Text}*{textBox2.Text} = {i * j}");
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             double i = double.Parse(textBox1.Text);
             double j = double.Parse(textBox2.Text);
-            listBox1.Items.Add($"{textBox1.Text}+{textBox2.Text} = {i / j}");
+            listBox1.Items.Add($"{textBox1.Text}/{textBox2.Text} = {i / j}");
         }
     }
 }
