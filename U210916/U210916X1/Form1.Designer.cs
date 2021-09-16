@@ -68,7 +68,7 @@ namespace U210916X1
             this.textBox3.Location = new System.Drawing.Point(150, 306);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(296, 37);
+            this.textBox3.Size = new System.Drawing.Size(296, 31);
             this.textBox3.TabIndex = 3;
             // 
             // label1
