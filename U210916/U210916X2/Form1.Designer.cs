@@ -62,6 +62,7 @@ namespace U210916X2
             this.button1.TabIndex = 2;
             this.button1.Text = "+";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -71,6 +72,7 @@ namespace U210916X2
             this.button2.TabIndex = 3;
             this.button2.Text = "-";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -80,6 +82,7 @@ namespace U210916X2
             this.button3.TabIndex = 4;
             this.button3.Text = "*";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -89,6 +92,7 @@ namespace U210916X2
             this.button4.TabIndex = 5;
             this.button4.Text = "/";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // listBox1
             // 
@@ -103,7 +107,7 @@ namespace U210916X2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 360);
+            this.ClientSize = new System.Drawing.Size(469, 360);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
