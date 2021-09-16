@@ -40,7 +40,7 @@ namespace U210916X2
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(170, 93);
+            this.textBox1.Location = new System.Drawing.Point(70, 42);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(105, 50);
@@ -48,7 +48,7 @@ namespace U210916X2
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(387, 93);
+            this.textBox2.Location = new System.Drawing.Point(287, 42);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(101, 50);
@@ -56,54 +56,54 @@ namespace U210916X2
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(170, 195);
+            this.button1.Location = new System.Drawing.Point(70, 116);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 43);
             this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
+            this.button1.Text = "+";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(251, 195);
+            this.button2.Location = new System.Drawing.Point(151, 116);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(75, 43);
             this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
+            this.button2.Text = "-";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(332, 195);
+            this.button3.Location = new System.Drawing.Point(232, 116);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(75, 43);
             this.button3.TabIndex = 4;
-            this.button3.Text = "button3";
+            this.button3.Text = "*";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(413, 195);
+            this.button4.Location = new System.Drawing.Point(313, 116);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(75, 43);
             this.button4.TabIndex = 5;
-            this.button4.Text = "button4";
+            this.button4.Text = "/";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(170, 224);
+            this.listBox1.Location = new System.Drawing.Point(70, 165);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(318, 212);
+            this.listBox1.Size = new System.Drawing.Size(318, 180);
             this.listBox1.TabIndex = 6;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(669, 450);
+            this.ClientSize = new System.Drawing.Size(535, 360);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -112,7 +112,7 @@ namespace U210916X2
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
-            this.Text = "ACME CALC 1.0";
+            this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
 
