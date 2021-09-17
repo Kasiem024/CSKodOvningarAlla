@@ -18,44 +18,48 @@ namespace U210916X3
         {
             InitializeComponent();
         }
-        private void btnPlus_Click(object sender, EventArgs e)
+        public void btnPlus_Click(object sender, EventArgs e)
         {
             double i = double.Parse(textBox1.Text);
             double j = double.Parse(textBox2.Text);
 
             double answer = Engine.Plus(i, j);
 
-            listBox1.Items.Add($"{i} + {j} = {answer}");
+            Result(i, j, answer, (sender as Button).Text);
         }
 
-        private void btnMinus_Click(object sender, EventArgs e)
+        public void btnMinus_Click(object sender, EventArgs e)
         {
             double i = double.Parse(textBox1.Text);
             double j = double.Parse(textBox2.Text);
 
             double answer = Engine.Minus(i, j);
 
-            listBox1.Items.Add($"{i} - {j} = {answer}");
+            Result(i, j, answer, (sender as Button).Text);
         }
 
-        private void btnMultiply_Click(object sender, EventArgs e)
+        public void btnMultiply_Click(object sender, EventArgs e)
         {
             double i = double.Parse(textBox1.Text);
             double j = double.Parse(textBox2.Text);
 
             double answer = Engine.Multiply(i, j);
 
-            listBox1.Items.Add($"{i} * {j} = {answer}");
+            Result(i, j, answer, (sender as Button).Text);
         }
 
-        private void btnDivide_Click(object sender, EventArgs e)
+        public void btnDivide_Click(object sender, System.EventArgs e)
         {
             double i = double.Parse(textBox1.Text);
             double j = double.Parse(textBox2.Text);
 
             double answer = Engine.Divide(i, j);
 
-            listBox1.Items.Add($"{i} / {j} = {answer}");
+            Result(i, j, answer, (sender as Button).Text);
+        }
+        public void Result(double i, double j, double answer, string operation)
+        {
+            listBox1.Items.Add($"{i} {operation} {j} = {answer}");
         }
     }
 }
