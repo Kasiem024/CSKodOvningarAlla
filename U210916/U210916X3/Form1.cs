@@ -16,5 +16,24 @@ namespace U210916X3
         {
             InitializeComponent();
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMultiply_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDivide_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
