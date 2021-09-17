@@ -20,12 +20,13 @@ namespace U210916X3
         }
         private void btnPlus_Click(object sender, EventArgs e)
         {
+            //textboxen förväntar sig en string så måste ändra det till en double först
             double i = double.Parse(textBox1.Text);
             double j = double.Parse(textBox2.Text);
-            //textboxen förväntar sig en string så msåte ändra det till en double först.
-            double answer = Engine.Plus(i, j);//Skickar i och j till Calculator, vad som händer i calculator matas in i answer.
 
-            Result(i, j, answer, (sender as Button).Text);//Skickar allting inom parentesen till Result klassen.
+            double answer = Engine.Plus(i, j);//Skickar i och j till Calculator, vad som händer i Calculator matas in i answer
+
+            Result(i, j, answer, (sender as Button).Text);//Skickar allting inom parentesen till Result klassen
         }
 
         private void btnMinus_Click(object sender, EventArgs e)
@@ -59,7 +60,7 @@ namespace U210916X3
         }
         private void Result(double i, double j, double answer, string operation)
         {
-            listBox1.Items.Add($"{i} {operation} {j} = {answer}");//Här skrivs ut allting. operation får man från btn.Text.
+            listBox1.Items.Add($"{i} {operation} {j} = {answer}");//Här skrivs ut allting. operation får man från btn.Text
         }
     }
 }

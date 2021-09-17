@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace U210916X3
 {
-    public class Calculator//Det är här kalkulationen faktiskt händer.
+    public class Calculator//Det är här kalkulationen faktiskt händer
     {
-        public double Plus(double number1, double number2)
+        public double Plus(double number1, double number2)//i och j blir till number1 och number2
         {
-            return number1 + number2;
+            return number1 + number2;//return skickas tillbaka till vart den skickades ifrån.
         }
         public double Minus(double number1, double number2)
         {
