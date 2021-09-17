@@ -18,7 +18,7 @@ namespace U210916X3
         {
             InitializeComponent();
         }
-        public void btnPlus_Click(object sender, EventArgs e)
+        private void btnPlus_Click(object sender, EventArgs e)
         {
             double i = double.Parse(textBox1.Text);
             double j = double.Parse(textBox2.Text);
@@ -28,7 +28,7 @@ namespace U210916X3
             Result(i, j, answer, (sender as Button).Text);
         }
 
-        public void btnMinus_Click(object sender, EventArgs e)
+        private void btnMinus_Click(object sender, EventArgs e)
         {
             double i = double.Parse(textBox1.Text);
             double j = double.Parse(textBox2.Text);
@@ -38,7 +38,7 @@ namespace U210916X3
             Result(i, j, answer, (sender as Button).Text);
         }
 
-        public void btnMultiply_Click(object sender, EventArgs e)
+        private void btnMultiply_Click(object sender, EventArgs e)
         {
             double i = double.Parse(textBox1.Text);
             double j = double.Parse(textBox2.Text);
@@ -48,7 +48,7 @@ namespace U210916X3
             Result(i, j, answer, (sender as Button).Text);
         }
 
-        public void btnDivide_Click(object sender, System.EventArgs e)
+        private void btnDivide_Click(object sender, System.EventArgs e)
         {
             double i = double.Parse(textBox1.Text);
             double j = double.Parse(textBox2.Text);
@@ -57,7 +57,7 @@ namespace U210916X3
 
             Result(i, j, answer, (sender as Button).Text);
         }
-        public void Result(double i, double j, double answer, string operation)
+        private void Result(double i, double j, double answer, string operation)
         {
             listBox1.Items.Add($"{i} {operation} {j} = {answer}");
         }
