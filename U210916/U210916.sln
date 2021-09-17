@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		TextFile1.txt = TextFile1.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "U210916X3", "U210916X3\U210916X3.csproj", "{20672232-DB96-4098-867F-69799E0B4ECC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{7D34E10F-93B2-45E4-BD12-278966FD310F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D34E10F-93B2-45E4-BD12-278966FD310F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D34E10F-93B2-45E4-BD12-278966FD310F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20672232-DB96-4098-867F-69799E0B4ECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20672232-DB96-4098-867F-69799E0B4ECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20672232-DB96-4098-867F-69799E0B4ECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20672232-DB96-4098-867F-69799E0B4ECC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
