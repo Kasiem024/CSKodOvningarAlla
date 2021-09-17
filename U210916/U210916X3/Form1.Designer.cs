@@ -68,7 +68,7 @@ namespace U210916X3
             this.btnPlus.TabIndex = 3;
             this.btnPlus.Text = "+";
             this.btnPlus.UseVisualStyleBackColor = true;
-            this.btnPlus.Click += new System.EventHandler(this.button1_Click);
+            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
             // 
             // btnMinus
             // 
@@ -78,7 +78,7 @@ namespace U210916X3
             this.btnMinus.TabIndex = 4;
             this.btnMinus.Text = "-";
             this.btnMinus.UseVisualStyleBackColor = true;
-            this.btnMinus.Click += new System.EventHandler(this.button2_Click);
+            this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click);
             // 
             // btnMultiply
             // 
