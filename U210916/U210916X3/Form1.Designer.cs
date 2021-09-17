@@ -1,5 +1,4 @@
-﻿
-namespace U210916X3
+﻿namespace U210916X3
 {
     partial class Form1
     {
@@ -130,4 +129,3 @@ namespace U210916X3
         private System.Windows.Forms.Button btnDivide;
     }
 }
-

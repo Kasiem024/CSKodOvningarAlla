@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace U210916X3
 {
-    public class Calculator
+    public class Calculator//Det är här kalkulationen faktiskt händer.
     {
         public double Plus(double number1, double number2)
         {
