@@ -17,7 +17,17 @@ namespace U210916X3
         public Form1()
         {
             InitializeComponent();
+            btnPlus.Click += new EventHandler(ButtonHandler);
+            btnMinus.Click += new EventHandler(ButtonHandler);
+            btnMultiply.Click += new EventHandler(ButtonHandler);
+            btnDivide.Click += new EventHandler(ButtonHandler);
         }
+
+        private void ButtonHandler(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnPlus_Click(object sender, EventArgs e)
         {
             //textboxen förväntar sig en string så måste ändra det till en double först
