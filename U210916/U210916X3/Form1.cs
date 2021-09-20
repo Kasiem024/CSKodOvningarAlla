@@ -29,24 +29,22 @@ namespace U210916X3
         {
             double i = double.Parse(textBox1.Text);
             double j = double.Parse(textBox2.Text);
+            double answer = 0;//Skapar answer innan switch så att den kan användas efter
             //Konverterar vad som står till en double så att decimaltal kan användas
 
             switch ((sender as Button).Text)//Beroende på vad som står i knappen ska en case köras
             {
                 case "+":
-                    double answer = Engine.Plus(i, j);//Skickar i och j till Calculator, där anropas plus och efter den körs blir svaret till answer
-                    Result(i, j, answer, (sender as Button).Text);//Skickar i, j, answer och vad som står på knappen till Result
+                    answer = Engine.Plus(i, j);//Skickar i och j till Calculator, där anropas plus och efter den körs blir svaret till answer
 
                     break;
 
                 case "-":
                     answer = Engine.Minus(i, j);
-                    Result(i, j, answer, (sender as Button).Text);
 
                     break;
                 case "*":
                     answer = Engine.Multiply(i, j);
-                    Result(i, j, answer, (sender as Button).Text);
 
                     break;
                 case "/":
@@ -57,11 +55,13 @@ namespace U210916X3
                     else
                     {
                         answer = Engine.Divide(i, j);
-                        Result(i, j, answer, (sender as Button).Text);
                     }
 
                     break;
             }
+
+            Result(i, j, answer, (sender as Button).Text);//Skickar i, j, answer och vad som står på knappen till Result
+
         }
 
         /*private void btnPlus_Click(object sender, EventArgs e)
