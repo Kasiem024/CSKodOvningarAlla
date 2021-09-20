@@ -35,7 +35,7 @@ namespace U210916X3
             switch ((sender as Button).Text)//Beroende på vad som står i knappen ska en case köras
             {
                 case "+":
-                    answer = Engine.Plus(i, j);//Skickar i och j till Calculator, där anropas plus och efter den körs blir svaret till answer
+                    answer = Engine.Plus(i, j);//Skickar i och j till Calculator, där anropas Plus och efter den körs blir svaret till answer
 
                     break;
 
@@ -65,6 +65,7 @@ namespace U210916X3
 
         }
 
+        //Använde denna kod i förra delen av uppgiften men blev ineffektiv
         /*private void btnPlus_Click(object sender, EventArgs e)
         {
             //textboxen förväntar sig en string så måste ändra det till en double först
@@ -105,9 +106,10 @@ namespace U210916X3
 
             Result(i, j, answer, (sender as Button).Text);
         }*/
-        private void Result(double i, double j, double answer, string operation)
+
+        private void Result(double i, double j, double answer, string operation)//Operation får värdet av (sender as Button).text
         {
-            listBox1.Items.Add($"{i} {operation} {j} = {answer}");//Här skrivs ut allting. operation får man från btn.Text
+            listBox1.Items.Add($"{i} {operation} {j} = {answer}");//Här skrivs allting ut till listBox1
         }
     }
 }
