@@ -48,7 +48,8 @@ namespace U210916X3
 
                     break;
                 case "/":
-                    if (textBox2.Text == "0")
+                    if (textBox2.Text == "0")//Ifall man försöker dela med 0. Något att tänka på för framtiden är att hantera undantag i en annan fil,
+                                             //i detta fall kanske detta borde hanteras i Calculator
                     {
                         listBox1.Items.Add("Cannot divide by 0");
                     }
