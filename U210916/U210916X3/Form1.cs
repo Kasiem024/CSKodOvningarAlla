@@ -17,23 +17,25 @@ namespace U210916X3
         public Form1()
         {
             InitializeComponent();
+
             btnPlus.Click += new EventHandler(ButtonHandler);
             btnMinus.Click += new EventHandler(ButtonHandler);
             btnMultiply.Click += new EventHandler(ButtonHandler);
             btnDivide.Click += new EventHandler(ButtonHandler);
+            //När knapparna trycks anropas ButtonHanlder, detta gör koden mer effektiv
         }
 
         private void ButtonHandler(object sender, EventArgs e)
         {
             double i = double.Parse(textBox1.Text);
             double j = double.Parse(textBox2.Text);
-            double answer;
+            //Konverterar vad som står till en double så att decimaltal kan användas
 
-            switch ((sender as Button).Text)
+            switch ((sender as Button).Text)//Beroende på vad som står i knappen ska en case köras
             {
                 case "+":
-                    answer = Engine.Plus(i, j);
-                    Result(i, j, answer, (sender as Button).Text);
+                    double answer = Engine.Plus(i, j);//Skickar i och j till Calculator, där anropas plus och efter den körs blir svaret till answer
+                    Result(i, j, answer, (sender as Button).Text);//Skickar i, j, answer och vad som står på knappen till Result
 
                     break;
 
