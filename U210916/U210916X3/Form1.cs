@@ -25,10 +25,37 @@ namespace U210916X3
 
         private void ButtonHandler(object sender, EventArgs e)
         {
+            double i = double.Parse(textBox1.Text);
+            double j = double.Parse(textBox2.Text);
+            double answer;
 
+            switch ((sender as Button).Text)
+            {
+                case "+":
+                    answer = Engine.Plus(i, j);
+                    Result(i, j, answer, (sender as Button).Text);
+
+                    break;
+
+                case "-":
+                    answer = Engine.Minus(i, j);
+                    Result(i, j, answer, (sender as Button).Text);
+
+                    break;
+                case "*":
+                    answer = Engine.Multiply(i, j);
+                    Result(i, j, answer, (sender as Button).Text);
+
+                    break;
+                case "/":
+                    answer = Engine.Divide(i, j);
+                    Result(i, j, answer, (sender as Button).Text);
+
+                    break;
+            }
         }
 
-        private void btnPlus_Click(object sender, EventArgs e)
+        /*private void btnPlus_Click(object sender, EventArgs e)
         {
             //textboxen förväntar sig en string så måste ändra det till en double först
             double i = double.Parse(textBox1.Text);
@@ -67,7 +94,7 @@ namespace U210916X3
             double answer = Engine.Divide(i, j);
 
             Result(i, j, answer, (sender as Button).Text);
-        }
+        }*/
         private void Result(double i, double j, double answer, string operation)
         {
             listBox1.Items.Add($"{i} {operation} {j} = {answer}");//Här skrivs ut allting. operation får man från btn.Text
