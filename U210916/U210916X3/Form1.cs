@@ -23,6 +23,15 @@ namespace U210916X3
             btnMultiply.Click += new EventHandler(ButtonHandler);
             btnDivide.Click += new EventHandler(ButtonHandler);
             //När knapparna trycks anropas ButtonHanlder, detta gör koden mer effektiv
+
+            textBox1.KeyPress += new KeyPressEventHandler(KeyControl);
+            textBox2.KeyPress += new KeyPressEventHandler(KeyControl);
+
+        }
+
+        private void KeyControl(object sender, KeyPressEventArgs e)
+        {
+
         }
 
         private void ButtonHandler(object sender, EventArgs e)
