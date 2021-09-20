@@ -48,8 +48,15 @@ namespace U210916X3
 
                     break;
                 case "/":
-                    answer = Engine.Divide(i, j);
-                    Result(i, j, answer, (sender as Button).Text);
+                    if (textBox1.Text == "0" || textBox2.Text == "0")
+                    {
+                        listBox1.Items.Add("Cannot divide by 0");
+                    }
+                    else
+                    {
+                        answer = Engine.Divide(i, j);
+                        Result(i, j, answer, (sender as Button).Text);
+                    }
 
                     break;
             }
