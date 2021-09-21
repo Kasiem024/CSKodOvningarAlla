@@ -26,12 +26,19 @@ namespace U210916X3
 
             textBox1.KeyPress += new KeyPressEventHandler(KeyControl);
             textBox2.KeyPress += new KeyPressEventHandler(KeyControl);
-
+            //När en knapp trycks i textBoxen
         }
 
         private void KeyControl(object sender, KeyPressEventArgs e)
         {
-
+            if (e.KeyChar < '0' || e.KeyChar > '9')//Om knappen som trycks inte är mellan 0 och 9 kan den inte tryckas
+            {
+                if (((short)e.KeyChar) != 8)//Backspace har nummret 8 i ASCII, alltså kan man trycka backspace,
+                                            //skriver short så att programmer förstår att jag menar ACSII, kan lika väl skriva int
+                {
+                    e.Handled = true;//Kan stå false här och man kan ändå använda backspace, förstår inte varför
+                }
+            }
         }
 
         private void ButtonHandler(object sender, EventArgs e)
@@ -61,13 +68,15 @@ namespace U210916X3
                                              //i detta fall kanske detta borde hanteras i Calculator
                     {
                         listBox1.Items.Add("Cannot divide by 0");
+                        return;//Avslutar hela metoden
                     }
                     else
                     {
                         answer = Engine.Divide(i, j);
-                    }
 
-                    break;
+                        break;
+                    }
+                    //Använder inte try catch här för att double kan vara ett oändligt tal, alltså funkar inte DivideByZeroException
             }
 
             Result(i, j, answer, (sender as Button).Text);//Skickar i, j, answer och vad som står på knappen till Result
