@@ -69,7 +69,7 @@ namespace U210921X1
             // 
             // btnAvgMileBMW
             // 
-            this.btnAvgMileBMW.Location = new System.Drawing.Point(542, 128);
+            this.btnAvgMileBMW.Location = new System.Drawing.Point(618, 128);
             this.btnAvgMileBMW.Name = "btnAvgMileBMW";
             this.btnAvgMileBMW.Size = new System.Drawing.Size(147, 94);
             this.btnAvgMileBMW.TabIndex = 3;
@@ -79,7 +79,7 @@ namespace U210921X1
             // 
             // btnCarsOld2003
             // 
-            this.btnCarsOld2003.Location = new System.Drawing.Point(542, 18);
+            this.btnCarsOld2003.Location = new System.Drawing.Point(618, 18);
             this.btnCarsOld2003.Name = "btnCarsOld2003";
             this.btnCarsOld2003.Size = new System.Drawing.Size(148, 94);
             this.btnCarsOld2003.TabIndex = 4;
@@ -99,7 +99,7 @@ namespace U210921X1
             // 
             // btnExpCar
             // 
-            this.btnExpCar.Location = new System.Drawing.Point(434, 228);
+            this.btnExpCar.Location = new System.Drawing.Point(472, 228);
             this.btnExpCar.Name = "btnExpCar";
             this.btnExpCar.Size = new System.Drawing.Size(147, 94);
             this.btnExpCar.TabIndex = 6;
