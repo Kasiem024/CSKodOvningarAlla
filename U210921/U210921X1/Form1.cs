@@ -48,8 +48,15 @@ namespace U210921X1
 
         private void btnAvgMileBMW_Click(object sender, EventArgs e)
         {
-            double i = Cars.FindAll(x => x.Make.ToUpper() == "BMW").Average(y => y.Km);//Searches Make for BMW then calculates the average value for Km
-            CarListBoxFunction.Items.Add($"The avergae mileage for all BMW cars in stroage is {i}");
+            try
+            {
+                double i = Cars.FindAll(x => x.Make.ToUpper() == "BMW").Average(y => y.Km);//Searches Make for BMW then calculates the average value for Km
+                CarListBoxFunction.Items.Add($"The avergae mileage for all BMW cars in stroage is {i}");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There are no BMW cars in storage!");
+            }
         }
 
         private void btnExpCar_Click(object sender, EventArgs e)
