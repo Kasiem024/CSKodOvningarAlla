@@ -45,14 +45,14 @@ namespace U210921X1
             this.CarListBox.ItemHeight = 16;
             this.CarListBox.Location = new System.Drawing.Point(12, 82);
             this.CarListBox.Name = "CarListBox";
-            this.CarListBox.Size = new System.Drawing.Size(308, 388);
+            this.CarListBox.Size = new System.Drawing.Size(308, 308);
             this.CarListBox.TabIndex = 0;
             // 
             // CarListBoxFunction
             // 
             this.CarListBoxFunction.FormattingEnabled = true;
             this.CarListBoxFunction.ItemHeight = 16;
-            this.CarListBoxFunction.Location = new System.Drawing.Point(326, 328);
+            this.CarListBoxFunction.Location = new System.Drawing.Point(326, 248);
             this.CarListBoxFunction.Name = "CarListBoxFunction";
             this.CarListBoxFunction.Size = new System.Drawing.Size(439, 148);
             this.CarListBoxFunction.TabIndex = 1;
@@ -99,9 +99,9 @@ namespace U210921X1
             // 
             // btnExpCar
             // 
-            this.btnExpCar.Location = new System.Drawing.Point(472, 228);
+            this.btnExpCar.Location = new System.Drawing.Point(480, 92);
             this.btnExpCar.Name = "btnExpCar";
-            this.btnExpCar.Size = new System.Drawing.Size(147, 94);
+            this.btnExpCar.Size = new System.Drawing.Size(132, 65);
             this.btnExpCar.TabIndex = 6;
             this.btnExpCar.Text = "Most expensive car";
             this.btnExpCar.UseVisualStyleBackColor = true;
@@ -121,7 +121,7 @@ namespace U210921X1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(777, 490);
+            this.ClientSize = new System.Drawing.Size(777, 406);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExpCar);
             this.Controls.Add(this.btnGreyVolvo);
