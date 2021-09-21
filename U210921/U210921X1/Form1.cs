@@ -62,6 +62,7 @@ namespace U210921X1
         private void btnAvgMileBMW_Click(object sender, EventArgs e)
         {
             double i = Cars.FindAll(x => x.Make == "BMW").Average(y => y.Km);
+            double j = Cars.FindAll(x => x.Make == "BMW").Count;
             CarListBoxFunction.Items.Add($"The avergae mileage for all BMW cars in stroage is {i}");  
         }
 

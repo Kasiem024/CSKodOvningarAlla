@@ -54,7 +54,7 @@ namespace U210921X1
             this.CarListBoxFunction.ItemHeight = 16;
             this.CarListBoxFunction.Location = new System.Drawing.Point(326, 328);
             this.CarListBoxFunction.Name = "CarListBoxFunction";
-            this.CarListBoxFunction.Size = new System.Drawing.Size(363, 148);
+            this.CarListBoxFunction.Size = new System.Drawing.Size(439, 148);
             this.CarListBoxFunction.TabIndex = 1;
             // 
             // btnRedCars
@@ -121,7 +121,7 @@ namespace U210921X1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 490);
+            this.ClientSize = new System.Drawing.Size(777, 490);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExpCar);
             this.Controls.Add(this.btnGreyVolvo);
