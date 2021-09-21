@@ -32,6 +32,15 @@ namespace U210921X1
 
             Cars = new List<Car>();
 
+            Cars = Cars.OrderBy(x => x.Make).ToList();
+
+            foreach (var car in Cars)
+            {
+                CarListBox.Items.Add($" {car.Make} {car.Model} {car.Year}");
+            }
+        }
+        public void CarList()
+        {
             Cars.Add(new Car() { Id = 1, Make = "Volvo", Model = "V70", Color = "White", Km = 1292, Price = 3465, Year = 1998 });
             Cars.Add(new Car() { Id = 31, Make = "Skoda", Model = "Fabia", Color = "Red", Km = 1292, Price = 76556, Year = 2001 });
             Cars.Add(new Car() { Id = 14, Make = "Volvo", Model = "XC90", Color = "Blue", Km = 432, Price = 32001, Year = 2003 });
@@ -54,18 +63,9 @@ namespace U210921X1
             Cars.Add(new Car() { Id = 991, Make = "Volvo", Model = "V70", Color = "Red", Km = 3475, Price = 14512, Year = 1998 });
             Cars.Add(new Car() { Id = 801, Make = "Audi", Model = "A7", Color = "White", Km = 492, Price = 187500, Year = 2002 });
             Cars.Add(new Car() { Id = 6031, Make = "Audi", Model = "A6", Color = "Blue", Km = 553, Price = 55400, Year = 2011 });
-
-            Cars = Cars.OrderBy(x => x.Make).ToList();
-
-            foreach (var car in Cars)
-            {
-                CarListBox.Items.Add($"{car.Id} {car.Make} {car.Model} {car.Color} {car.Km} {car.Price} {car.Year}");
-            }
-
         }
     }
 }
-
 public class Car
 {
     public int Id { get; set; }
