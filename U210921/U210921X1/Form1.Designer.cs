@@ -36,15 +36,16 @@ namespace U210921X1
             this.btnCarsOld2003 = new System.Windows.Forms.Button();
             this.btnGreyVolvo = new System.Windows.Forms.Button();
             this.btnExpCar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // CarListBox
             // 
             this.CarListBox.FormattingEnabled = true;
             this.CarListBox.ItemHeight = 16;
-            this.CarListBox.Location = new System.Drawing.Point(12, 18);
+            this.CarListBox.Location = new System.Drawing.Point(12, 82);
             this.CarListBox.Name = "CarListBox";
-            this.CarListBox.Size = new System.Drawing.Size(308, 452);
+            this.CarListBox.Size = new System.Drawing.Size(308, 388);
             this.CarListBox.TabIndex = 0;
             // 
             // CarListBoxFunction
@@ -64,6 +65,7 @@ namespace U210921X1
             this.btnRedCars.TabIndex = 2;
             this.btnRedCars.Text = "Amount of red cars";
             this.btnRedCars.UseVisualStyleBackColor = true;
+            this.btnRedCars.Click += new System.EventHandler(this.btnRedCars_Click);
             // 
             // btnAvgMileBMW
             // 
@@ -73,6 +75,7 @@ namespace U210921X1
             this.btnAvgMileBMW.TabIndex = 3;
             this.btnAvgMileBMW.Text = "Average mileage for BMW cars";
             this.btnAvgMileBMW.UseVisualStyleBackColor = true;
+            this.btnAvgMileBMW.Click += new System.EventHandler(this.btnAvgMileBMW_Click);
             // 
             // btnCarsOld2003
             // 
@@ -82,6 +85,7 @@ namespace U210921X1
             this.btnCarsOld2003.TabIndex = 4;
             this.btnCarsOld2003.Text = "Amount of cars older than 2003";
             this.btnCarsOld2003.UseVisualStyleBackColor = true;
+            this.btnCarsOld2003.Click += new System.EventHandler(this.btnCarsOld2003_Click);
             // 
             // btnGreyVolvo
             // 
@@ -91,6 +95,7 @@ namespace U210921X1
             this.btnGreyVolvo.TabIndex = 5;
             this.btnGreyVolvo.Text = "Amount of grey Volvo";
             this.btnGreyVolvo.UseVisualStyleBackColor = true;
+            this.btnGreyVolvo.Click += new System.EventHandler(this.btnGreyVolvo_Click);
             // 
             // btnExpCar
             // 
@@ -100,12 +105,24 @@ namespace U210921X1
             this.btnExpCar.TabIndex = 6;
             this.btnExpCar.Text = "Most expensive car";
             this.btnExpCar.UseVisualStyleBackColor = true;
+            this.btnExpCar.Click += new System.EventHandler(this.btnExpCar_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(300, 40);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "All cars in storage";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 490);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExpCar);
             this.Controls.Add(this.btnGreyVolvo);
             this.Controls.Add(this.btnCarsOld2003);
@@ -116,6 +133,7 @@ namespace U210921X1
             this.Name = "Form1";
             this.Text = "Car List";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -128,6 +146,7 @@ namespace U210921X1
         private System.Windows.Forms.Button btnCarsOld2003;
         private System.Windows.Forms.Button btnGreyVolvo;
         private System.Windows.Forms.Button btnExpCar;
+        private System.Windows.Forms.Label label1;
     }
 }
 

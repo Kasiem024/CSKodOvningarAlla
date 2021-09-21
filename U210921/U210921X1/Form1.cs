@@ -66,6 +66,31 @@ namespace U210921X1
             Cars.Add(new Car() { Id = 801, Make = "Audi", Model = "A7", Color = "White", Km = 492, Price = 187500, Year = 2002 });
             Cars.Add(new Car() { Id = 6031, Make = "Audi", Model = "A6", Color = "Blue", Km = 553, Price = 55400, Year = 2011 });
         }
+
+        private void btnRedCars_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCarsOld2003_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGreyVolvo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAvgMileBMW_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExpCar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 public class Car
