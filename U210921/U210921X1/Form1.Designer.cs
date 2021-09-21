@@ -93,7 +93,7 @@ namespace U210921X1
             this.btnGreyVolvo.Name = "btnGreyVolvo";
             this.btnGreyVolvo.Size = new System.Drawing.Size(147, 94);
             this.btnGreyVolvo.TabIndex = 5;
-            this.btnGreyVolvo.Text = "Amount of grey Volvo";
+            this.btnGreyVolvo.Text = "Amount of grey Volvos";
             this.btnGreyVolvo.UseVisualStyleBackColor = true;
             this.btnGreyVolvo.Click += new System.EventHandler(this.btnGreyVolvo_Click);
             // 
@@ -113,7 +113,7 @@ namespace U210921X1
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(21, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(300, 40);
+            this.label1.Size = new System.Drawing.Size(240, 32);
             this.label1.TabIndex = 7;
             this.label1.Text = "All cars in storage";
             // 

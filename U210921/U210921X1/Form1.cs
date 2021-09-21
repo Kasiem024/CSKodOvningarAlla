@@ -55,17 +55,20 @@ namespace U210921X1
 
         private void btnGreyVolvo_Click(object sender, EventArgs e)
         {
-
+            int i = Cars.FindAll(x => x.Make == "Volvo").FindAll(y => y.Color == "Grey").Count;
+            CarListBoxFunction.Items.Add($"There are {i} grey Volvos in storage");
         }
 
         private void btnAvgMileBMW_Click(object sender, EventArgs e)
         {
-
+            double i = Cars.FindAll(x => x.Make == "BMW").Average(y => y.Km);
+            CarListBoxFunction.Items.Add($"The avergae mileage for all BMW cars in stroage is {i}");  
         }
 
         private void btnExpCar_Click(object sender, EventArgs e)
         {
-
+            Cars = Cars.OrderByDescending(x => x.Price).ToList();
+            CarListBoxFunction.Items.Add($"The most expensive car in storage is {Cars[0].Make} {Cars[0].Model} {Cars[0].Year}");
         }
         public void CarList()
         {
