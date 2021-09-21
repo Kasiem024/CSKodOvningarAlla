@@ -29,26 +29,26 @@ namespace U210921X1
         }
         private void btnRedCars_Click(object sender, EventArgs e)
         {
-            int i = Cars.FindAll(x => x.Color == "Red").Count;//Searches Color for everything Red and counts,
-                                                              //if it isnt spelt exactly the same it doesnt find it (red doesnt count, needs to be Red)
+            int i = Cars.FindAll(x => x.Color.ToUpper() == "RED").Count;//Searches Color for everything RED and counts
             CarListBoxFunction.Items.Add($"There are {i} red cars in storage");
         }
 
         private void btnCarsOld2003_Click(object sender, EventArgs e)
         {
-            int i = Cars.FindAll(x => x.Year < 2003).Count;//Searches Year for everying less than 2003 and counts
+            int i = Cars.FindAll(x => x.Year < 2003).Count;//Searches Year for everything less than 2003 and counts
             CarListBoxFunction.Items.Add($"There are {i} cars made before 2003 in storage");
         }
 
         private void btnGreyVolvo_Click(object sender, EventArgs e)
         {
-            int i = Cars.FindAll(x => x.Make == "Volvo").FindAll(y => y.Color == "Grey").Count;//Searches Make for Volvo then searches that list for Grey and counts
+            int i = Cars.FindAll(x => x.Make.ToUpper() == "VOLVO").FindAll(y => y.Color.ToUpper() == "GREY").Count;
+            //Searches Make for VOLVO then searches that list for GREY and counts
             CarListBoxFunction.Items.Add($"There are {i} grey Volvos in storage");
         }
 
         private void btnAvgMileBMW_Click(object sender, EventArgs e)
         {
-            double i = Cars.FindAll(x => x.Make == "BMW").Average(y => y.Km);//Searches Make for BMW then calculates the average value for Km
+            double i = Cars.FindAll(x => x.Make.ToUpper() == "BMW").Average(y => y.Km);//Searches Make for BMW then calculates the average value for Km
             CarListBoxFunction.Items.Add($"The avergae mileage for all BMW cars in stroage is {i}");
         }
 
