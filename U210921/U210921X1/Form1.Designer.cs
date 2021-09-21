@@ -29,13 +29,33 @@ namespace U210921X1
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.CarListBox = new System.Windows.Forms.ListBox();
+            this.SuspendLayout();
+            // 
+            // CarListBox
+            // 
+            this.CarListBox.FormattingEnabled = true;
+            this.CarListBox.ItemHeight = 16;
+            this.CarListBox.Location = new System.Drawing.Point(176, 162);
+            this.CarListBox.Name = "CarListBox";
+            this.CarListBox.Size = new System.Drawing.Size(477, 276);
+            this.CarListBox.TabIndex = 0;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Controls.Add(this.CarListBox);
+            this.Name = "Form1";
+            this.Text = "Car List";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox CarListBox;
     }
 }
 
