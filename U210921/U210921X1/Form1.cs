@@ -8,20 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-/*Vi vill stötta en bilhandlare med ett programstöd för att hantera sina bilar.
-Första fasen innehåller följande behov:
-Inventarielista bifogas med alla bilar som finns i lager
-Se till att hantera det i ditt program avseende domänmodellen (namn på klassen och egenskaper behöver matcha)
-När programmet startar vill vi direkt se en lista över alla bilar, sorterat utifrån tillverkare i alfabetisk ordning
-Ex: "Audi Q3, 2011" är all info som ska visas i listan när programmet startar
-Skapa en listbox till i underkanten, som kan fungera som en "kvittoremsa" för de olika frågorna/funktionerna
-1/Knapp som ger svaret på "Amount of red cars" i listboxen ska då visas "You have X red cars"
-2/Antal bilar äldre än 2003
-3/Antal gråa Volvobilar
-4/Snittkörsträckan för BMW bilarna
-5/Vilken är den dyraste bilen?
-*/
-
 namespace U210921X1
 {
     public partial class Form1 : Form
@@ -34,7 +20,7 @@ namespace U210921X1
             Cars = new List<Car>();//Making the list Cars here becasue I now need it
             CarList();//Calling to the method CarList here
 
-            Cars = Cars.OrderBy(x => x.Make).ToList();//Ordering Cars alphabetically by make and overwriting the current list with the sorted one 
+            Cars = Cars.OrderBy(x => x.Make).ToList();//Ordering Cars alphabetically by Make and overwriting the current list with the sorted one 
 
             foreach (var car in Cars)//This is an easy way to print all cars in the list, should exist another shorter way to do it
             {
@@ -43,8 +29,8 @@ namespace U210921X1
         }
         private void btnRedCars_Click(object sender, EventArgs e)
         {
-            int i = Cars.FindAll(x => x.Color == "Red").Count;//Searches Color for everything red and counts,
-                                                              //if it isnt spelt exactly the same it doesnt find it (red doesnt count)
+            int i = Cars.FindAll(x => x.Color == "Red").Count;//Searches Color for everything Red and counts,
+                                                              //if it isnt spelt exactly the same it doesnt find it (red doesnt count, needs to be Red)
             CarListBoxFunction.Items.Add($"There are {i} red cars in storage");
         }
 
@@ -56,14 +42,14 @@ namespace U210921X1
 
         private void btnGreyVolvo_Click(object sender, EventArgs e)
         {
-            int i = Cars.FindAll(x => x.Make == "Volvo").FindAll(y => y.Color == "Grey").Count;//Seraches Make for Volvo then searches that list for Grey and counts
+            int i = Cars.FindAll(x => x.Make == "Volvo").FindAll(y => y.Color == "Grey").Count;//Searches Make for Volvo then searches that list for Grey and counts
             CarListBoxFunction.Items.Add($"There are {i} grey Volvos in storage");
         }
 
         private void btnAvgMileBMW_Click(object sender, EventArgs e)
         {
             double i = Cars.FindAll(x => x.Make == "BMW").Average(y => y.Km);//Searches Make for BMW then calculates the average value for Km
-            CarListBoxFunction.Items.Add($"The avergae mileage for all BMW cars in stroage is {i}");  
+            CarListBoxFunction.Items.Add($"The avergae mileage for all BMW cars in stroage is {i}");
         }
 
         private void btnExpCar_Click(object sender, EventArgs e)
