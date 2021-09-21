@@ -49,7 +49,8 @@ namespace U210921X1
 
         private void btnCarsOld2003_Click(object sender, EventArgs e)
         {
-
+            int i = Cars.FindAll(x => x.Year < 2003).Count;
+            CarListBoxFunction.Items.Add($"There are {i} cars made before 2003 in storage");
         }
 
         private void btnGreyVolvo_Click(object sender, EventArgs e)
