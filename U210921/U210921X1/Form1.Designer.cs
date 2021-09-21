@@ -31,6 +31,11 @@ namespace U210921X1
         {
             this.CarListBox = new System.Windows.Forms.ListBox();
             this.CarListBoxFunction = new System.Windows.Forms.ListBox();
+            this.btnRedCars = new System.Windows.Forms.Button();
+            this.btnAvgMileBMW = new System.Windows.Forms.Button();
+            this.btnCarsOld2003 = new System.Windows.Forms.Button();
+            this.btnGreyVolvo = new System.Windows.Forms.Button();
+            this.btnExpCar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CarListBox
@@ -39,23 +44,73 @@ namespace U210921X1
             this.CarListBox.ItemHeight = 16;
             this.CarListBox.Location = new System.Drawing.Point(12, 18);
             this.CarListBox.Name = "CarListBox";
-            this.CarListBox.Size = new System.Drawing.Size(255, 420);
+            this.CarListBox.Size = new System.Drawing.Size(308, 452);
             this.CarListBox.TabIndex = 0;
             // 
             // CarListBoxFunction
             // 
             this.CarListBoxFunction.FormattingEnabled = true;
             this.CarListBoxFunction.ItemHeight = 16;
-            this.CarListBoxFunction.Location = new System.Drawing.Point(315, 18);
+            this.CarListBoxFunction.Location = new System.Drawing.Point(326, 328);
             this.CarListBoxFunction.Name = "CarListBoxFunction";
-            this.CarListBoxFunction.Size = new System.Drawing.Size(218, 420);
+            this.CarListBoxFunction.Size = new System.Drawing.Size(363, 148);
             this.CarListBoxFunction.TabIndex = 1;
+            // 
+            // btnRedCars
+            // 
+            this.btnRedCars.Location = new System.Drawing.Point(327, 18);
+            this.btnRedCars.Name = "btnRedCars";
+            this.btnRedCars.Size = new System.Drawing.Size(148, 94);
+            this.btnRedCars.TabIndex = 2;
+            this.btnRedCars.Text = "Amount of red cars";
+            this.btnRedCars.UseVisualStyleBackColor = true;
+            // 
+            // btnAvgMileBMW
+            // 
+            this.btnAvgMileBMW.Location = new System.Drawing.Point(542, 128);
+            this.btnAvgMileBMW.Name = "btnAvgMileBMW";
+            this.btnAvgMileBMW.Size = new System.Drawing.Size(147, 94);
+            this.btnAvgMileBMW.TabIndex = 3;
+            this.btnAvgMileBMW.Text = "Average mileage for BMW cars";
+            this.btnAvgMileBMW.UseVisualStyleBackColor = true;
+            // 
+            // btnCarsOld2003
+            // 
+            this.btnCarsOld2003.Location = new System.Drawing.Point(542, 18);
+            this.btnCarsOld2003.Name = "btnCarsOld2003";
+            this.btnCarsOld2003.Size = new System.Drawing.Size(148, 94);
+            this.btnCarsOld2003.TabIndex = 4;
+            this.btnCarsOld2003.Text = "Amount of cars older than 2003";
+            this.btnCarsOld2003.UseVisualStyleBackColor = true;
+            // 
+            // btnGreyVolvo
+            // 
+            this.btnGreyVolvo.Location = new System.Drawing.Point(327, 128);
+            this.btnGreyVolvo.Name = "btnGreyVolvo";
+            this.btnGreyVolvo.Size = new System.Drawing.Size(147, 94);
+            this.btnGreyVolvo.TabIndex = 5;
+            this.btnGreyVolvo.Text = "Amount of grey Volvo";
+            this.btnGreyVolvo.UseVisualStyleBackColor = true;
+            // 
+            // btnExpCar
+            // 
+            this.btnExpCar.Location = new System.Drawing.Point(434, 228);
+            this.btnExpCar.Name = "btnExpCar";
+            this.btnExpCar.Size = new System.Drawing.Size(147, 94);
+            this.btnExpCar.TabIndex = 6;
+            this.btnExpCar.Text = "Most expensive car";
+            this.btnExpCar.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 450);
+            this.ClientSize = new System.Drawing.Size(712, 490);
+            this.Controls.Add(this.btnExpCar);
+            this.Controls.Add(this.btnGreyVolvo);
+            this.Controls.Add(this.btnCarsOld2003);
+            this.Controls.Add(this.btnAvgMileBMW);
+            this.Controls.Add(this.btnRedCars);
             this.Controls.Add(this.CarListBoxFunction);
             this.Controls.Add(this.CarListBox);
             this.Name = "Form1";
@@ -68,6 +123,11 @@ namespace U210921X1
 
         private System.Windows.Forms.ListBox CarListBox;
         private System.Windows.Forms.ListBox CarListBoxFunction;
+        private System.Windows.Forms.Button btnRedCars;
+        private System.Windows.Forms.Button btnAvgMileBMW;
+        private System.Windows.Forms.Button btnCarsOld2003;
+        private System.Windows.Forms.Button btnGreyVolvo;
+        private System.Windows.Forms.Button btnExpCar;
     }
 }
 

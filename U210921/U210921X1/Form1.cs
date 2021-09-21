@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 /*Vi vill stötta en bilhandlare med ett programstöd för att hantera sina bilar.
 Första fasen innehåller följande behov:
 Inventarielista bifogas med alla bilar som finns i lager
@@ -31,6 +32,7 @@ namespace U210921X1
             InitializeComponent();
 
             Cars = new List<Car>();
+            CarList();
 
             Cars = Cars.OrderBy(x => x.Make).ToList();
 
@@ -64,7 +66,6 @@ namespace U210921X1
             Cars.Add(new Car() { Id = 801, Make = "Audi", Model = "A7", Color = "White", Km = 492, Price = 187500, Year = 2002 });
             Cars.Add(new Car() { Id = 6031, Make = "Audi", Model = "A6", Color = "Blue", Km = 553, Price = 55400, Year = 2011 });
         }
-    }
 }
 public class Car
 {
