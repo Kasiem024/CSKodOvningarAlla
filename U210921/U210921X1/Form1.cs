@@ -26,52 +26,53 @@ namespace U210921X1
 {
     public partial class Form1 : Form
     {
-        List<Car> Cars;
+        List<Car> Cars;//Declaring the car here becasue I dont need it yet
         public Form1()
         {
             InitializeComponent();
 
-            Cars = new List<Car>();
-            CarList();
+            Cars = new List<Car>();//Making the list Cars here becasue I now need it
+            CarList();//Calling to the method CarList here
 
-            Cars = Cars.OrderBy(x => x.Make).ToList();
+            Cars = Cars.OrderBy(x => x.Make).ToList();//Ordering Cars alphabetically by make and overwriting the current list with the sorted one 
 
-            foreach (var car in Cars)
+            foreach (var car in Cars)//This is an easy way to print all cars in the list, should exist another shorter way to do it
             {
                 CarListBox.Items.Add($" {car.Make} {car.Model} {car.Year}");
             }
         }
         private void btnRedCars_Click(object sender, EventArgs e)
         {
-            int i = Cars.FindAll(x => x.Color == "Red").Count;
+            int i = Cars.FindAll(x => x.Color == "Red").Count;//Searches Color for everything red and counts,
+                                                              //if it isnt spelt exactly the same it doesnt find it (red doesnt count)
             CarListBoxFunction.Items.Add($"There are {i} red cars in storage");
         }
 
         private void btnCarsOld2003_Click(object sender, EventArgs e)
         {
-            int i = Cars.FindAll(x => x.Year < 2003).Count;
+            int i = Cars.FindAll(x => x.Year < 2003).Count;//Searches Year for everying less than 2003 and counts
             CarListBoxFunction.Items.Add($"There are {i} cars made before 2003 in storage");
         }
 
         private void btnGreyVolvo_Click(object sender, EventArgs e)
         {
-            int i = Cars.FindAll(x => x.Make == "Volvo").FindAll(y => y.Color == "Grey").Count;
+            int i = Cars.FindAll(x => x.Make == "Volvo").FindAll(y => y.Color == "Grey").Count;//Seraches Make for Volvo then searches that list for Grey and counts
             CarListBoxFunction.Items.Add($"There are {i} grey Volvos in storage");
         }
 
         private void btnAvgMileBMW_Click(object sender, EventArgs e)
         {
-            double i = Cars.FindAll(x => x.Make == "BMW").Average(y => y.Km);
-            double j = Cars.FindAll(x => x.Make == "BMW").Count;
+            double i = Cars.FindAll(x => x.Make == "BMW").Average(y => y.Km);//Searches Make for BMW then calculates the average value for Km
             CarListBoxFunction.Items.Add($"The avergae mileage for all BMW cars in stroage is {i}");  
         }
 
         private void btnExpCar_Click(object sender, EventArgs e)
         {
-            Cars = Cars.OrderByDescending(x => x.Price).ToList();
+            Cars = Cars.OrderByDescending(x => x.Price).ToList();//Orders the list by price in descending order
             CarListBoxFunction.Items.Add($"The most expensive car in storage is {Cars[0].Make} {Cars[0].Model} {Cars[0].Year}");
+            //Because I ordered the list by price the first car in the list is the most expensive one
         }
-        public void CarList()
+        public void CarList()//Code looks cleaner if all cars are in their own method
         {
             Cars.Add(new Car() { Id = 1, Make = "Volvo", Model = "V70", Color = "White", Km = 1292, Price = 3465, Year = 1998 });
             Cars.Add(new Car() { Id = 31, Make = "Skoda", Model = "Fabia", Color = "Red", Km = 1292, Price = 76556, Year = 2001 });
