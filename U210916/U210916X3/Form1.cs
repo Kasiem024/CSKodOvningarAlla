@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace U210916X3
@@ -65,10 +58,10 @@ namespace U210916X3
                     break;
                 case "/":
                     if (textBox2.Text == "0")//Ifall man försöker dela med 0. Något att tänka på för framtiden är att hantera undantag i en annan fil,
-                                             //i detta fall kanske detta borde hanteras i Calculator
+                                             //i sådana fall kanske detta borde hanteras i Calculator, ska separera Logic och GUI
                     {
                         listBox1.Items.Add("Cannot divide by 0");
-                        return;//Avslutar hela metoden
+                        return;//Avslutar hela metoden ButtonHandler
                     }
                     else
                     {
@@ -76,7 +69,8 @@ namespace U210916X3
 
                         break;
                     }
-                    //Använder inte try catch här för att double kan vara ett oändligt tal, alltså funkar inte DivideByZeroException
+                    //Använder inte try catch här för att double kan vara ett oändligt tal,
+                    //alltså funkar inte DivideByZeroException för att programmet tror att divison med noll blir oändlighet
             }
 
             Result(i, j, answer, (sender as Button).Text);//Skickar i, j, answer och vad som står på knappen till Result
