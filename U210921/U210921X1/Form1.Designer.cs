@@ -36,9 +36,9 @@ namespace U210921X1
             // 
             this.CarListBox.FormattingEnabled = true;
             this.CarListBox.ItemHeight = 16;
-            this.CarListBox.Location = new System.Drawing.Point(176, 162);
+            this.CarListBox.Location = new System.Drawing.Point(12, 18);
             this.CarListBox.Name = "CarListBox";
-            this.CarListBox.Size = new System.Drawing.Size(477, 276);
+            this.CarListBox.Size = new System.Drawing.Size(422, 420);
             this.CarListBox.TabIndex = 0;
             // 
             // Form1
