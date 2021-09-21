@@ -55,7 +55,7 @@ namespace U210921X1
             }
             catch (Exception)
             {
-                MessageBox.Show("There are no BMW cars in storage!");
+                MessageBox.Show("There are no BMW cars in storage!");//If there are no BMW cars the program will crash because Average will divide by zero
             }
         }
 
