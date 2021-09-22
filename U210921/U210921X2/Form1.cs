@@ -8,6 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*
+If the inputed Id doesnt match a car in the list
+If tbxPrice and tbxKm is empty when btnSave is clicked
+If tbxId is empty when btnSave is clicked
+If tbxEdit is empty when it is clicked
+Design is lacking
+*/
+
 namespace U210921X2
 {
     public partial class Form1 : Form
