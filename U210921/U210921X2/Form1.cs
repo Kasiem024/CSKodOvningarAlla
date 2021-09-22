@@ -31,6 +31,7 @@ namespace U210921X2
             {
                 cmbChooseColors.Items.Add($"{color}");
             }
+
         }
 
         private void listBoxAllCars_SelectedIndexChanged(object sender, EventArgs e)
@@ -42,6 +43,19 @@ namespace U210921X2
 
             tbxCarInfo.Text = ($"ID: {SelectedCar.Id} {SelectedCar.Make} {SelectedCar.Model} {SelectedCar.Color}" +
             $" Mileage:{SelectedCar.Km}km Price:{SelectedCar.Price} kr Year:{SelectedCar.Year}");
+        }
+        private void cmbChooseColors_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listBoxCarColors.Items.Clear(); 
+
+            string SelectedColor = cmbChooseColors.Items[cmbChooseColors.SelectedIndex].ToString();
+
+            var AllCarsColor = Cars.FindAll(x => x.Color == SelectedColor);
+
+            foreach (var car in AllCarsColor)
+            {
+                listBoxCarColors.Items.Add(car);
+            }
         }
         public void CarList()//Code looks cleaner if all cars are in their own method
         {

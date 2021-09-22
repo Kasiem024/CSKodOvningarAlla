@@ -158,6 +158,7 @@ namespace U210921X2
             this.cmbChooseColors.Name = "cmbChooseColors";
             this.cmbChooseColors.Size = new System.Drawing.Size(121, 24);
             this.cmbChooseColors.TabIndex = 16;
+            this.cmbChooseColors.SelectedIndexChanged += new System.EventHandler(this.cmbChooseColors_SelectedIndexChanged);
             // 
             // Form1
             // 
