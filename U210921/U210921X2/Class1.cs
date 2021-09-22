@@ -1,6 +1,6 @@
 ﻿namespace U210921X2
 {
-    public class Car
+    public class Car//Making this here instead of Form1 in case another file needs to access this class
     {
         public int Id { get; set; }
         public string Make { get; set; }

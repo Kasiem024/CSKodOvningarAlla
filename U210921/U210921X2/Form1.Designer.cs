@@ -52,6 +52,7 @@ namespace U210921X2
             this.listBoxAllCars.Name = "listBoxAllCars";
             this.listBoxAllCars.Size = new System.Drawing.Size(163, 228);
             this.listBoxAllCars.TabIndex = 0;
+            this.listBoxAllCars.SelectedIndexChanged += new System.EventHandler(this.listBoxAllCars_SelectedIndexChanged);
             // 
             // cmbColor
             // 
