@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace U210921X2
@@ -18,25 +22,19 @@ namespace U210921X2
 
             foreach (Car car in Cars.OrderBy(x => x.Make))
             {
-                listBoxAllCars.Items.Add($"{car.Make} {car.Model} {car.Year}");
+                listBoxAllCars.Items.Add(car);
             }
         }
 
         private void listBoxAllCars_SelectedIndexChanged(object sender, EventArgs e)
         {
+            tbxCarInfo.Clear();
             ListBox ListOfCars = sender as ListBox;
 
             Car SelectedCar = ListOfCars.SelectedItem as Car;
 
-            MessageBox.Show("Test " + ListOfCars.SelectedItem.GetType().ToString());
-
-
-            //lblCarInfo.Text = $"{SelectedCar.Id} {SelectedCar.Make} {SelectedCar.Model} {SelectedCar.Color}" +
-            //$" {SelectedCar.Km} {SelectedCar.Price} {SelectedCar.Year}";
-
-            //MessageBox.Show($"{SelectedCar.Id} {SelectedCar.Make} {SelectedCar.Model} {SelectedCar.Color}" +
-            //$" {SelectedCar.Km} {SelectedCar.Price} {SelectedCar.Year}");
-
+            tbxCarInfo.Text = ($"ID: {SelectedCar.Id} {SelectedCar.Make} {SelectedCar.Model} {SelectedCar.Color}" +
+            $" Mileage:{SelectedCar.Km}km Price:{SelectedCar.Price} kr Year:{SelectedCar.Year}");
         }
         public void CarList()//Code looks cleaner if all cars are in their own method
         {
