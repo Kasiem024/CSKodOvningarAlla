@@ -29,12 +29,12 @@ namespace U210921X2
         /// </summary>
         private void InitializeComponent()
         {
-            this.listAllCars = new System.Windows.Forms.ListBox();
+            this.listBoxAllCars = new System.Windows.Forms.ListBox();
             this.cmbColor = new System.Windows.Forms.ComboBox();
-            this.listColors = new System.Windows.Forms.ListBox();
+            this.listBoxColors = new System.Windows.Forms.ListBox();
             this.lblCarInfo = new System.Windows.Forms.Label();
             this.btnEditCar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblEditCar = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.tbxId = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
@@ -44,31 +44,31 @@ namespace U210921X2
             this.tbxKm = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // listAllCars
+            // listBoxAllCars
             // 
-            this.listAllCars.FormattingEnabled = true;
-            this.listAllCars.ItemHeight = 16;
-            this.listAllCars.Location = new System.Drawing.Point(12, 12);
-            this.listAllCars.Name = "listAllCars";
-            this.listAllCars.Size = new System.Drawing.Size(163, 228);
-            this.listAllCars.TabIndex = 0;
+            this.listBoxAllCars.FormattingEnabled = true;
+            this.listBoxAllCars.ItemHeight = 16;
+            this.listBoxAllCars.Location = new System.Drawing.Point(12, 12);
+            this.listBoxAllCars.Name = "listBoxAllCars";
+            this.listBoxAllCars.Size = new System.Drawing.Size(163, 228);
+            this.listBoxAllCars.TabIndex = 0;
             // 
             // cmbColor
             // 
             this.cmbColor.FormattingEnabled = true;
             this.cmbColor.Location = new System.Drawing.Point(281, 16);
             this.cmbColor.Name = "cmbColor";
-            this.cmbColor.Size = new System.Drawing.Size(121, 24);
+            this.cmbColor.Size = new System.Drawing.Size(120, 24);
             this.cmbColor.TabIndex = 3;
             // 
-            // listColors
+            // listBoxColors
             // 
-            this.listColors.FormattingEnabled = true;
-            this.listColors.ItemHeight = 16;
-            this.listColors.Location = new System.Drawing.Point(281, 46);
-            this.listColors.Name = "listColors";
-            this.listColors.Size = new System.Drawing.Size(120, 132);
-            this.listColors.TabIndex = 4;
+            this.listBoxColors.FormattingEnabled = true;
+            this.listBoxColors.ItemHeight = 16;
+            this.listBoxColors.Location = new System.Drawing.Point(281, 46);
+            this.listBoxColors.Name = "listBoxColors";
+            this.listBoxColors.Size = new System.Drawing.Size(120, 132);
+            this.listBoxColors.TabIndex = 4;
             // 
             // lblCarInfo
             // 
@@ -82,35 +82,35 @@ namespace U210921X2
             // 
             // btnEditCar
             // 
-            this.btnEditCar.Location = new System.Drawing.Point(518, 74);
+            this.btnEditCar.Location = new System.Drawing.Point(521, 81);
             this.btnEditCar.Name = "btnEditCar";
-            this.btnEditCar.Size = new System.Drawing.Size(70, 22);
+            this.btnEditCar.Size = new System.Drawing.Size(70, 25);
             this.btnEditCar.TabIndex = 5;
             this.btnEditCar.Text = "Edit";
             this.btnEditCar.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblEditCar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(419, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 31);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Edit Car Info";
+            this.lblEditCar.AutoSize = true;
+            this.lblEditCar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditCar.Location = new System.Drawing.Point(419, 12);
+            this.lblEditCar.Name = "lblEditCar";
+            this.lblEditCar.Size = new System.Drawing.Size(149, 31);
+            this.lblEditCar.TabIndex = 6;
+            this.lblEditCar.Text = "Edit Car Info";
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(518, 156);
+            this.btnSave.Location = new System.Drawing.Point(521, 171);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(70, 22);
+            this.btnSave.Size = new System.Drawing.Size(70, 25);
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save Changes";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
             // tbxId
             // 
-            this.tbxId.Location = new System.Drawing.Point(488, 46);
+            this.tbxId.Location = new System.Drawing.Point(491, 46);
             this.tbxId.Multiline = true;
             this.tbxId.Name = "tbxId";
             this.tbxId.Size = new System.Drawing.Size(100, 22);
@@ -127,7 +127,7 @@ namespace U210921X2
             // 
             // tbxPrice
             // 
-            this.tbxPrice.Location = new System.Drawing.Point(488, 99);
+            this.tbxPrice.Location = new System.Drawing.Point(491, 112);
             this.tbxPrice.Multiline = true;
             this.tbxPrice.Name = "tbxPrice";
             this.tbxPrice.Size = new System.Drawing.Size(100, 22);
@@ -136,7 +136,7 @@ namespace U210921X2
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(421, 99);
+            this.lblPrice.Location = new System.Drawing.Point(421, 112);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(40, 17);
             this.lblPrice.TabIndex = 11;
@@ -145,15 +145,15 @@ namespace U210921X2
             // lblKm
             // 
             this.lblKm.AutoSize = true;
-            this.lblKm.Location = new System.Drawing.Point(421, 128);
+            this.lblKm.Location = new System.Drawing.Point(421, 143);
             this.lblKm.Name = "lblKm";
-            this.lblKm.Size = new System.Drawing.Size(71, 21);
+            this.lblKm.Size = new System.Drawing.Size(57, 17);
             this.lblKm.TabIndex = 12;
             this.lblKm.Text = "Mileage";
             // 
             // tbxKm
             // 
-            this.tbxKm.Location = new System.Drawing.Point(488, 128);
+            this.tbxKm.Location = new System.Drawing.Point(491, 143);
             this.tbxKm.Multiline = true;
             this.tbxKm.Name = "tbxKm";
             this.tbxKm.Size = new System.Drawing.Size(100, 22);
@@ -171,12 +171,12 @@ namespace U210921X2
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.tbxId);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblEditCar);
             this.Controls.Add(this.btnEditCar);
-            this.Controls.Add(this.listColors);
+            this.Controls.Add(this.listBoxColors);
             this.Controls.Add(this.cmbColor);
             this.Controls.Add(this.lblCarInfo);
-            this.Controls.Add(this.listAllCars);
+            this.Controls.Add(this.listBoxAllCars);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -186,12 +186,12 @@ namespace U210921X2
 
         #endregion
 
-        private System.Windows.Forms.ListBox listAllCars;
+        private System.Windows.Forms.ListBox listBoxAllCars;
         private System.Windows.Forms.ComboBox cmbColor;
-        private System.Windows.Forms.ListBox listColors;
+        private System.Windows.Forms.ListBox listBoxColors;
         private System.Windows.Forms.Label lblCarInfo;
         private System.Windows.Forms.Button btnEditCar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblEditCar;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox tbxId;
         private System.Windows.Forms.Label lblId;

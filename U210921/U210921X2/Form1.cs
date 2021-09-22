@@ -1,4 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace U210921X2
@@ -12,6 +19,12 @@ namespace U210921X2
 
             Cars = new List<Car>();//Making the list Cars here becasue I now need it
             CarList();//Calling to the method CarList here
+
+            foreach (Car car in Cars.OrderBy(x => x.Make))
+            {
+                listBoxAllCars.Items.Add($"{car.Make} {car.Model} {car.Year}");
+            }
+
         }
         public void CarList()//Code looks cleaner if all cars are in their own method
         {
@@ -39,5 +52,4 @@ namespace U210921X2
             Cars.Add(new Car() { Id = 6031, Make = "Audi", Model = "A6", Color = "Blue", Km = 553, Price = 55400, Year = 2011 });
         }
     }
-
 }
