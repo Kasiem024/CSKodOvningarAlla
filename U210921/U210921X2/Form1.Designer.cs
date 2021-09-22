@@ -40,8 +40,8 @@ namespace U210921X2
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblKm = new System.Windows.Forms.Label();
             this.tbxKm = new System.Windows.Forms.TextBox();
-            this.listBoxShowColors = new System.Windows.Forms.ListBox();
             this.tbxCarInfo = new System.Windows.Forms.TextBox();
+            this.cmbChooseColors = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // listBoxAllCars
@@ -142,15 +142,6 @@ namespace U210921X2
             this.tbxKm.Size = new System.Drawing.Size(100, 22);
             this.tbxKm.TabIndex = 13;
             // 
-            // listBoxShowColors
-            // 
-            this.listBoxShowColors.FormattingEnabled = true;
-            this.listBoxShowColors.ItemHeight = 16;
-            this.listBoxShowColors.Location = new System.Drawing.Point(401, 12);
-            this.listBoxShowColors.Name = "listBoxShowColors";
-            this.listBoxShowColors.Size = new System.Drawing.Size(104, 84);
-            this.listBoxShowColors.TabIndex = 14;
-            // 
             // tbxCarInfo
             // 
             this.tbxCarInfo.Location = new System.Drawing.Point(188, 12);
@@ -160,13 +151,21 @@ namespace U210921X2
             this.tbxCarInfo.Size = new System.Drawing.Size(192, 56);
             this.tbxCarInfo.TabIndex = 15;
             // 
+            // cmbChooseColors
+            // 
+            this.cmbChooseColors.FormattingEnabled = true;
+            this.cmbChooseColors.Location = new System.Drawing.Point(401, 12);
+            this.cmbChooseColors.Name = "cmbChooseColors";
+            this.cmbChooseColors.Size = new System.Drawing.Size(121, 24);
+            this.cmbChooseColors.TabIndex = 16;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 274);
+            this.Controls.Add(this.cmbChooseColors);
             this.Controls.Add(this.tbxCarInfo);
-            this.Controls.Add(this.listBoxShowColors);
             this.Controls.Add(this.tbxKm);
             this.Controls.Add(this.lblKm);
             this.Controls.Add(this.lblPrice);
@@ -198,8 +197,8 @@ namespace U210921X2
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblKm;
         private System.Windows.Forms.TextBox tbxKm;
-        private System.Windows.Forms.ListBox listBoxShowColors;
         private System.Windows.Forms.TextBox tbxCarInfo;
+        private System.Windows.Forms.ComboBox cmbChooseColors;
     }
 }
 

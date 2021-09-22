@@ -24,6 +24,13 @@ namespace U210921X2
             {
                 listBoxAllCars.Items.Add(car);
             }
+
+            var CarColors = Cars.Select(x => x.Color).Distinct();
+
+            foreach (var color in CarColors)
+            {
+                cmbChooseColors.Items.Add($"{color}");
+            }
         }
 
         private void listBoxAllCars_SelectedIndexChanged(object sender, EventArgs e)
