@@ -20,12 +20,13 @@ namespace U210921X2
             Cars = new List<Car>();//Making the list Cars here becasue I now need it
             CarList();//Calling to the method CarList here
 
-            foreach (Car car in Cars.OrderBy(x => x.Make))
+            foreach (Car car in Cars.OrderBy(x => x.Make))//Prints all cars in the list into the listbox,
+                                                          //OrderBy used here so that the list isnt permanently sorted
             {
                 listBoxAllCars.Items.Add(car);
             }
 
-            var CarColors = Cars.Select(x => x.Color).Distinct();
+            var CarColors = Cars.Select(x => x.Color).Distinct();//Selects all variables in property Color that are distinct
 
             foreach (var color in CarColors)
             {
@@ -36,19 +37,20 @@ namespace U210921X2
 
         private void listBoxAllCars_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbxCarInfo.Clear();
-            ListBox ListOfCars = sender as ListBox;
-
-            Car SelectedCar = ListOfCars.SelectedItem as Car;
+            tbxCarInfo.Clear();//Clears here for better visual clarity
+            Car SelectedCar = (sender as ListBox).SelectedItem as Car;//ListOfCars is a list because ListBox is the sender
+                                                                     //SelectedCar is a Car and the selected item
 
             tbxCarInfo.Text = ($"ID: {SelectedCar.Id} {SelectedCar.Make} {SelectedCar.Model} {SelectedCar.Color}" +
             $" Mileage:{SelectedCar.Km}km Price:{SelectedCar.Price} kr Year:{SelectedCar.Year}");
         }
         private void cmbChooseColors_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listBoxCarColors.Items.Clear(); 
+            listBoxCarColors.Items.Clear();
 
-            string SelectedColor = cmbChooseColors.Items[cmbChooseColors.SelectedIndex].ToString();
+            ComboBox ComboBoxColors = sender as ComboBox;
+
+            string SelectedColor = (sender as ComboBox).SelectedItem.ToString();
 
             var AllCarsColor = Cars.FindAll(x => x.Color == SelectedColor);
 
@@ -56,6 +58,24 @@ namespace U210921X2
             {
                 listBoxCarColors.Items.Add(car);
             }
+        }
+        private void btnEditCar_Click(object sender, EventArgs e)
+        {
+            string SelectedIdTemp = tbxId.Text;
+
+            int SelectedId = int.Parse(SelectedIdTemp);
+
+            var SelctedCarEdit = Cars.Find(x => x.Id == SelectedId);
+
+            tbxPrice.Text = SelctedCarEdit.Price.ToString();
+            tbxKm.Text = SelctedCarEdit.Km.ToString();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Cars.Find(x => x.Id == int.Parse(tbxId.Text)).Price = int.Parse(tbxPrice.Text);
+
+            Cars.Find(x => x.Id == int.Parse(tbxId.Text)).Km = int.Parse(tbxKm.Text);
         }
         public void CarList()//Code looks cleaner if all cars are in their own method
         {

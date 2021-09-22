@@ -71,6 +71,7 @@ namespace U210921X2
             this.btnEditCar.TabIndex = 5;
             this.btnEditCar.Text = "Edit";
             this.btnEditCar.UseVisualStyleBackColor = true;
+            this.btnEditCar.Click += new System.EventHandler(this.btnEditCar_Click);
             // 
             // lblEditCar
             // 
@@ -90,6 +91,7 @@ namespace U210921X2
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save Changes";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // tbxId
             // 
@@ -156,7 +158,7 @@ namespace U210921X2
             this.cmbChooseColors.FormattingEnabled = true;
             this.cmbChooseColors.Location = new System.Drawing.Point(401, 12);
             this.cmbChooseColors.Name = "cmbChooseColors";
-            this.cmbChooseColors.Size = new System.Drawing.Size(121, 24);
+            this.cmbChooseColors.Size = new System.Drawing.Size(104, 24);
             this.cmbChooseColors.TabIndex = 16;
             this.cmbChooseColors.SelectedIndexChanged += new System.EventHandler(this.cmbChooseColors_SelectedIndexChanged);
             // 
@@ -164,7 +166,7 @@ namespace U210921X2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(551, 274);
+            this.ClientSize = new System.Drawing.Size(530, 274);
             this.Controls.Add(this.cmbChooseColors);
             this.Controls.Add(this.tbxCarInfo);
             this.Controls.Add(this.tbxKm);
