@@ -60,7 +60,7 @@ namespace U210921X2
             this.listBoxCarColors.ItemHeight = 16;
             this.listBoxCarColors.Location = new System.Drawing.Point(401, 102);
             this.listBoxCarColors.Name = "listBoxCarColors";
-            this.listBoxCarColors.Size = new System.Drawing.Size(104, 132);
+            this.listBoxCarColors.Size = new System.Drawing.Size(117, 132);
             this.listBoxCarColors.TabIndex = 4;
             // 
             // btnEditCar
@@ -150,7 +150,7 @@ namespace U210921X2
             this.tbxCarInfo.Multiline = true;
             this.tbxCarInfo.Name = "tbxCarInfo";
             this.tbxCarInfo.ReadOnly = true;
-            this.tbxCarInfo.Size = new System.Drawing.Size(192, 56);
+            this.tbxCarInfo.Size = new System.Drawing.Size(207, 56);
             this.tbxCarInfo.TabIndex = 15;
             // 
             // cmbChooseColors
@@ -158,7 +158,7 @@ namespace U210921X2
             this.cmbChooseColors.FormattingEnabled = true;
             this.cmbChooseColors.Location = new System.Drawing.Point(401, 12);
             this.cmbChooseColors.Name = "cmbChooseColors";
-            this.cmbChooseColors.Size = new System.Drawing.Size(104, 24);
+            this.cmbChooseColors.Size = new System.Drawing.Size(117, 24);
             this.cmbChooseColors.TabIndex = 16;
             this.cmbChooseColors.SelectedIndexChanged += new System.EventHandler(this.cmbChooseColors_SelectedIndexChanged);
             // 

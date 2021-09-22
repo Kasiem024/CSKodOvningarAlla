@@ -37,7 +37,7 @@ namespace U210921X2
 
         private void listBoxAllCars_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbxCarInfo.Clear();//Clears here for better visual clarity
+            tbxCarInfo.Clear();//For better visual clarity
             Car SelectedCar = (sender as ListBox).SelectedItem as Car;//ListOfCars is a list because ListBox is the sender
                                                                      //SelectedCar is a Car and the selected item
 
@@ -48,11 +48,11 @@ namespace U210921X2
         {
             listBoxCarColors.Items.Clear();
 
-            ComboBox ComboBoxColors = sender as ComboBox;
+            ComboBox ComboBoxColors = (sender as ComboBox).SelectedItem as ComboBox;
 
             string SelectedColor = (sender as ComboBox).SelectedItem.ToString();
 
-            var AllCarsColor = Cars.FindAll(x => x.Color == SelectedColor);
+            var AllCarsColor = Cars.FindAll(x => x.Color == SelectedColor);//AllCarsColor is a sublist of Cars
 
             foreach (var car in AllCarsColor)
             {
@@ -61,23 +61,25 @@ namespace U210921X2
         }
         private void btnEditCar_Click(object sender, EventArgs e)
         {
-            string SelectedIdTemp = tbxId.Text;
+            string SelectedIdTemp = tbxId.Text;//Creating a temp because tbxId is expecting a string
 
-            int SelectedId = int.Parse(SelectedIdTemp);
+            int SelectedId = int.Parse(SelectedIdTemp);//Converting string in tbxId to int
 
-            var SelctedCarEdit = Cars.Find(x => x.Id == SelectedId);
+            var SelctedCarEdit = Cars.Find(x => x.Id == SelectedId);//Finding the car with the same id
 
             tbxPrice.Text = SelctedCarEdit.Price.ToString();
             tbxKm.Text = SelctedCarEdit.Km.ToString();
+            //Writing in tbxPrice the selected cars price and mileage as a string
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             Cars.Find(x => x.Id == int.Parse(tbxId.Text)).Price = int.Parse(tbxPrice.Text);
+            //Finds the car with same Id as whats in tbxId, overwrites that cars Price to whats written in tbxPrice
 
             Cars.Find(x => x.Id == int.Parse(tbxId.Text)).Km = int.Parse(tbxKm.Text);
         }
-        public void CarList()//Code looks cleaner if all cars are in their own method
+        public void CarList()//For better visual clarity in the code
         {
             Cars.Add(new Car() { Id = 1, Make = "Volvo", Model = "V70", Color = "White", Km = 1292, Price = 3465, Year = 1998 });
             Cars.Add(new Car() { Id = 31, Make = "Skoda", Model = "Fabia", Color = "Red", Km = 1292, Price = 76556, Year = 2001 });
