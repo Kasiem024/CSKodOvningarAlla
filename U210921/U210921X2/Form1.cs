@@ -12,7 +12,9 @@ using System.Windows.Forms;
 If the inputed Id doesnt match a car in the list
 If tbxPrice and tbxKm is empty when btnSave is clicked
 If tbxId is empty when btnSave is clicked
-If tbxEdit is empty when it is clicked
+If tbxEdit is empty when tbnEdit is clicked
+Can write into cmbChooseColors which is unnecessary
+Code for btnEdit_Click can probably be better
 Design is lacking
 */
 
