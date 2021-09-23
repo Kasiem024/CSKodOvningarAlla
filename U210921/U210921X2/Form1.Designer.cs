@@ -50,7 +50,7 @@ namespace U210921X2
             this.tbxColor = new System.Windows.Forms.TextBox();
             this.tbxYear = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.tbnDelete = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -248,15 +248,15 @@ namespace U210921X2
             this.label6.TabIndex = 26;
             this.label6.Text = "Show by Color";
             // 
-            // tbnDelete
+            // btnDelete
             // 
-            this.tbnDelete.Location = new System.Drawing.Point(231, 285);
-            this.tbnDelete.Name = "tbnDelete";
-            this.tbnDelete.Size = new System.Drawing.Size(77, 46);
-            this.tbnDelete.TabIndex = 27;
-            this.tbnDelete.Text = "Delete Car";
-            this.tbnDelete.UseVisualStyleBackColor = true;
-            this.tbnDelete.Click += new System.EventHandler(this.tbnDelete_Click);
+            this.btnDelete.Location = new System.Drawing.Point(231, 285);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(77, 46);
+            this.btnDelete.TabIndex = 27;
+            this.btnDelete.Text = "Delete Car";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // button1
             // 
@@ -273,7 +273,7 @@ namespace U210921X2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(541, 340);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.tbnDelete);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tbxYear);
             this.Controls.Add(this.tbxColor);
@@ -325,7 +325,7 @@ namespace U210921X2
         private System.Windows.Forms.TextBox tbxColor;
         private System.Windows.Forms.TextBox tbxYear;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button tbnDelete;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button button1;
     }
 }

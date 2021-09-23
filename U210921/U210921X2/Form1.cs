@@ -31,14 +31,8 @@ namespace U210921X2
             CarList();//Calling to the method CarList here
 
             listBoxRefresh();
-
-            var CarColors = Cars.Select(x => x.Color).Distinct();//Selects all variables in property Color that are distinct
-
-            foreach (var color in CarColors)
-            {
-                cmbChooseColors.Items.Add($"{color}");
-            }
-
+            cmbRefresh();
+            tbxId.Enabled = false;
         }
 
         private void listBoxAllCars_SelectedIndexChanged(object sender, EventArgs e)
@@ -70,26 +64,33 @@ namespace U210921X2
         }
         private void btnEditCar_Click(object sender, EventArgs e)
         {
-            var SelctedCarEdit = Cars.Find(x => x.Id == int.Parse(tbxId.Text));//Finding the car with the same Id as tbxId.Text and converting to an int
+            var SelctedCaredit = Cars.Find(x => x.Id == int.Parse(tbxId.Text));//Finding the car with the same Id as tbxId.Text and converting to an int
 
-            tbxPrice.Text = SelctedCarEdit.Price.ToString();
-            tbxKm.Text = SelctedCarEdit.Km.ToString();
+            tbxPrice.Text = SelctedCaredit.Price.ToString();
+            tbxKm.Text = SelctedCaredit.Km.ToString();
             //Writing in tbxPrice and tbxKm the selected cars price and mileage as a string
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Cars[SelectedCar()].Price = int.Parse(tbxPrice.Text);
             //Finds the car with same index as whats in tbxId, overwrites that cars Price to whats written in tbxPrice
-
+            Cars[SelectedCar()].Make = tbxMake.Text.ToUpper();
+            Cars[SelectedCar()].Model = tbxModel.Text.ToUpper();
+            Cars[SelectedCar()].Color = tbxColor.Text.ToUpper();
+            Cars[SelectedCar()].Price = int.Parse(tbxPrice.Text);
             Cars[SelectedCar()].Km = int.Parse(tbxKm.Text);
+            Cars[SelectedCar()].Year = int.Parse(tbxYear.Text);
+            listBoxRefresh();
+            ClearAllText(this);
+            cmbRefresh();
         }
 
-        private void tbnDelete_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             Cars.RemoveAt(SelectedCar());
             listBoxRefresh();
             ClearAllText(this);
+            cmbRefresh();
         }
 
         public int SelectedCar()
@@ -107,6 +108,17 @@ namespace U210921X2
                 listBoxAllCars.Items.Add(car);
             }
         }
+        public void cmbRefresh()
+        {
+            cmbChooseColors.Items.Clear();
+            var CarColors = Cars.Select(x => x.Color.ToUpper()).Distinct();//Selects all variables in property Color that are distinct
+
+            foreach (var color in CarColors)
+            {
+                cmbChooseColors.Items.Add($"{color}");
+            }
+        }
+
         public void ClearAllText(Control con)
         {
             foreach (Control c in con.Controls)
@@ -119,28 +131,28 @@ namespace U210921X2
         }
         public void CarList()//For better visual clarity in the code
         {
-            Cars.Add(new Car() { Id = 1, Make = "Volvo", Model = "V70", Color = "White", Km = 1292, Price = 3465, Year = 1998 });
-            Cars.Add(new Car() { Id = 31, Make = "Skoda", Model = "Fabia", Color = "Red", Km = 1292, Price = 76556, Year = 2001 });
-            Cars.Add(new Car() { Id = 14, Make = "Volvo", Model = "XC90", Color = "Blue", Km = 432, Price = 32001, Year = 2003 });
-            Cars.Add(new Car() { Id = 4, Make = "Volvo", Model = "V70", Color = "Red", Km = 1223492, Price = 24512, Year = 1998 });
-            Cars.Add(new Car() { Id = 23, Make = "BMW", Model = "735", Color = "Black", Km = 435, Price = 234512, Year = 1999 });
-            Cars.Add(new Car() { Id = 234, Make = "Audi", Model = "Q3", Color = "Blue", Km = 345, Price = 334552, Year = 2010 });
-            Cars.Add(new Car() { Id = 451, Make = "Volvo", Model = "V40", Color = "Grey", Km = 235235, Price = 535512, Year = 2008 });
-            Cars.Add(new Car() { Id = 651, Make = "Volvo", Model = "XC90", Color = "White", Km = 345345, Price = 34510, Year = 2011 });
-            Cars.Add(new Car() { Id = 91, Make = "Volvo", Model = "V70", Color = "Red", Km = 345, Price = 4512, Year = 1997 });
-            Cars.Add(new Car() { Id = 8001, Make = "Audi", Model = "A3", Color = "White", Km = 123492, Price = 87500, Year = 2001 });
-            Cars.Add(new Car() { Id = 631, Make = "Audi", Model = "A8", Color = "Blue", Km = 55342, Price = 55400, Year = 2010 });
-            Cars.Add(new Car() { Id = 51, Make = "Volvo", Model = "V40", Color = "Red", Km = 1692, Price = 3465, Year = 1999 });
-            Cars.Add(new Car() { Id = 781, Make = "Skoda", Model = "Fabia", Color = "Blue", Km = 1792, Price = 56556, Year = 2000 });
-            Cars.Add(new Car() { Id = 144, Make = "Volvo", Model = "XC90", Color = "Blue", Km = 4382, Price = 25001, Year = 2004 });
-            Cars.Add(new Car() { Id = 48, Make = "Volvo", Model = "V70", Color = "Red", Km = 12292, Price = 26512, Year = 1997 });
-            Cars.Add(new Car() { Id = 912, Make = "BMW", Model = "735", Color = "Black", Km = 4395, Price = 134512, Year = 1960 });
-            Cars.Add(new Car() { Id = 2344, Make = "Audi", Model = "Q3", Color = "Grey", Km = 3425, Price = 434552, Year = 2011 });
-            Cars.Add(new Car() { Id = 4501, Make = "Volvo", Model = "V40", Color = "Grey", Km = 215235, Price = 435512, Year = 2007 });
-            Cars.Add(new Car() { Id = 6051, Make = "Volvo", Model = "XC90", Color = "White", Km = 47345, Price = 134510, Year = 2012 });
-            Cars.Add(new Car() { Id = 991, Make = "Volvo", Model = "V70", Color = "Red", Km = 3475, Price = 14512, Year = 1998 });
-            Cars.Add(new Car() { Id = 801, Make = "Audi", Model = "A7", Color = "White", Km = 492, Price = 187500, Year = 2002 });
-            Cars.Add(new Car() { Id = 6031, Make = "Audi", Model = "A6", Color = "Blue", Km = 553, Price = 55400, Year = 2011 });
+            Cars.Add(new Car() { Id = 1, Make = "VOLVO", Model = "V70", Color = "WHITE", Km = 1292, Price = 3465, Year = 1998 });
+            Cars.Add(new Car() { Id = 31, Make = "SKODA", Model = "FABIA", Color = "RED", Km = 1292, Price = 76556, Year = 2001 });
+            Cars.Add(new Car() { Id = 14, Make = "VOLVO", Model = "XC90", Color = "BLUE", Km = 432, Price = 32001, Year = 2003 });
+            Cars.Add(new Car() { Id = 4, Make = "VOLVO", Model = "V70", Color = "RED", Km = 1223492, Price = 24512, Year = 1998 });
+            Cars.Add(new Car() { Id = 23, Make = "BMW", Model = "735", Color = "BLACK", Km = 435, Price = 234512, Year = 1999 });
+            Cars.Add(new Car() { Id = 234, Make = "AUDI", Model = "Q3", Color = "BLUE", Km = 345, Price = 334552, Year = 2010 });
+            Cars.Add(new Car() { Id = 451, Make = "VOLVO", Model = "V40", Color = "GREY", Km = 235235, Price = 535512, Year = 2008 });
+            Cars.Add(new Car() { Id = 651, Make = "VOLVO", Model = "XC90", Color = "WHITE", Km = 345345, Price = 34510, Year = 2011 });
+            Cars.Add(new Car() { Id = 91, Make = "VOLVO", Model = "V70", Color = "RED", Km = 345, Price = 4512, Year = 1997 });
+            Cars.Add(new Car() { Id = 8001, Make = "AUDI", Model = "A3", Color = "WHITE", Km = 123492, Price = 87500, Year = 2001 });
+            Cars.Add(new Car() { Id = 631, Make = "AUDI", Model = "A8", Color = "BLUE", Km = 55342, Price = 55400, Year = 2010 });
+            Cars.Add(new Car() { Id = 51, Make = "VOLVO", Model = "V40", Color = "RED", Km = 1692, Price = 3465, Year = 1999 });
+            Cars.Add(new Car() { Id = 781, Make = "SKODA", Model = "FABIA", Color = "BLUE", Km = 1792, Price = 56556, Year = 2000 });
+            Cars.Add(new Car() { Id = 144, Make = "VOLVO", Model = "XC90", Color = "BLUE", Km = 4382, Price = 25001, Year = 2004 });
+            Cars.Add(new Car() { Id = 48, Make = "VOLVO", Model = "V70", Color = "RED", Km = 12292, Price = 26512, Year = 1997 });
+            Cars.Add(new Car() { Id = 912, Make = "BMW", Model = "735", Color = "BLACK", Km = 4395, Price = 134512, Year = 1960 });
+            Cars.Add(new Car() { Id = 2344, Make = "AUDI", Model = "Q3", Color = "GREY", Km = 3425, Price = 434552, Year = 2011 });
+            Cars.Add(new Car() { Id = 4501, Make = "VOLVO", Model = "V40", Color = "GREY", Km = 215235, Price = 435512, Year = 2007 });
+            Cars.Add(new Car() { Id = 6051, Make = "VOLVO", Model = "XC90", Color = "WHITE", Km = 47345, Price = 134510, Year = 2012 });
+            Cars.Add(new Car() { Id = 991, Make = "VOLVO", Model = "V70", Color = "RED", Km = 3475, Price = 14512, Year = 1998 });
+            Cars.Add(new Car() { Id = 801, Make = "AUDI", Model = "A7", Color = "WHITE", Km = 492, Price = 187500, Year = 2002 });
+            Cars.Add(new Car() { Id = 6031, Make = "AUDI", Model = "A6", Color = "BLUE", Km = 553, Price = 55400, Year = 2011 });
         }
     }
 }
