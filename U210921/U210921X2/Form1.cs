@@ -9,12 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /*
-If the inputed Id doesnt match a car in the list
-If tbxPrice and tbxKm is empty when btnSave is clicked
-If tbxId is empty when btnSave is clicked
-If tbxEdit is empty when tbnEdit is clicked
-Can write into cmbChooseColors which is unnecessary
-Code for btnEdit_Click can probably be better
+Sometimes textboxes are empty and a new car can still be added
 Design is lacking
 */
 
@@ -50,28 +45,35 @@ namespace U210921X2
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (Cars.Select(x => x.Id).Contains(int.Parse(tbxId.Text)) != true)
+            try
             {
-                Cars.Add(new Car()
+                if (Cars.Select(x => x.Id).Contains(int.Parse(tbxId.Text)) != true)
                 {
-                    Id = int.Parse(tbxId.Text),
-                    Make = tbxMake.Text.ToUpper(),
-                    Model = tbxModel.Text.ToUpper(),
-                    Color = tbxColor.Text.ToUpper(),
-                    Km = int.Parse(tbxKm.Text),
-                    Price = int.Parse(tbxPrice.Text),
-                    Year = int.Parse(tbxYear.Text)
-                });
-            }
-            else
-            {
-                MessageBox.Show("ID already exists in list! Choose a diffrent ID for your new car!");
-            }
+                    Cars.Add(new Car()
+                    {
+                        Id = int.Parse(tbxId.Text),
+                        Make = tbxMake.Text.ToUpper(),
+                        Model = tbxModel.Text.ToUpper(),
+                        Color = tbxColor.Text.ToUpper(),
+                        Km = int.Parse(tbxKm.Text),
+                        Price = int.Parse(tbxPrice.Text),
+                        Year = int.Parse(tbxYear.Text)
+                    });
 
-            btnEnabler();
-            listBoxRefresh();
-            ClearAllText(this);
-            cmbRefresh();
+                    ClearAllText(this);
+                    btnEnabler();
+                    listBoxRefresh();
+                    cmbRefresh();
+                }
+                else
+                {
+                    MessageBox.Show("ID already exists in list! Choose a diffrent ID for your new car!");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error!\nFalse input");
+            }
         }
         private void cmbChooseColors_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -115,6 +117,14 @@ namespace U210921X2
         private void btnDelete_Click(object sender, EventArgs e)
         {
             Cars.RemoveAt(SelectedCar());
+
+            listBoxRefresh();
+            ClearAllText(this);
+            cmbRefresh();
+        }
+        private void btnNewCar_Click(object sender, EventArgs e)
+        {
+            btnEnabler();
 
             listBoxRefresh();
             ClearAllText(this);
@@ -201,11 +211,6 @@ namespace U210921X2
             Cars.Add(new Car() { Id = 991, Make = "VOLVO", Model = "V70", Color = "RED", Km = 3475, Price = 14512, Year = 1998 });
             Cars.Add(new Car() { Id = 801, Make = "AUDI", Model = "A7", Color = "WHITE", Km = 492, Price = 187500, Year = 2002 });
             Cars.Add(new Car() { Id = 6031, Make = "AUDI", Model = "A6", Color = "BLUE", Km = 553, Price = 55400, Year = 2011 });
-        }
-
-        private void btnNewCar_Click(object sender, EventArgs e)
-        {
-            btnEnabler();
         }
     }
 }

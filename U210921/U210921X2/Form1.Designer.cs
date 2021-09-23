@@ -150,6 +150,7 @@ namespace U210921X2
             // 
             // cmbChooseColors
             // 
+            this.cmbChooseColors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbChooseColors.FormattingEnabled = true;
             this.cmbChooseColors.Location = new System.Drawing.Point(401, 42);
             this.cmbChooseColors.Name = "cmbChooseColors";
