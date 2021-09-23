@@ -59,9 +59,9 @@ namespace U210921X2
             // 
             this.listBoxAllCars.FormattingEnabled = true;
             this.listBoxAllCars.ItemHeight = 16;
-            this.listBoxAllCars.Location = new System.Drawing.Point(12, 36);
+            this.listBoxAllCars.Location = new System.Drawing.Point(13, 39);
             this.listBoxAllCars.Name = "listBoxAllCars";
-            this.listBoxAllCars.Size = new System.Drawing.Size(165, 196);
+            this.listBoxAllCars.Size = new System.Drawing.Size(165, 292);
             this.listBoxAllCars.TabIndex = 0;
             this.listBoxAllCars.SelectedIndexChanged += new System.EventHandler(this.listBoxAllCars_SelectedIndexChanged);
             // 
@@ -69,9 +69,9 @@ namespace U210921X2
             // 
             this.listBoxCarColors.FormattingEnabled = true;
             this.listBoxCarColors.ItemHeight = 16;
-            this.listBoxCarColors.Location = new System.Drawing.Point(401, 95);
+            this.listBoxCarColors.Location = new System.Drawing.Point(361, 103);
             this.listBoxCarColors.Name = "listBoxCarColors";
-            this.listBoxCarColors.Size = new System.Drawing.Size(117, 132);
+            this.listBoxCarColors.Size = new System.Drawing.Size(117, 228);
             this.listBoxCarColors.TabIndex = 4;
             // 
             // lblEditCar
@@ -126,7 +126,7 @@ namespace U210921X2
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrice.Location = new System.Drawing.Point(182, 149);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(60, 25);
+            this.lblPrice.Size = new System.Drawing.Size(48, 20);
             this.lblPrice.TabIndex = 11;
             this.lblPrice.Text = "Price";
             // 
@@ -152,7 +152,7 @@ namespace U210921X2
             // 
             this.cmbChooseColors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbChooseColors.FormattingEnabled = true;
-            this.cmbChooseColors.Location = new System.Drawing.Point(401, 42);
+            this.cmbChooseColors.Location = new System.Drawing.Point(361, 34);
             this.cmbChooseColors.Name = "cmbChooseColors";
             this.cmbChooseColors.Size = new System.Drawing.Size(117, 24);
             this.cmbChooseColors.TabIndex = 16;
@@ -244,7 +244,7 @@ namespace U210921X2
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(396, 8);
+            this.label6.Location = new System.Drawing.Point(356, 6);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(140, 25);
             this.label6.TabIndex = 26;
@@ -284,7 +284,7 @@ namespace U210921X2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(541, 340);
+            this.ClientSize = new System.Drawing.Size(493, 340);
             this.Controls.Add(this.btnNewCar);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
