@@ -17,6 +17,7 @@ namespace U210921X2
     public partial class Form1 : Form
     {
         List<Car> Cars;
+        //Decalring that I want to usa a list called Cars that has properties from the class Car in the future
         public Form1()
         {
             InitializeComponent();
@@ -24,16 +25,16 @@ namespace U210921X2
             Cars = new List<Car>();//Making the list Cars here becasue I now need it
             CarList();//Calling to the method CarList here
 
-            btnEnabler();
-
-            listBoxRefresh();
-            cmbRefresh();
+            btnEnabler();//Disables tbxId and btnAdd because theyre on by deafult
+            listBoxRefresh();//Adds all items in list Cars to listBoxAllCars
+            cmbRefresh();//Adds all distinct colors in Color to cmbChooseColor
         }
 
         private void listBoxAllCars_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Car SelectedCar = (sender as ListBox).SelectedItem as Car;//ListOfCars is a list because ListBox is the sender
-                                                                     //SelectedCar is a Car and the selected item
+            Car SelectedCar = (sender as ListBox).SelectedItem as Car;
+            //SelectedCar is the currently selected item in listbox listBoxAllCars and is a Car
+
             tbxId.Text = $"{SelectedCar.Id}";
             tbxMake.Text = $"{SelectedCar.Make}";
             tbxModel.Text = $"{SelectedCar.Model}";
@@ -44,9 +45,10 @@ namespace U210921X2
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            try
+            try//This part of the program is whats intended to happen if nothing wrong happens
             {
                 if (Cars.Select(x => x.Id).Contains(int.Parse(tbxId.Text)) != true)
+                    //If the ID in tbx.Id doesnt overlap with a car in Cars
                 {
                     Cars.Add(new Car()
                     {
@@ -59,7 +61,8 @@ namespace U210921X2
                         Year = int.Parse(tbxYear.Text)
                     });
 
-                    ClearAllText(this);
+                    ClearAllText(this);//All textboxes are cleared for better user experience.
+                                       //"this" points to the class its located in
                     btnEnabler();
                     listBoxRefresh();
                     cmbRefresh();
@@ -69,49 +72,43 @@ namespace U210921X2
                     MessageBox.Show("ID already exists in list! Choose a diffrent ID for your new car!");
                 }
             }
-            catch (Exception)
+            catch (Exception)//If something not intended happens when btnAdd is clicked this happens
             {
                 MessageBox.Show("Error! False input!");
             }
         }
         private void cmbChooseColors_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listBoxCarColors.Items.Clear();
+            listBoxCarColors.Items.Clear();//Clears what is currently in listBoxCarColors for visual clarity
 
-            string selectedColor = (sender as ComboBox).SelectedItem.ToString().ToUpper();
+            string selectedColor = (sender as ComboBox).SelectedItem.ToString();
+            //SelectedColor is the selected item from the ComboBox cmbChooseColors and is also a string
 
-            foreach (Car c in Cars)
+            foreach (Car c in Cars)//Looks through all items in Cars
             {
                 if (c.Color.ToUpper() == selectedColor)
+                //If the Color property of the Car that is currently being examined matches selectedColor add that Car to listBoxCarColors
                 {
                     listBoxCarColors.Items.Add(c);
                 }
             }
         }
-        private void btnEditCar_Click(object sender, EventArgs e)
-        {
-            var SelctedCaredit = Cars.Find(x => x.Id == int.Parse(tbxId.Text));//Finding the car with the same Id as tbxId.Text and converting to an int
-
-            tbxPrice.Text = SelctedCaredit.Price.ToString();
-            tbxKm.Text = SelctedCaredit.Km.ToString();
-            //Writing in tbxPrice and tbxKm the selected cars price and mileage as a string
-        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            foreach (Control tbx in this.Controls)
+            foreach (Control tbx in Controls)
+                //For each component in the visual design in Form1 that is included in the Control class
             {
-                if (tbx is TextBox)
+                if (tbx is TextBox)//If the Control is a TextBox
                 {
-                    if (tbx.Text == string.Empty)
+                    if (tbx.Text == string.Empty)//If the TextBox is empty
                     {
                         MessageBox.Show("Error! False input!");
-                        return;
+                        return;//Exits out of the current event method
                     }
                 }
             }
 
-            //Finds the car with same index as whats in tbxId, overwrites that cars Price to whats written in tbxPrice
             Cars[SelectedCar()].Make = tbxMake.Text.ToUpper();
             Cars[SelectedCar()].Model = tbxModel.Text.ToUpper();
             Cars[SelectedCar()].Color = tbxColor.Text.ToUpper();
@@ -126,7 +123,7 @@ namespace U210921X2
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Cars.RemoveAt(SelectedCar());
+            Cars.RemoveAt(SelectedCar());//Removes the Car with the same index as whats in tbxId
 
             listBoxRefresh();
             ClearAllText(this);
@@ -135,7 +132,6 @@ namespace U210921X2
         private void btnNewCar_Click(object sender, EventArgs e)
         {
             btnEnabler();
-
             listBoxRefresh();
             ClearAllText(this);
             cmbRefresh();
@@ -144,14 +140,18 @@ namespace U210921X2
         public int SelectedCar()
         {
             return Cars.FindIndex(x => x.Id == int.Parse(tbxId.Text));
+            //Finds the index of the Car with the same Id as whats currently in tbxId
         }
 
-        public void listBoxRefresh() 
+        public void listBoxRefresh()
+        //Method that refreshes the listBox listBoxAllCars. Makin a method because listBoxAllCars regularly gets changed
         {
-            listBoxAllCars.Items.Clear();
+            listBoxAllCars.Items.Clear();//Clears all items in listbox before updating it
 
-            foreach (Car car in Cars.OrderBy(x => x.Make).ThenBy(y => y.Model).ThenBy(z => z.Year))//Prints all cars in the list into the listbox,
-                                                          //OrderBy used here so that the list isnt permanently sorted
+            foreach (Car car in Cars.OrderBy(x => x.Make).ThenBy(y => y.Model).ThenBy(z => z.Year))
+                //Adds all cars in the list into the listbox. OrderBy used here so that the list isnt permanently sorted
+                //First OrderBy lists by property Make, ThenBy sorts by Model property then sorts by year Property
+                //Purpose of the sorting is better visual clarity
             {
                 listBoxAllCars.Items.Add(car);
             }
@@ -159,29 +159,34 @@ namespace U210921X2
         public void cmbRefresh()
         {
             cmbChooseColors.Items.Clear();
-            //Selects all variables in property Color that are distinct
 
             foreach (var color in Cars.Select(x => x.Color.ToUpper()).Distinct())
+            //Selects all variables in property Color that are distinct
             {
-                cmbChooseColors.Items.Add($"{color}");
+                cmbChooseColors.Items.Add($"{color}");//Adds all distinct colors to cmbChooseColors
             }
         }
 
         public void ClearAllText(Control con)
+            //Purpose of this method is to clear all textboxes, creating a method because textboxes need to be cleared regularly
         {
-            foreach (Control tbx in con.Controls)
+            foreach (Control tbx in Controls)//Need to understand the pupose of "con" here
             {
-                if (tbx is TextBox)
+                if (tbx is TextBox)//If the Control is a textBox clear it
                 {
                     ((TextBox)tbx).Clear();
                 }
-                else
-                {
-                    ClearAllText(tbx);
-                }
+                //else
+                //{
+                //    ClearAllText(tbx);
+                //}
+                //If a textBox is nested inside another type of control it is also cleared
+                //Unnecessary in this program
             }
         }
         public void btnEnabler()
+            //Purpose of this method is to reverse usability of tbxId and btnAdd
+            //Because theyre not always needed
         {
             if (tbxId.Enabled == false)
             {
