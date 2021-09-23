@@ -30,11 +30,7 @@ namespace U210921X2
             Cars = new List<Car>();//Making the list Cars here becasue I now need it
             CarList();//Calling to the method CarList here
 
-            foreach (Car car in Cars.OrderBy(x => x.Make))//Prints all cars in the list into the listbox,
-                                                          //OrderBy used here so that the list isnt permanently sorted
-            {
-                listBoxAllCars.Items.Add(car);
-            }
+            listBoxRefresh();
 
             var CarColors = Cars.Select(x => x.Color).Distinct();//Selects all variables in property Color that are distinct
 
@@ -87,6 +83,39 @@ namespace U210921X2
             //Finds the car with same Id as whats in tbxId, overwrites that cars Price to whats written in tbxPrice
 
             Cars.Find(x => x.Id == int.Parse(tbxId.Text)).Km = int.Parse(tbxKm.Text);
+        }
+
+        private void tbnDelete_Click(object sender, EventArgs e)
+        {
+            Cars.RemoveAt(SelectedCar());
+            listBoxRefresh();
+            ClearAllText(this);
+        }
+
+        public int SelectedCar()
+        {
+            return Cars.FindIndex(x => x.Id == int.Parse(tbxId.Text));
+        }
+
+        public void listBoxRefresh() 
+        {
+            listBoxAllCars.Items.Clear();
+
+            foreach (Car car in Cars.OrderBy(x => x.Make))//Prints all cars in the list into the listbox,
+                                                          //OrderBy used here so that the list isnt permanently sorted
+            {
+                listBoxAllCars.Items.Add(car);
+            }
+        }
+        public void ClearAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Clear();
+                else
+                    ClearAllText(c);
+            }
         }
         public void CarList()//For better visual clarity in the code
         {

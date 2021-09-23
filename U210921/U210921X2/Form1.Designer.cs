@@ -266,6 +266,7 @@ namespace U210921X2
             this.tbnDelete.TabIndex = 27;
             this.tbnDelete.Text = "Delete";
             this.tbnDelete.UseVisualStyleBackColor = true;
+            this.tbnDelete.Click += new System.EventHandler(this.tbnDelete_Click);
             // 
             // Form1
             // 
