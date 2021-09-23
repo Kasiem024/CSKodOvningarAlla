@@ -48,15 +48,22 @@ namespace U210921X2
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Cars.Add(new Car() { Id = int.Parse(tbxId.Text), Make = tbxMake.Text.ToUpper(), Model = tbxModel.Text.ToUpper(), Color = tbxColor.Text.ToUpper(), 
-                Km = int.Parse(tbxKm.Text), Price = int.Parse(tbxPrice.Text), Year = int.Parse(tbxYear.Text)});
-
-            foreach (var item in Cars)
+            if (Cars.Select(x => x.Id).Contains(int.Parse(tbxId.Text)) != true)
             {
-                if (item.Id == int.Parse(tbxId.Text))
+                Cars.Add(new Car()
                 {
-                    MessageBox.Show("Test");
-                }
+                    Id = int.Parse(tbxId.Text),
+                    Make = tbxMake.Text.ToUpper(),
+                    Model = tbxModel.Text.ToUpper(),
+                    Color = tbxColor.Text.ToUpper(),
+                    Km = int.Parse(tbxKm.Text),
+                    Price = int.Parse(tbxPrice.Text),
+                    Year = int.Parse(tbxYear.Text)
+                });
+            }
+            else
+            {
+                MessageBox.Show("ID already exists in list! Choose a diffrent ID for your new car!");
             }
 
             listBoxRefresh();
