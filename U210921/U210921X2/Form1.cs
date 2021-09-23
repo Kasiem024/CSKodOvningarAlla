@@ -71,11 +71,11 @@ namespace U210921X2
         }
         private void btnEditCar_Click(object sender, EventArgs e)
         {
-            var SelctedCarEdit = Cars.Find(x => x.Id == int.Parse(tbxId.Text));//Finding the car with the same id
+            var SelctedCarEdit = Cars.Find(x => x.Id == int.Parse(tbxId.Text));//Finding the car with the same Id as tbxId.Text and converting to an int
 
             tbxPrice.Text = SelctedCarEdit.Price.ToString();
             tbxKm.Text = SelctedCarEdit.Km.ToString();
-            //Writing in tbxPrice the selected cars price and mileage as a string
+            //Writing in tbxPrice and tbxKm the selected cars price and mileage as a string
         }
 
         private void btnSave_Click(object sender, EventArgs e)
