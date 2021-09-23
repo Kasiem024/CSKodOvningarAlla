@@ -79,15 +79,14 @@ namespace U210921X2
         {
             listBoxCarColors.Items.Clear();
 
-            ComboBox ComboBoxColors = (sender as ComboBox).SelectedItem as ComboBox;
+            string selectedColor = (sender as ComboBox).SelectedItem.ToString().ToUpper();
 
-            string SelectedColor = (sender as ComboBox).SelectedItem.ToString();
-
-            var AllCarsColor = Cars.FindAll(x => x.Color == SelectedColor);//AllCarsColor is a sublist of Cars
-
-            foreach (var car in AllCarsColor)
+            foreach (Car c in Cars)
             {
-                listBoxCarColors.Items.Add(car);
+                if (c.Color.ToUpper() == selectedColor)
+                {
+                    listBoxCarColors.Items.Add(c);
+                }
             }
         }
         private void btnEditCar_Click(object sender, EventArgs e)
@@ -101,6 +100,16 @@ namespace U210921X2
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            foreach (Control c in this.Controls)
+            {
+                if (c is TextBox)
+                {
+                    if (c.Text == string.Empty)
+                    {
+                        MessageBox.Show("Test");
+                    }
+                }
+            }
             //Finds the car with same index as whats in tbxId, overwrites that cars Price to whats written in tbxPrice
             Cars[SelectedCar()].Make = tbxMake.Text.ToUpper();
             Cars[SelectedCar()].Model = tbxModel.Text.ToUpper();
@@ -149,9 +158,9 @@ namespace U210921X2
         public void cmbRefresh()
         {
             cmbChooseColors.Items.Clear();
-            var CarColors = Cars.Select(x => x.Color.ToUpper()).Distinct();//Selects all variables in property Color that are distinct
+            //Selects all variables in property Color that are distinct
 
-            foreach (var color in CarColors)
+            foreach (var color in Cars.Select(x => x.Color.ToUpper()).Distinct())
             {
                 cmbChooseColors.Items.Add($"{color}");
             }
@@ -162,9 +171,13 @@ namespace U210921X2
             foreach (Control c in con.Controls)
             {
                 if (c is TextBox)
+                {
                     ((TextBox)c).Clear();
+                }
                 else
+                {
                     ClearAllText(c);
+                }
             }
         }
         public void btnEnabler()
