@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /*
-Sometimes textboxes are empty and a new car can still be added
 Design is lacking
 */
 
@@ -72,7 +71,7 @@ namespace U210921X2
             }
             catch (Exception)
             {
-                MessageBox.Show("Error!\nFalse input");
+                MessageBox.Show("Error! False input!");
             }
         }
         private void cmbChooseColors_SelectedIndexChanged(object sender, EventArgs e)
@@ -100,16 +99,18 @@ namespace U210921X2
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            foreach (Control c in this.Controls)
+            foreach (Control tbx in this.Controls)
             {
-                if (c is TextBox)
+                if (tbx is TextBox)
                 {
-                    if (c.Text == string.Empty)
+                    if (tbx.Text == string.Empty)
                     {
-                        MessageBox.Show("Test");
+                        MessageBox.Show("Error! False input!");
+                        return;
                     }
                 }
             }
+
             //Finds the car with same index as whats in tbxId, overwrites that cars Price to whats written in tbxPrice
             Cars[SelectedCar()].Make = tbxMake.Text.ToUpper();
             Cars[SelectedCar()].Model = tbxModel.Text.ToUpper();
@@ -168,15 +169,15 @@ namespace U210921X2
 
         public void ClearAllText(Control con)
         {
-            foreach (Control c in con.Controls)
+            foreach (Control tbx in con.Controls)
             {
-                if (c is TextBox)
+                if (tbx is TextBox)
                 {
-                    ((TextBox)c).Clear();
+                    ((TextBox)tbx).Clear();
                 }
                 else
                 {
-                    ClearAllText(c);
+                    ClearAllText(tbx);
                 }
             }
         }
