@@ -52,6 +52,7 @@ namespace U210921X2
             this.label6 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnCleartxtBox = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxAllCars
@@ -250,9 +251,9 @@ namespace U210921X2
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(231, 285);
+            this.btnDelete.Location = new System.Drawing.Point(186, 285);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(77, 46);
+            this.btnDelete.Size = new System.Drawing.Size(74, 46);
             this.btnDelete.TabIndex = 27;
             this.btnDelete.Text = "Delete Car";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -268,11 +269,22 @@ namespace U210921X2
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnCleartxtBox
+            // 
+            this.btnCleartxtBox.Location = new System.Drawing.Point(278, 285);
+            this.btnCleartxtBox.Name = "btnCleartxtBox";
+            this.btnCleartxtBox.Size = new System.Drawing.Size(77, 46);
+            this.btnCleartxtBox.TabIndex = 29;
+            this.btnCleartxtBox.Text = "Clear Textbox";
+            this.btnCleartxtBox.UseVisualStyleBackColor = true;
+            this.btnCleartxtBox.Click += new System.EventHandler(this.btnCleartbx_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(541, 340);
+            this.Controls.Add(this.btnCleartxtBox);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.label6);
@@ -328,6 +340,7 @@ namespace U210921X2
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnCleartxtBox;
     }
 }
 

@@ -38,18 +38,26 @@ namespace U210921X2
         {
             Car SelectedCar = (sender as ListBox).SelectedItem as Car;//ListOfCars is a list because ListBox is the sender
                                                                      //SelectedCar is a Car and the selected item
-            tbxId.Text = ($"{SelectedCar.Id}");
-            tbxMake.Text = ($"{SelectedCar.Make}");
-            tbxModel.Text = ($"{SelectedCar.Model}");
-            tbxColor.Text = ($"{SelectedCar.Color}");
-            tbxKm.Text = ($"{SelectedCar.Km}");
-            tbxPrice.Text = ($"{SelectedCar.Price}");
-            tbxYear.Text = ($"{SelectedCar.Year}");
+            tbxId.Text = $"{SelectedCar.Id}";
+            tbxMake.Text = $"{SelectedCar.Make}";
+            tbxModel.Text = $"{SelectedCar.Model}";
+            tbxColor.Text = $"{SelectedCar.Color}";
+            tbxKm.Text = $"{SelectedCar.Km}";
+            tbxPrice.Text = $"{SelectedCar.Price}";
+            tbxYear.Text = $"{SelectedCar.Year}";
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Cars.Add(new Car() { Id = int.Parse(tbxId.Text), Make = tbxMake.Text.ToUpper(), Model = tbxModel.Text.ToUpper(), Color = tbxColor.Text.ToUpper(), 
                 Km = int.Parse(tbxKm.Text), Price = int.Parse(tbxPrice.Text), Year = int.Parse(tbxYear.Text)});
+
+            foreach (var item in Cars)
+            {
+                if (item.Id == int.Parse(tbxId.Text))
+                {
+                    MessageBox.Show("Test");
+                }
+            }
 
             listBoxRefresh();
             ClearAllText(this);
@@ -137,6 +145,17 @@ namespace U210921X2
                     ((TextBox)c).Clear();
                 else
                     ClearAllText(c);
+            }
+        }
+        private void btnCleartbx_Click(object sender, EventArgs e)
+        {
+            if (tbxId.Enabled == false)
+            {
+                tbxId.Enabled = true;
+            }
+            else
+            {
+                tbxId.Enabled = false;
             }
         }
         public void CarList()//For better visual clarity in the code
