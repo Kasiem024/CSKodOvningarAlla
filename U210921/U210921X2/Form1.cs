@@ -32,7 +32,6 @@ namespace U210921X2
 
             listBoxRefresh();
             cmbRefresh();
-            tbxId.Enabled = false;
         }
 
         private void listBoxAllCars_SelectedIndexChanged(object sender, EventArgs e)
@@ -46,6 +45,15 @@ namespace U210921X2
             tbxKm.Text = ($"{SelectedCar.Km}");
             tbxPrice.Text = ($"{SelectedCar.Price}");
             tbxYear.Text = ($"{SelectedCar.Year}");
+        }
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Cars.Add(new Car() { Id = int.Parse(tbxId.Text), Make = tbxMake.Text.ToUpper(), Model = tbxModel.Text.ToUpper(), Color = tbxColor.Text.ToUpper(), 
+                Km = int.Parse(tbxKm.Text), Price = int.Parse(tbxPrice.Text), Year = int.Parse(tbxYear.Text)});
+
+            listBoxRefresh();
+            ClearAllText(this);
+            cmbRefresh();
         }
         private void cmbChooseColors_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -80,6 +88,7 @@ namespace U210921X2
             Cars[SelectedCar()].Price = int.Parse(tbxPrice.Text);
             Cars[SelectedCar()].Km = int.Parse(tbxKm.Text);
             Cars[SelectedCar()].Year = int.Parse(tbxYear.Text);
+
             listBoxRefresh();
             ClearAllText(this);
             cmbRefresh();
@@ -88,6 +97,7 @@ namespace U210921X2
         private void btnDelete_Click(object sender, EventArgs e)
         {
             Cars.RemoveAt(SelectedCar());
+
             listBoxRefresh();
             ClearAllText(this);
             cmbRefresh();
@@ -102,7 +112,7 @@ namespace U210921X2
         {
             listBoxAllCars.Items.Clear();
 
-            foreach (Car car in Cars.OrderBy(x => x.Make))//Prints all cars in the list into the listbox,
+            foreach (Car car in Cars.OrderBy(x => x.Make).ThenBy(y => y.Model).ThenBy(z => z.Year))//Prints all cars in the list into the listbox,
                                                           //OrderBy used here so that the list isnt permanently sorted
             {
                 listBoxAllCars.Items.Add(car);
