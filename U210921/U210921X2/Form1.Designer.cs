@@ -31,7 +31,6 @@ namespace U210921X2
         {
             this.listBoxAllCars = new System.Windows.Forms.ListBox();
             this.listBoxCarColors = new System.Windows.Forms.ListBox();
-            this.btnEditCar = new System.Windows.Forms.Button();
             this.lblEditCar = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.tbxId = new System.Windows.Forms.TextBox();
@@ -52,6 +51,7 @@ namespace U210921X2
             this.tbxYear = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tbnDelete = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxAllCars
@@ -73,16 +73,6 @@ namespace U210921X2
             this.listBoxCarColors.Size = new System.Drawing.Size(117, 132);
             this.listBoxCarColors.TabIndex = 4;
             // 
-            // btnEditCar
-            // 
-            this.btnEditCar.Location = new System.Drawing.Point(240, 264);
-            this.btnEditCar.Name = "btnEditCar";
-            this.btnEditCar.Size = new System.Drawing.Size(70, 25);
-            this.btnEditCar.TabIndex = 5;
-            this.btnEditCar.Text = "Edit";
-            this.btnEditCar.UseVisualStyleBackColor = true;
-            this.btnEditCar.Click += new System.EventHandler(this.btnEditCar_Click);
-            // 
             // lblEditCar
             // 
             this.lblEditCar.AutoSize = true;
@@ -95,9 +85,9 @@ namespace U210921X2
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(285, 233);
+            this.btnSave.Location = new System.Drawing.Point(278, 233);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(70, 25);
+            this.btnSave.Size = new System.Drawing.Size(77, 46);
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save Changes";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -254,25 +244,35 @@ namespace U210921X2
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(396, 8);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(175, 31);
+            this.label6.Size = new System.Drawing.Size(140, 25);
             this.label6.TabIndex = 26;
             this.label6.Text = "Show by Color";
             // 
             // tbnDelete
             // 
-            this.tbnDelete.Location = new System.Drawing.Point(188, 233);
+            this.tbnDelete.Location = new System.Drawing.Point(231, 285);
             this.tbnDelete.Name = "tbnDelete";
-            this.tbnDelete.Size = new System.Drawing.Size(70, 25);
+            this.tbnDelete.Size = new System.Drawing.Size(77, 46);
             this.tbnDelete.TabIndex = 27;
-            this.tbnDelete.Text = "Delete";
+            this.tbnDelete.Text = "Delete Car";
             this.tbnDelete.UseVisualStyleBackColor = true;
             this.tbnDelete.Click += new System.EventHandler(this.tbnDelete_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(186, 233);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(74, 46);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Add New Car";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(541, 302);
+            this.ClientSize = new System.Drawing.Size(541, 340);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.tbnDelete);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tbxYear);
@@ -293,7 +293,6 @@ namespace U210921X2
             this.Controls.Add(this.tbxId);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblEditCar);
-            this.Controls.Add(this.btnEditCar);
             this.Controls.Add(this.listBoxCarColors);
             this.Controls.Add(this.listBoxAllCars);
             this.Name = "Form1";
@@ -307,7 +306,6 @@ namespace U210921X2
 
         private System.Windows.Forms.ListBox listBoxAllCars;
         private System.Windows.Forms.ListBox listBoxCarColors;
-        private System.Windows.Forms.Button btnEditCar;
         private System.Windows.Forms.Label lblEditCar;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox tbxId;
@@ -328,6 +326,7 @@ namespace U210921X2
         private System.Windows.Forms.TextBox tbxYear;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button tbnDelete;
+        private System.Windows.Forms.Button button1;
     }
 }
 

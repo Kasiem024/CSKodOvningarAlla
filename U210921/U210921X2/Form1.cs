@@ -49,8 +49,8 @@ namespace U210921X2
             tbxMake.Text = ($"{SelectedCar.Make}");
             tbxModel.Text = ($"{SelectedCar.Model}");
             tbxColor.Text = ($"{SelectedCar.Color}");
-            tbxKm.Text = ($"{SelectedCar.Km} km");
-            tbxPrice.Text = ($"{SelectedCar.Price} kr");
+            tbxKm.Text = ($"{SelectedCar.Km}");
+            tbxPrice.Text = ($"{SelectedCar.Price}");
             tbxYear.Text = ($"{SelectedCar.Year}");
         }
         private void cmbChooseColors_SelectedIndexChanged(object sender, EventArgs e)
@@ -79,10 +79,10 @@ namespace U210921X2
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Cars.Find(x => x.Id == int.Parse(tbxId.Text)).Price = int.Parse(tbxPrice.Text);
-            //Finds the car with same Id as whats in tbxId, overwrites that cars Price to whats written in tbxPrice
+            Cars[SelectedCar()].Price = int.Parse(tbxPrice.Text);
+            //Finds the car with same index as whats in tbxId, overwrites that cars Price to whats written in tbxPrice
 
-            Cars.Find(x => x.Id == int.Parse(tbxId.Text)).Km = int.Parse(tbxKm.Text);
+            Cars[SelectedCar()].Km = int.Parse(tbxKm.Text);
         }
 
         private void tbnDelete_Click(object sender, EventArgs e)
