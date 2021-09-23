@@ -30,6 +30,8 @@ namespace U210921X2
             Cars = new List<Car>();//Making the list Cars here becasue I now need it
             CarList();//Calling to the method CarList here
 
+            btnEnabler();
+
             listBoxRefresh();
             cmbRefresh();
         }
@@ -66,6 +68,7 @@ namespace U210921X2
                 MessageBox.Show("ID already exists in list! Choose a diffrent ID for your new car!");
             }
 
+            btnEnabler();
             listBoxRefresh();
             ClearAllText(this);
             cmbRefresh();
@@ -154,7 +157,7 @@ namespace U210921X2
                     ClearAllText(c);
             }
         }
-        private void btnCleartbx_Click(object sender, EventArgs e)
+        public void btnEnabler()
         {
             if (tbxId.Enabled == false)
             {
@@ -163,6 +166,15 @@ namespace U210921X2
             else
             {
                 tbxId.Enabled = false;
+            }
+
+            if (btnAdd.Enabled == false)
+            {
+                btnAdd.Enabled = true;
+            }
+            else
+            {
+                btnAdd.Enabled = false;
             }
         }
         public void CarList()//For better visual clarity in the code
@@ -189,6 +201,11 @@ namespace U210921X2
             Cars.Add(new Car() { Id = 991, Make = "VOLVO", Model = "V70", Color = "RED", Km = 3475, Price = 14512, Year = 1998 });
             Cars.Add(new Car() { Id = 801, Make = "AUDI", Model = "A7", Color = "WHITE", Km = 492, Price = 187500, Year = 2002 });
             Cars.Add(new Car() { Id = 6031, Make = "AUDI", Model = "A6", Color = "BLUE", Km = 553, Price = 55400, Year = 2011 });
+        }
+
+        private void btnNewCar_Click(object sender, EventArgs e)
+        {
+            btnEnabler();
         }
     }
 }

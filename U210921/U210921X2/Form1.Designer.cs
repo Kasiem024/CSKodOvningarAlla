@@ -52,7 +52,7 @@ namespace U210921X2
             this.label6 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnCleartxtBox = new System.Windows.Forms.Button();
+            this.btnNewCar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxAllCars
@@ -251,7 +251,7 @@ namespace U210921X2
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(186, 285);
+            this.btnDelete.Location = new System.Drawing.Point(183, 233);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(74, 46);
             this.btnDelete.TabIndex = 27;
@@ -261,30 +261,30 @@ namespace U210921X2
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(186, 233);
+            this.btnAdd.Location = new System.Drawing.Point(278, 285);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(74, 46);
+            this.btnAdd.Size = new System.Drawing.Size(77, 46);
             this.btnAdd.TabIndex = 28;
             this.btnAdd.Text = "Add New Car";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnCleartxtBox
+            // btnNewCar
             // 
-            this.btnCleartxtBox.Location = new System.Drawing.Point(278, 285);
-            this.btnCleartxtBox.Name = "btnCleartxtBox";
-            this.btnCleartxtBox.Size = new System.Drawing.Size(77, 46);
-            this.btnCleartxtBox.TabIndex = 29;
-            this.btnCleartxtBox.Text = "Clear Textbox";
-            this.btnCleartxtBox.UseVisualStyleBackColor = true;
-            this.btnCleartxtBox.Click += new System.EventHandler(this.btnCleartbx_Click);
+            this.btnNewCar.Location = new System.Drawing.Point(183, 285);
+            this.btnNewCar.Name = "btnNewCar";
+            this.btnNewCar.Size = new System.Drawing.Size(74, 46);
+            this.btnNewCar.TabIndex = 29;
+            this.btnNewCar.Text = "New Car";
+            this.btnNewCar.UseVisualStyleBackColor = true;
+            this.btnNewCar.Click += new System.EventHandler(this.btnNewCar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(541, 340);
-            this.Controls.Add(this.btnCleartxtBox);
+            this.Controls.Add(this.btnNewCar);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.label6);
@@ -340,7 +340,7 @@ namespace U210921X2
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnCleartxtBox;
+        private System.Windows.Forms.Button btnNewCar;
     }
 }
 
