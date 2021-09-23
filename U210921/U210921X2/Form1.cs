@@ -47,12 +47,15 @@ namespace U210921X2
 
         private void listBoxAllCars_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbxCarInfo.Clear();//For better visual clarity
             Car SelectedCar = (sender as ListBox).SelectedItem as Car;//ListOfCars is a list because ListBox is the sender
                                                                      //SelectedCar is a Car and the selected item
-
-            tbxCarInfo.Text = ($"ID: {SelectedCar.Id} {SelectedCar.Make} {SelectedCar.Model} {SelectedCar.Color}" +
-            $" Mileage:{SelectedCar.Km}km Price:{SelectedCar.Price} kr Year:{SelectedCar.Year}");
+            tbxId.Text = ($"{SelectedCar.Id}");
+            tbxMake.Text = ($"{SelectedCar.Make}");
+            tbxModel.Text = ($"{SelectedCar.Model}");
+            tbxColor.Text = ($"{SelectedCar.Color}");
+            tbxKm.Text = ($"{SelectedCar.Km} km");
+            tbxPrice.Text = ($"{SelectedCar.Price} kr");
+            tbxYear.Text = ($"{SelectedCar.Year}");
         }
         private void cmbChooseColors_SelectedIndexChanged(object sender, EventArgs e)
         {
