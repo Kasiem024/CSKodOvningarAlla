@@ -71,11 +71,7 @@ namespace U210921X2
         }
         private void btnEditCar_Click(object sender, EventArgs e)
         {
-            string SelectedIdTemp = tbxId.Text;//Creating a temp because tbxId is expecting a string
-
-            int SelectedId = int.Parse(SelectedIdTemp);//Converting string in tbxId to int
-
-            var SelctedCarEdit = Cars.Find(x => x.Id == SelectedId);//Finding the car with the same id
+            var SelctedCarEdit = Cars.Find(x => x.Id == int.Parse(tbxId.Text));//Finding the car with the same id
 
             tbxPrice.Text = SelctedCarEdit.Price.ToString();
             tbxKm.Text = SelctedCarEdit.Km.ToString();
