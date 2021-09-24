@@ -77,19 +77,27 @@ namespace U210921X2
                 MessageBox.Show("Error! False input!");
             }
         }
-        private void cmbChooseColors_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbChooseProperty_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listBoxCarColors.Items.Clear();//Clears what is currently in listBoxCarColors for visual clarity
+            listBoxCarProperty.Items.Clear();//Clears what is currently in listBoxCarColors for visual clarity
 
-            string selectedColor = (sender as ComboBox).SelectedItem.ToString();
+            string selectedProperty = (sender as ComboBox).SelectedItem.ToString();
             //SelectedColor is the selected item from the ComboBox cmbChooseColors and is also a string
 
             foreach (Car c in Cars)//Looks through all items in Cars
             {
-                if (c.Color.ToUpper() == selectedColor)
-                //If the Color property of the Car that is currently being examined matches selectedColor add that Car to listBoxCarColors
+                if (c.Make.ToUpper() == selectedProperty)
+                //If the property of the Car that is currently being examined matches selectedProperty add that Car to listBoxCarColors
                 {
-                    listBoxCarColors.Items.Add(c);
+                    listBoxCarProperty.Items.Add(c);
+                }
+                if (c.Model.ToUpper() == selectedProperty)
+                {
+                    listBoxCarProperty.Items.Add(c);
+                }
+                if (c.Color.ToUpper() == selectedProperty)
+                {
+                    listBoxCarProperty.Items.Add(c);
                 }
             }
         }
@@ -158,12 +166,23 @@ namespace U210921X2
         }
         public void cmbRefresh()
         {
-            cmbChooseColors.Items.Clear();
+            cmbChooseProperty.Items.Clear();
 
-            foreach (var color in Cars.Select(x => x.Color.ToUpper()).Distinct())
+            foreach (var item in Cars.Select(x => x.Make.ToUpper()).Distinct())
             //Selects all variables in property Color that are distinct
+
             {
-                cmbChooseColors.Items.Add($"{color}");//Adds all distinct colors to cmbChooseColors
+                cmbChooseProperty.Items.Add($"{item}");//Adds all distinct colors to cmbChooseColors
+            }
+
+            foreach (var item in Cars.Select(x => x.Model.ToUpper()).Distinct())
+            {
+                cmbChooseProperty.Items.Add($"{item}");
+            }
+
+            foreach (var item in Cars.Select(x => x.Color.ToUpper()).Distinct())
+            {
+                cmbChooseProperty.Items.Add($"{item}");
             }
         }
 

@@ -30,7 +30,7 @@ namespace U210921X2
         private void InitializeComponent()
         {
             this.listBoxAllCars = new System.Windows.Forms.ListBox();
-            this.listBoxCarColors = new System.Windows.Forms.ListBox();
+            this.listBoxCarProperty = new System.Windows.Forms.ListBox();
             this.lblEditCar = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.tbxId = new System.Windows.Forms.TextBox();
@@ -39,7 +39,7 @@ namespace U210921X2
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblKm = new System.Windows.Forms.Label();
             this.tbxKm = new System.Windows.Forms.TextBox();
-            this.cmbChooseColors = new System.Windows.Forms.ComboBox();
+            this.cmbChooseProperty = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -65,14 +65,14 @@ namespace U210921X2
             this.listBoxAllCars.TabIndex = 0;
             this.listBoxAllCars.SelectedIndexChanged += new System.EventHandler(this.listBoxAllCars_SelectedIndexChanged);
             // 
-            // listBoxCarColors
+            // listBoxCarProperty
             // 
-            this.listBoxCarColors.FormattingEnabled = true;
-            this.listBoxCarColors.ItemHeight = 16;
-            this.listBoxCarColors.Location = new System.Drawing.Point(361, 103);
-            this.listBoxCarColors.Name = "listBoxCarColors";
-            this.listBoxCarColors.Size = new System.Drawing.Size(117, 228);
-            this.listBoxCarColors.TabIndex = 4;
+            this.listBoxCarProperty.FormattingEnabled = true;
+            this.listBoxCarProperty.ItemHeight = 16;
+            this.listBoxCarProperty.Location = new System.Drawing.Point(361, 103);
+            this.listBoxCarProperty.Name = "listBoxCarProperty";
+            this.listBoxCarProperty.Size = new System.Drawing.Size(117, 228);
+            this.listBoxCarProperty.TabIndex = 4;
             // 
             // lblEditCar
             // 
@@ -148,15 +148,15 @@ namespace U210921X2
             this.tbxKm.Size = new System.Drawing.Size(100, 22);
             this.tbxKm.TabIndex = 13;
             // 
-            // cmbChooseColors
+            // cmbChooseProperty
             // 
-            this.cmbChooseColors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbChooseColors.FormattingEnabled = true;
-            this.cmbChooseColors.Location = new System.Drawing.Point(361, 34);
-            this.cmbChooseColors.Name = "cmbChooseColors";
-            this.cmbChooseColors.Size = new System.Drawing.Size(117, 24);
-            this.cmbChooseColors.TabIndex = 16;
-            this.cmbChooseColors.SelectedIndexChanged += new System.EventHandler(this.cmbChooseColors_SelectedIndexChanged);
+            this.cmbChooseProperty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbChooseProperty.FormattingEnabled = true;
+            this.cmbChooseProperty.Location = new System.Drawing.Point(361, 34);
+            this.cmbChooseProperty.Name = "cmbChooseProperty";
+            this.cmbChooseProperty.Size = new System.Drawing.Size(117, 24);
+            this.cmbChooseProperty.TabIndex = 16;
+            this.cmbChooseProperty.SelectedIndexChanged += new System.EventHandler(this.cmbChooseProperty_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -298,7 +298,7 @@ namespace U210921X2
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmbChooseColors);
+            this.Controls.Add(this.cmbChooseProperty);
             this.Controls.Add(this.tbxKm);
             this.Controls.Add(this.lblKm);
             this.Controls.Add(this.lblPrice);
@@ -307,7 +307,7 @@ namespace U210921X2
             this.Controls.Add(this.tbxId);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblEditCar);
-            this.Controls.Add(this.listBoxCarColors);
+            this.Controls.Add(this.listBoxCarProperty);
             this.Controls.Add(this.listBoxAllCars);
             this.Name = "Form1";
             this.Text = "Car";
@@ -319,7 +319,7 @@ namespace U210921X2
         #endregion
 
         private System.Windows.Forms.ListBox listBoxAllCars;
-        private System.Windows.Forms.ListBox listBoxCarColors;
+        private System.Windows.Forms.ListBox listBoxCarProperty;
         private System.Windows.Forms.Label lblEditCar;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox tbxId;
@@ -328,7 +328,7 @@ namespace U210921X2
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblKm;
         private System.Windows.Forms.TextBox tbxKm;
-        private System.Windows.Forms.ComboBox cmbChooseColors;
+        private System.Windows.Forms.ComboBox cmbChooseProperty;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
