@@ -150,7 +150,6 @@ namespace U210921X2
             return Cars.FindIndex(x => x.Id == int.Parse(tbxId.Text));
             //Finds the index of the Car with the same Id as whats currently in tbxId
         }
-
         public void listBoxRefresh()
         //Method that refreshes the listBox listBoxAllCars. Makin a method because listBoxAllCars regularly gets changed
         {
