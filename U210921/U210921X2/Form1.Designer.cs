@@ -152,7 +152,7 @@ namespace U210921X2
             // 
             this.cmbChooseProperty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.cmbChooseProperty.FormattingEnabled = true;
-            this.cmbChooseProperty.Location = new System.Drawing.Point(378, 34);
+            this.cmbChooseProperty.Location = new System.Drawing.Point(378, 40);
             this.cmbChooseProperty.Name = "cmbChooseProperty";
             this.cmbChooseProperty.Size = new System.Drawing.Size(137, 24);
             this.cmbChooseProperty.TabIndex = 16;
@@ -284,7 +284,7 @@ namespace U210921X2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 340);
+            this.ClientSize = new System.Drawing.Size(549, 348);
             this.Controls.Add(this.btnNewCar);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);

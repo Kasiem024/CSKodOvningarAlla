@@ -84,7 +84,7 @@ namespace U210921X2
             string selectedProperty = (sender as ComboBox).SelectedItem.ToString();
             //SelectedPropertyis the selected item from the ComboBox cmbChooseProperty and is also a string
 
-            foreach (Car c in Cars)//Looks through all items in Cars
+            foreach (Car c in Cars.OrderBy(x => x.Make).ThenBy(y => y.Model).ThenBy(z => z.Year))//Looks through all items in Cars
             {
                 if (c.Make.ToUpper() == selectedProperty)
                 //If the property of the Car that is currently being examined matches selectedProperty add that Car to listBoxCarProperty
