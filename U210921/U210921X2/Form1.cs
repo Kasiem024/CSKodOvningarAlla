@@ -27,7 +27,7 @@ namespace U210921X2
 
             btnEnabler();//Disables tbxId and btnAdd because theyre on by deafult
             listBoxRefresh();//Adds all items in list Cars to listBoxAllCars
-            cmbRefresh();//Adds all distinct colors in Color to cmbChooseColor
+            cmbRefresh();//Adds all distinct properties in Car to cmbChooseProperty
         }
 
         private void listBoxAllCars_SelectedIndexChanged(object sender, EventArgs e)
@@ -79,15 +79,15 @@ namespace U210921X2
         }
         private void cmbChooseProperty_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listBoxCarProperty.Items.Clear();//Clears what is currently in listBoxCarColors for visual clarity
+            listBoxCarProperty.Items.Clear();//Clears what is currently in listBoxCarProperty for visual clarity
 
             string selectedProperty = (sender as ComboBox).SelectedItem.ToString();
-            //SelectedColor is the selected item from the ComboBox cmbChooseColors and is also a string
+            //SelectedPropertyis the selected item from the ComboBox cmbChooseProperty and is also a string
 
             foreach (Car c in Cars)//Looks through all items in Cars
             {
                 if (c.Make.ToUpper() == selectedProperty)
-                //If the property of the Car that is currently being examined matches selectedProperty add that Car to listBoxCarColors
+                //If the property of the Car that is currently being examined matches selectedProperty add that Car to listBoxCarProperty
                 {
                     listBoxCarProperty.Items.Add(c);
                 }
@@ -169,10 +169,10 @@ namespace U210921X2
             cmbChooseProperty.Items.Clear();
 
             foreach (var item in Cars.Select(x => x.Make.ToUpper()).Distinct())
-            //Selects all variables in property Color that are distinct
+            //Selects all variables in property Make that are distinct
 
             {
-                cmbChooseProperty.Items.Add($"{item}");//Adds all distinct colors to cmbChooseColors
+                cmbChooseProperty.Items.Add($"{item}");//Adds all distinct makes to cmbChooseProperty
             }
 
             foreach (var item in Cars.Select(x => x.Model.ToUpper()).Distinct())

@@ -69,9 +69,9 @@ namespace U210921X2
             // 
             this.listBoxCarProperty.FormattingEnabled = true;
             this.listBoxCarProperty.ItemHeight = 16;
-            this.listBoxCarProperty.Location = new System.Drawing.Point(361, 103);
+            this.listBoxCarProperty.Location = new System.Drawing.Point(378, 103);
             this.listBoxCarProperty.Name = "listBoxCarProperty";
-            this.listBoxCarProperty.Size = new System.Drawing.Size(117, 228);
+            this.listBoxCarProperty.Size = new System.Drawing.Size(137, 228);
             this.listBoxCarProperty.TabIndex = 4;
             // 
             // lblEditCar
@@ -150,11 +150,11 @@ namespace U210921X2
             // 
             // cmbChooseProperty
             // 
-            this.cmbChooseProperty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbChooseProperty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.cmbChooseProperty.FormattingEnabled = true;
-            this.cmbChooseProperty.Location = new System.Drawing.Point(361, 34);
+            this.cmbChooseProperty.Location = new System.Drawing.Point(378, 34);
             this.cmbChooseProperty.Name = "cmbChooseProperty";
-            this.cmbChooseProperty.Size = new System.Drawing.Size(117, 24);
+            this.cmbChooseProperty.Size = new System.Drawing.Size(137, 24);
             this.cmbChooseProperty.TabIndex = 16;
             this.cmbChooseProperty.SelectedIndexChanged += new System.EventHandler(this.cmbChooseProperty_SelectedIndexChanged);
             // 
@@ -246,9 +246,9 @@ namespace U210921X2
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(356, 6);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(140, 25);
+            this.label6.Size = new System.Drawing.Size(224, 31);
             this.label6.TabIndex = 26;
-            this.label6.Text = "Show by Color";
+            this.label6.Text = "Search by Property";
             // 
             // btnDelete
             // 
@@ -284,7 +284,7 @@ namespace U210921X2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 340);
+            this.ClientSize = new System.Drawing.Size(542, 340);
             this.Controls.Add(this.btnNewCar);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
