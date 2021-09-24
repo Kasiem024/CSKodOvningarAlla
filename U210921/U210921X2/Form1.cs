@@ -32,16 +32,7 @@ namespace U210921X2
 
         private void listBoxAllCars_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Car SelectedCar = (sender as ListBox).SelectedItem as Car;
-            //SelectedCar is the currently selected item in listbox listBoxAllCars and is a Car
-
-            tbxId.Text = $"{SelectedCar.Id}";
-            tbxMake.Text = $"{SelectedCar.Make}";
-            tbxModel.Text = $"{SelectedCar.Model}";
-            tbxColor.Text = $"{SelectedCar.Color}";
-            tbxKm.Text = $"{SelectedCar.Km}";
-            tbxPrice.Text = $"{SelectedCar.Price}";
-            tbxYear.Text = $"{SelectedCar.Year}";
+            ListBoxItemsAdd(sender);
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -101,6 +92,10 @@ namespace U210921X2
                 }
             }
         }
+        private void listBoxCarProperty_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListBoxItemsAdd(sender);
+        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -149,6 +144,20 @@ namespace U210921X2
         {
             return Cars.FindIndex(x => x.Id == int.Parse(tbxId.Text));
             //Finds the index of the Car with the same Id as whats currently in tbxId
+        }
+
+        public void ListBoxItemsAdd(object sender)
+        {
+            Car SelectedCar = (sender as ListBox).SelectedItem as Car;
+            //SelectedCar is the currently selected item in listbox listBoxAllCars and is a Car
+
+            tbxId.Text = $"{SelectedCar.Id}";
+            tbxMake.Text = $"{SelectedCar.Make}";
+            tbxModel.Text = $"{SelectedCar.Model}";
+            tbxColor.Text = $"{SelectedCar.Color}";
+            tbxKm.Text = $"{SelectedCar.Km}";
+            tbxPrice.Text = $"{SelectedCar.Price}";
+            tbxYear.Text = $"{SelectedCar.Year}";
         }
         public void listBoxRefresh()
         //Method that refreshes the listBox listBoxAllCars. Makin a method because listBoxAllCars regularly gets changed

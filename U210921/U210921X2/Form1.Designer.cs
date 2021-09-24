@@ -73,6 +73,7 @@ namespace U210921X2
             this.listBoxCarProperty.Name = "listBoxCarProperty";
             this.listBoxCarProperty.Size = new System.Drawing.Size(137, 228);
             this.listBoxCarProperty.TabIndex = 4;
+            this.listBoxCarProperty.SelectedIndexChanged += new System.EventHandler(this.listBoxCarProperty_SelectedIndexChanged);
             // 
             // lblEditCar
             // 
