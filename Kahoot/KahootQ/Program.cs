@@ -4,9 +4,30 @@ namespace KahootQ
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
-            Console.WriteLine("Hello World!");
+            int i = 242424;
+            i.ToString();
+            string answer = "Du är förvirrad som fan";
+            second();
+        }
+        public void first()
+        {
+            Console.WriteLine("second method");
+        }
+        public static void second()
+        {
+            Console.WriteLine("first method");
+        }
+        public void First()
+        {
+            string first = "second method";
+            Console.WriteLine(first);
+            Console.WriteLine("third method");
+        }
+        public static void Second()
+        {
+            Console.WriteLine("fourth method");
         }
     }
 }
